@@ -14,7 +14,8 @@ CREATE TABLE app_user (
   password varchar(32) NOT NULL,
   role varchar(32),
   birthdate DATE,
-  email_address varchar(100)
+  email_address varchar(100),
+  salt varchar(200)
 );
 
 CREATE TABLE brewery (
