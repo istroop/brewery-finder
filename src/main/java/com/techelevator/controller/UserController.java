@@ -29,7 +29,7 @@ public class UserController {
 		if( ! modelHolder.containsAttribute("user")) {
 			modelHolder.addAttribute("user", new User());
 		}
-		return "newUser";
+		return "registration/newUser";
 	}
 	
 	@RequestMapping(path="/users", method=RequestMethod.POST)
@@ -41,7 +41,7 @@ public class UserController {
 		}
 		
 		userDAO.saveUser(user.getUserName(), user.getPassword());
-		return "redirect:/login";
+		return "login/login";
 	}
 	
 	
