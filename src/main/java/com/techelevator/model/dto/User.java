@@ -2,9 +2,12 @@ package com.techelevator.model.dto;
 
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 public class User {
 	private String userName;
+	private String userEmail;
+	private LocalDate birthdate;
 	
 	@Size(min=8, message="Password too short, must be at least 8")
 	@Pattern.List({
@@ -44,5 +47,21 @@ public class User {
 	}
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
+	}
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.userEmail = emailAddress;
+	}
+
+	public LocalDate getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(LocalDate birthdate) {
+		this.birthdate = birthdate;
 	}
 }

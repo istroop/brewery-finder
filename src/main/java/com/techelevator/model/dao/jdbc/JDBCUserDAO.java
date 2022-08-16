@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 import com.techelevator.model.dto.User;
 import com.techelevator.services.security.PasswordHasher;
 
+import java.time.LocalDate;
+
 @Component
 public class JDBCUserDAO implements UserDAO
 {
@@ -26,13 +28,13 @@ public class JDBCUserDAO implements UserDAO
 	}
 	
 	@Override
-	public void saveUser(String userName, String password) {
+	public void saveUser(String userName, String password, LocalDate birthdate, String role, String userEmail) {
 		byte[] salt = hashMaster.generateRandomSalt();
 		String hashedPassword = hashMaster.computeHash(password, salt);
 		String saltString = new String(Base64.encode(salt));
 		
-		jdbcTemplate.update("INSERT INTO app_user(user_name, password, salt) VALUES (?, ?, ?)",
-				userName, hashedPassword, saltString);
+		jdbcTemplate.update("INSERT INTO app_user(user_name, password, birthdate, role, email_address, salt) VALUES (?, ?, ?, ?, ?, ?)",
+				userName, hashedPassword, birthdate, role, userEmail, saltString);
 	}
 
 	@Override
