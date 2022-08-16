@@ -1,6 +1,8 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<c:import url="/WEB-INF/jsp/common/header.jsp" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,14 +15,23 @@
 			box-sizing: border-box;
 		}
 		.container {
-			padding: 16px;
+			padding: 15px;
 			background-color: white;
 		}
 
 		input[type=text], input [type=password] {
 			width: 100%;
 			padding: 15px;
-			margin: 5px 0 22px 0;
+			margin: 5px 0 15px 0;
+			display: inline-block;
+			border: none;
+			background: #f1f1f1;
+		}
+
+		input[type=password], input [type=password] {
+			width: 100%;
+			padding: 15px;
+			margin: 5px 0 15px 0;
 			display: inline-block;
 			border: none;
 			background: #f1f1f1;
@@ -29,13 +40,18 @@
 		input[type=date], input [type=date] {
 			width: 100%;
 			padding: 15px;
-			margin: 5px 0 22px 0;
+			margin: 5px 0 15px 0;
 			display: inline-block;
 			border: none;
 			background: #f1f1f1;
 		}
 
 		input[type=text]:focus, input[type=password]:focus {
+			background-color: #dddddd;
+			outline: none;
+		}
+
+		input[type=password]:focus, input[type=password]:focus {
 			background-color: #dddddd;
 			outline: none;
 		}
@@ -47,7 +63,7 @@
 
 		hr {
 			border: 1px solid #f1f1f1;
-			margin-bottom: 25px;
+			margin-bottom: 15px;
 		}
 
 		.registerbtn {
@@ -69,8 +85,6 @@
 
 <body>
 
-<c:import url="/WEB-INF/jsp/common/header.jsp" />
-
 <c:url var="validationJs" value="/js/user-validation.js" />
 <script src="${validationJs}"></script>
 
@@ -89,15 +103,15 @@
 				<input type="date" id="userBirthday" name="userBirthday" placeholder="User Birthday" class="form-control" />
 			</div>
 			<div class="container">
-				<label class="control-label" for="userEmail">Email: </label>
+				<label for="userEmail">Email: </label>
 				<input type="text" id="userEmail" name="userEmail" placeholder="User Email" class="form-control" required oninvalid="this.setCutomValidity(\'This field is required\')" />
 			</div>
 			<div class="container">
-				<label class="control-label" for="password">Password: </label>
+				<label for="password">Password: </label>
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" required oninvalid="this.setCutomValidity(\'This field is required\')" />
 			</div>
 			<div class="container">
-				<label class="control-label" for="confirmPassword">Confirm Password: </label>
+				<label for="confirmPassword">Confirm Password: </label>
 				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" required oninvalid="this.setCutomValidity(\'This field is required\')" />
 			</div>
 			<div class="container">
