@@ -25,7 +25,7 @@ public class JDBCBeerDAO implements BeerDAO {
     public List<Beer> getBeersByBrewery(int brewery_id) {
         String sqlSearchForBeers = "SELECT id FROM beer WHERE brewery_id = ?";
 
-        SqlRowSet beerSet = jdbcTemplate.queryForRowSet(sqlSearchForBeers);
+        SqlRowSet beerSet = jdbcTemplate.queryForRowSet(sqlSearchForBeers, brewery_id);
         List<Beer> beers = new ArrayList<>();
 
         while (beerSet.next()) {
