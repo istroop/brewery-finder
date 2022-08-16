@@ -11,4 +11,5 @@
     <h3>${brewery.name}</h3>
 </c:forEach>
 
+
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
