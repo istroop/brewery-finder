@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BreweryDAO {
 
-    public List<Brewery> getBreweries();
+    public List<Brewery> getActiveBreweries();
     public Brewery getBreweryById (int id);
 
 }
