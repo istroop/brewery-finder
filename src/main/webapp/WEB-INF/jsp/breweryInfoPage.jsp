@@ -6,16 +6,24 @@
     <title>Brewery Information Page</title>
 </head>
 <body>
+
+<%--Image for Brewery--%>
+<%--<li>Brewery Image: ${brewery.image}</li>--%>
+
+
+<h2>${brewery.name}</h2>
+<h5>${brewery.history}</h5>
+
+
 <p>
     <ul>
-    <li>Brewery Status: </li>
-    <li>Contact Information: </li>
-    <li>Brewery History: </li>
-    <li>Hours/Days of Operation: </li>
-    <li>Brewery Image: </li>
-    <li>Address: </li><br>
-    <li>Beer List: </li>
+    <li>Address: ${brewery.address}</li>
+    <li>Phone Number: ${brewery.phone}</li>
+    <li>Hours of Operation: ${brewery.hoursOfOperation}</li>
+    <br>
 </ul>
+
+<h4>Beers: </h4>
 </p>
 </body>
 </html>

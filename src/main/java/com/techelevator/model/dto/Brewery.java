@@ -10,13 +10,15 @@ public class Brewery {
 
     private String hoursOfOperation;
 
-    private Long phone;
+    private String phone;
 
     private String history;
 
     private String image;
 
     private Boolean activityStatus;
+
+    private String address;
 
     public void setId(int id) {this.id = id;}
 
@@ -48,11 +50,11 @@ public class Brewery {
         this.hoursOfOperation = hoursOfOperation;
     }
 
-    public Long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -80,7 +82,16 @@ public class Brewery {
         this.activityStatus = activityStatus;
     }
 
-    public Brewery(int id, String name, int brewer, String hoursOfOperation, Long phone, String history, String image, Boolean activityStatus) {
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Brewery(int id, String name, int brewer, String hoursOfOperation, String phone, String history, String image,
+                   String address, Boolean activityStatus) {
         this.id = id;
         this.name = name;
         this.brewer = brewer;
@@ -88,6 +99,7 @@ public class Brewery {
         this.phone = phone;
         this.history = history;
         this.image = image;
+        this.address = address;
         this.activityStatus = activityStatus;
     }
     public Brewery() {};

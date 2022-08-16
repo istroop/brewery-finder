@@ -39,7 +39,8 @@ public class JDBCBreweryDAO implements BreweryDAO{
 
     @Override
     public Brewery getBreweryById(int id) {
-        String sqlSearchForBrewery ="SELECT id, name, brewer, hours_of_operation, history, image, active_status "+
+        String sqlSearchForBrewery ="SELECT id, name, brewer, hours_of_operation, phone, history, address, image, " +
+                "active_status "+
                 "FROM brewery "+
                 "WHERE id = ? ";
 
@@ -51,8 +52,10 @@ public class JDBCBreweryDAO implements BreweryDAO{
             thisBrewery.setName(brewery.getString("name"));
             thisBrewery.setBrewer(brewery.getInt("brewer"));
             thisBrewery.setHoursOfOperation(brewery.getString("hours_of_operation"));
+            thisBrewery.setPhone(brewery.getString("phone"));
             thisBrewery.setHistory(brewery.getString("history"));
             thisBrewery.setImage(brewery.getString("image"));
+            thisBrewery.setAddress(brewery.getString("address"));
             thisBrewery.setActivityStatus(brewery.getBoolean("active_status"));
         }
 

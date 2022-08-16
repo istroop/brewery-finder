@@ -8,8 +8,15 @@
 <h2>Welcome to the Brewery Finder!</h2>
 
 <c:forEach var="brewery" items="${breweries}">
-    <h3>${brewery.name}</h3>
+    <c:url var="breweryHref"
+           value="/breweries/${brewery.id}"/>
+    <h3>
+        <a class="nav-link" href="${breweryHref}">${brewery.name}</a>
+    </h3>
 </c:forEach>
+
+
+
 
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
