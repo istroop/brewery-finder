@@ -24,6 +24,11 @@
 </ul>
 
 <h4>Beers: </h4>
+<ul>
+    <c:forEach var="beer" items="${beers}">
+        <li>${beer.name}</li>
+    </c:forEach>
+</ul>
 </p>
 </body>
 </html>

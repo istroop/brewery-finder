@@ -32,4 +32,12 @@ INSERT INTO brewery
                                                       ' & Japanese-American fusion eats.', '7902 Park Place', true),
 ('Asheville Brewing Company', 1, '', '', '', '', false);
 
+INSERT INTO beer
+    (name, brewery_id, image, description, abv, beer_type) values
+('Beer 1', 1, 'beer image url', 'i will come back and change these later', '0.5', 'the good kind'),
+('Beer 2', 1, 'beer image url', 'i will come back and change these later', '5.5', 'the good kind'),
+('Beer 3', 2, 'beer image url', 'i will come back and change these later', '6.5', 'the good kind'),
+('Beer 4', 3, 'beer image url', 'i will come back and change these later', '9.5', 'the good kind'),
+('Beer 5', 4, 'beer image url', 'i will come back and change these later', '10.5', 'the good kind');
+
 COMMIT;
