@@ -11,4 +11,9 @@ public class MainPageController {
         return "mainPage";
     }
 
+    @RequestMapping("/users/{userName}")
+    public String getLoggedInMainPage() {
+        return "mainPage";
+    }
+
 }
