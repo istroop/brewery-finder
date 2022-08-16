@@ -74,18 +74,18 @@
             <a href="<c:url value="/"/>" class="navbar-brand">Brewery Finder</a>
         </div>
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav nav">
                 <c:if test="${not empty currentUser}">
-                    <c:url var="dashboardHref" value="/users/${currentUser}"/>
+                    <c:url var="dashboardHref" value="/users/${currentUser.getUserName()}"/>
                     <li class="nav-item"><a class="nav-link" href="${dashboardHref}">Private Messages</a></li>
                     <c:url var="newMessageHref"
-                           value="/users/${currentUser}/messages/new"/>
+                           value="/users/${currentUser.getUserName()}/messages/new"/>
                     <li class="nav-item"><a class="nav-link" href="${newMessageHref}">New Message</a></li>
                     <c:url var="sentMessagesHref"
-                           value="/users/${currentUser}/messages"/>
+                           value="/users/${currentUser.getUserName()}/messages"/>
                     <li class="nav-item"><a class="nav-link" href="${sentMessagesHref}">Sent Messages</a></li>
                     <c:url var="changePasswordHref"
-                           value="/users/${currentUser}/changePassword"/>
+                           value="/users/${currentUser.getUserName()}/changePassword"/>
                     <li class="nav-item"><a class="nav-link" href="${changePasswordHref}">Change Password</a></li>
                 </c:if>
             </ul>

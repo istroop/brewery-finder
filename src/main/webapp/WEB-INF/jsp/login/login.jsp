@@ -32,6 +32,7 @@
 		<form method="POST" action="${formAction}">
 		<input type="hidden" name="destination" value="${param.destination}"/>
 		<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
+			<h3 style="color:mediumpurple"> Login </h3>
 			<div class="form-group">
 				<label for="userName">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
@@ -45,4 +46,5 @@
 	</div>
 	<div class="col-sm-4"></div>
 </div>
+
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
