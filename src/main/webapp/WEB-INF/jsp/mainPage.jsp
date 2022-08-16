@@ -6,4 +6,5 @@
 <h2>Welcome to the Brewery Finder!</h2>
 
 
+
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
