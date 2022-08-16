@@ -59,7 +59,11 @@
 <h4>What's on tap at ${brewery.name}: </h4>
 <ul>
     <c:forEach var="beer" items="${beers}">
-        <li>${beer.name}</li>
+        <c:url var="beerHref"
+               value="/beer/${brewery.id}"/>
+        <h3>
+            <a class="nav-link" href="${beerHref}">${beer.name}</a>
+        </h3>
     </c:forEach>
 </ul>
 </p>

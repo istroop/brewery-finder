@@ -2,7 +2,6 @@ package com.techelevator.controller;
 
 import com.techelevator.model.dao.BeerDAO;
 import com.techelevator.model.dao.BreweryDAO;
-import com.techelevator.model.dao.UserDAO;
 import com.techelevator.model.dto.Beer;
 import com.techelevator.model.dto.Brewery;
 import org.springframework.beans.factory.annotation.Autowired;

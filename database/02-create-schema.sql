@@ -35,12 +35,12 @@ CREATE TABLE brewery (
 
 CREATE TABLE beer (
     id SERIAL PRIMARY KEY,
-    brewery_id int NOT NULL,
+    brewery_id int,
     name varchar(255) NOT NULL,
-    image varchar(255),
-    description varchar(500),
-    abv float,
-    beer_type varchar(255),
+    image varchar(255) NOT NULL,
+    description varchar(500) NOT NULL,
+    abv float NOT NULL,
+    beer_type varchar(255) NOT NULL,
     CONSTRAINT beer_to_brewery_id_fkey FOREIGN KEY (brewery_id)
                   REFERENCES brewery(id)
 );
