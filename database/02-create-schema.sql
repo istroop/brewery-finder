@@ -14,7 +14,7 @@ CREATE TABLE app_user (
   user_name varchar(32) NOT NULL UNIQUE,
   password varchar(32) NOT NULL,
   role varchar(32),
-  birthdate DATE,
+  birthdate varchar(100),
   email_address varchar(100),
   salt varchar(200)
 );

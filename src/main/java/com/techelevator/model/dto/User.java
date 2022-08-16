@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class User {
 	private String userName;
 	private String userEmail;
-	private LocalDate birthdate;
+	private String birthdate;
 	
 	@Size(min=8, message="Password too short, must be at least 8")
 	@Pattern.List({
@@ -53,15 +53,15 @@ public class User {
 		return userEmail;
 	}
 
-	public void setEmailAddress(String emailAddress) {
+	public void setUserEmail(String emailAddress) {
 		this.userEmail = emailAddress;
 	}
 
-	public LocalDate getBirthdate() {
+	public String getBirthdate() {
 		return birthdate;
 	}
 
-	public void setBirthdate(LocalDate birthdate) {
+	public void setBirthdate(String birthdate) {
 		this.birthdate = birthdate;
 	}
 }

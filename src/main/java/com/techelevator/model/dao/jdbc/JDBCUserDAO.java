@@ -28,7 +28,7 @@ public class JDBCUserDAO implements UserDAO
 	}
 	
 	@Override
-	public void saveUser(String userName, String password, LocalDate birthdate, String role, String userEmail) {
+	public void saveUser(String userName, String password, String birthdate, String role, String userEmail) {
 		byte[] salt = hashMaster.generateRandomSalt();
 		String hashedPassword = hashMaster.computeHash(password, salt);
 		String saltString = new String(Base64.encode(salt));

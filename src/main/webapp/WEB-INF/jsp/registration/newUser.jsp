@@ -96,23 +96,23 @@
 			<h3 style="color:mediumpurple"> Create your Profile Today! </h3>
 			<div class="container">
 				<label class="control-label" for="userName">Full Name: </label>
-				<input type="text" id="userName" name="userName" placeHolder="Full Name" class="form-control" required oninvalid="this.setCutomValidity(\'This field is required\')"/>
+				<input type="text" id="userName" name="userName" placeHolder="Full Name" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')"/>
 			</div>
 			<div class="container">
 				<label for="userBirthday">Birthday: </label>
-				<input type="date" id="userBirthday" name="userBirthday" placeholder="User Birthday" class="form-control" />
+				<input type="date" id="userBirthday" name="birthdate" placeholder="User Birthday" class="form-control" />
 			</div>
 			<div class="container">
 				<label for="userEmail">Email: </label>
-				<input type="text" id="userEmail" name="userEmail" placeholder="User Email" class="form-control" required oninvalid="this.setCutomValidity(\'This field is required\')" />
+				<input type="text" id="userEmail" name="userEmail" placeholder="User Email" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')" />
 			</div>
 			<div class="container">
 				<label for="password">Password: </label>
-				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" required oninvalid="this.setCutomValidity(\'This field is required\')" />
+				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')" />
 			</div>
 			<div class="container">
 				<label for="confirmPassword">Confirm Password: </label>
-				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" required oninvalid="this.setCutomValidity(\'This field is required\')" />
+				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')" />
 			</div>
 			<div class="container">
 				<label for="role">Choose a Role: </label><br>
