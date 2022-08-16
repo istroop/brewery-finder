@@ -1,21 +1,30 @@
 package com.techelevator.model.dao.jdbc;
 
 import com.techelevator.model.dao.BreweryDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 import com.techelevator.model.dto.Brewery;
+
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class JDBCBreweryDAO implements BreweryDAO{
 
+
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    public JDBCBreweryDAO(DataSource dataSource) {
+        jdbcTemplate = new JdbcTemplate(dataSource);
+    }
+
     @Override
-    public List<Brewery> getBreweries() {
-        String sqlSearchForBreweries = "SELECT id FROM brewery";
+    public List<Brewery> getActiveBreweries() {
+        String sqlSearchForBreweries = "SELECT id FROM brewery WHERE active_status = TRUE";
 
         SqlRowSet breweriesSet = jdbcTemplate.queryForRowSet(sqlSearchForBreweries);
         List<Brewery> breweries = new ArrayList<>();
@@ -44,7 +53,7 @@ public class JDBCBreweryDAO implements BreweryDAO{
             thisBrewery.setHoursOfOperation(brewery.getString("hours_of_operation"));
             thisBrewery.setHistory(brewery.getString("history"));
             thisBrewery.setImage(brewery.getString("image"));
-            thisBrewery.setActivityStatus(brewery.getBoolean("activity_status"));
+            thisBrewery.setActivityStatus(brewery.getBoolean("active_status"));
         }
 
         return thisBrewery;
