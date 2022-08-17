@@ -36,6 +36,7 @@
 	}
 
 	.center {
+		text-align: center;
 
 	}
 </style>
@@ -47,7 +48,7 @@
 		<form class="formPadding" method="POST" action="${formAction}">
 		<input type="hidden" name="destination" value="${param.destination}"/>
 		<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
-			<h3 style="color:#0671f3" class="glyphicon-align-center"> Login </h3>
+			<h3 style="color:#a68fff" class="center"> Login </h3>
 			<div class="form-group">
 				<label for="userName">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />

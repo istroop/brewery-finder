@@ -18,15 +18,15 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 17px;
         }
-        .container {
+        .header {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .container img {vertical-align: middle;}
+        .header img {vertical-align: middle;}
 
-        .container .content {
+        .header .content {
             position: absolute;
             bottom: 0;
             background: rgb(0,0,0);
@@ -44,7 +44,7 @@
 <body>
 <title>Brewery Information Page</title>
 
-<div class="container">
+<div class="header">
     <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
     <div class="content">
         <h1>Welcome to ${brewery.name}</h1>
