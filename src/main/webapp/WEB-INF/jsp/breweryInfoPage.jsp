@@ -4,6 +4,10 @@
 
 <!DOCTYPE html>
 <html>
+<br>
+<br>
+<br>
+<br>
 <head>
     <meta name = "viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -19,7 +23,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .container img {vertical-align: middle;}
 
         .container .content {
@@ -28,7 +32,7 @@
             background: rgb(0,0,0);
             background: rgba(0,0,0,0.5);
             color: #f1f1f1;
-            width: 100%
+            width: 100%;
             padding: 20px;
         }
         p.indent {
@@ -47,14 +51,25 @@
         <p class="indent">${brewery.history}</p>
     </div>
 </div>
-
-<br><p>
+<div>
     <ul>
     <li>You can find us at: ${brewery.address}</li><br>
     <li>During our hours: ${brewery.hoursOfOperation}</li><br>
     <li>Or contact us at: ${brewery.phone}</li><br>
+    </ul>
+</div>
+    <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
+<div>
+<h5>
+    <a class="nav-link" href="${updateHref}">Update Brewery</a>
+</h5>
+<ul>
+    <li>You can find us at: ${brewery.address}</li>
+    <li>During our hours: ${brewery.hoursOfOperation}</li>
+    <li>Or contact us at: ${brewery.phone}</li>
+    <br>
 </ul>
-
+</div>
 <h4 style="color: mediumpurple">What's on tap at ${brewery.name}: </h4><br>
 <ul>
     <c:forEach var="beer" items="${beers}">
