@@ -39,11 +39,12 @@
 <body>
 <title>Update Brewery Page</title>
 
-<c:url var="formAction" value="/breweries/${breweryId}/update" />
+<c:url var="formAction" value="/breweries/${breweryId}" />
 <form method="POST" action="${formAction}">
     <div class="container">
         <div class="container">
             <h3 style="color:mediumpurple"> Update ${brewery.getName()}:</h3>
+            <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
             <div class="container">
                 <label class="control-label" for="phone">Phone: </label>
                 <input type="text" id="phone" name="phone" value="${brewery.phone}" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')"/>

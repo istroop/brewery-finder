@@ -61,7 +61,9 @@
     <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
 <div>
 <h5>
-    <a class="nav-link" href="${updateHref}">Update Brewery</a>
+    <c:if test="${currentUser.getRole()}=brewer">
+        <a class="nav-link" href="${updateHref}">Update Brewery</a>
+    </c:if>
 </h5>
 <ul>
     <li>You can find us at: ${brewery.address}</li>
