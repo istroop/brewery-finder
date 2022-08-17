@@ -60,11 +60,6 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-
-        </div>
-        <div class="navbar-header">
-            <c:url var="homePageHref" value="/"/>
-            <c:url var="imgSrc" value="/img/placeholder.png"/>
             <a href="${homePageHref}"><img src="${imgSrc}" class="img-fluid" style="height: 50px;"/></a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
