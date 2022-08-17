@@ -18,15 +18,15 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 17px;
         }
-        .header {
+        .brewerycontainer {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .header img {vertical-align: middle;}
+        .brewerycontainer img {vertical-align: middle;}
 
-        .header .content {
+        .brewerycontainer .content {
             position: absolute;
             bottom: 0;
             background: rgb(0,0,0);
@@ -63,16 +63,8 @@
 
 <body>
 <title>Brewery Information Page</title>
-<<<<<<< HEAD
-<c:url var="updateHref" value="/breweries/${breweryId}/update"/>
-<h5>
-    <c:if test = "${currentUser.getRole() == 'brewer'}">
-        <a class="nav-link" href="${updateHref}">Update Brewery</a>
-    </c:if>
-    <a class="nav-link" href="${updateHref}">Update Brewery</a>
-</h5>
 <!--Image with history overlay-->
-<div class="container">
+<div class="brewerycontainer">
     <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
     <div class="content">
         <h1>Welcome to ${brewery.name}</h1>
