@@ -41,7 +41,7 @@
 <title>Brewery Information Page</title>
 
 <div class="container">
-    <img src="https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,h_1200,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/asheville/Funkatorium-Exterior-480-91fc40fd5056a36_91fc4714-5056-a36a-0aaf2f3b57df9c87.jpg" alt="Brewery Image" style="width:100%;">
+    <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
     <div class="content">
         <h1>Welcome to ${brewery.name}</h1>
         <p class="indent">${brewery.history}</p>
