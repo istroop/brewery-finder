@@ -18,15 +18,15 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 17px;
         }
-        .container {
+        .header {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .container img {vertical-align: middle;}
+        .header img {vertical-align: middle;}
 
-        .container .content {
+        .header .content {
             position: absolute;
             bottom: 0;
             background: rgb(0,0,0);
@@ -63,6 +63,7 @@
 
 <body>
 <title>Brewery Information Page</title>
+<<<<<<< HEAD
 <!--Image with history overlay-->
 <div class="container">
     <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
@@ -83,6 +84,7 @@
         <div class="w3-row">
             <p>${brewery.address}</p>
     </div>
+</div>
 </div>
 
 <div class="w3-container w3-padding-64 w3-blue-grey w3-xlarge">
