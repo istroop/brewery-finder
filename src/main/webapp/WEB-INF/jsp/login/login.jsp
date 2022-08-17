@@ -25,11 +25,17 @@
 	});
 </script>
 
+<style>
+	.formPadding {
+		padding-top: 50px;
+	}
+</style>
+
 <div class="row">
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4">
 		<c:url var="formAction" value="/login" />
-		<form method="POST" action="${formAction}">
+		<form class="formPadding" method="POST" action="${formAction}">
 		<input type="hidden" name="destination" value="${param.destination}"/>
 		<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 			<h3 style="color:mediumpurple"> Login </h3>
