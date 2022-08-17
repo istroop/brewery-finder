@@ -4,6 +4,10 @@
 
 <!DOCTYPE html>
 <html>
+<br>
+<br>
+<br>
+<br>
 <head>
     <meta name = "viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -19,7 +23,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .container img {vertical-align: middle;}
 
         .container .content {
@@ -49,7 +53,11 @@
 </div>
 
 <br><p>
-    <ul>
+    <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
+<h5>
+    <a class="nav-link" href="${updateHref}">Update Brewery</a>
+</h5>
+<ul>
     <li>You can find us at: ${brewery.address}</li>
     <li>During our hours: ${brewery.hoursOfOperation}</li>
     <li>Or contact us at: ${brewery.phone}</li>
