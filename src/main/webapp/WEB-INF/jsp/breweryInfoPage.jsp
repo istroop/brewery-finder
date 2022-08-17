@@ -63,6 +63,13 @@
 
 <body>
 <title>Brewery Information Page</title>
+<c:url var="updateHref" value="/breweries/${breweryId}/update"/>
+<h5>
+    <c:if test = "${currentUser.getRole() == 'brewer'}">
+        <a class="nav-link" href="${updateHref}">Update Brewery</a>
+    </c:if>
+    <a class="nav-link" href="${updateHref}">Update Brewery</a>
+</h5>
 <!--Image with history overlay-->
 <div class="brewerycontainer">
     <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
