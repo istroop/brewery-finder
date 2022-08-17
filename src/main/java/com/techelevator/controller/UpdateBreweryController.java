@@ -38,6 +38,6 @@ public class UpdateBreweryController {
 
         breweryDAO.updateBrewery(breweryId, brewery.getHoursOfOperation(), brewery.getPhone(),
                 brewery.getHistory(), brewery.getImage(), brewery.getAddress(), brewery.getActivityStatus());
-        return "breweryInfoPage";
+        return "redirect:/breweries/" + breweryId;
     }
 }
