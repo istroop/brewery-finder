@@ -63,14 +63,14 @@
         }
 
         .registerbtn {
-            background-color: #C8B6FF;
+            background-color: #a68fff;
             color: white;
-            padding: 16px 20px;
+            padding: 10px 20px;
             margin: 40px 0;
             border: none;
             cursor: pointer;
             width: 100%;
-            opacity: 0.9;
+            font-size: 140%;
         }
 
         .registerbtn:hover {
@@ -83,6 +83,7 @@
 
         .inputField {
             padding-right: 15px;
+            width: 100%;
         }
 
         .center {
@@ -103,11 +104,11 @@
     <div class="col-sm">
         <c:url var="formAction" value="/users"/>
         <form class="formPadding" method="POST" action="${formAction}">
-            <h3 style="color:mediumpurple" class="center"> Create your Profile Today! </h3>
+            <h3 style="color:#a68fff" class="center"> Create your Profile Today! </h3>
             <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
             <div class="container">
                 <div class="container">
-                    <div class="inputField form-group">
+                    <div class="inputField">
                         <label class="control-label" for="userName">Full Name: </label>
                         <input type="text" id="userName" name="userName" placeHolder="Full Name" class="form-control"
                                required oninvalid="this.setCustomValidity(\'This field is required\')"/>
@@ -138,7 +139,7 @@
                             <option value="beerLover">Beer Lover</option>
                             <option value="brewer">Brewer</option>
                         </select><br>
-                        <button type="submit" class="registerbtn">Create My Profile</button>
+                        <button type="submit" class="btn btn-block registerbtn">Create My Profile</button>
                 </div>
             </div>
         </form>

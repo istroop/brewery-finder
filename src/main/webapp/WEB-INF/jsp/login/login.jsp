@@ -29,6 +29,15 @@
 	.formPadding {
 		padding-top: 50px;
 	}
+
+	.login-btn {
+		background-color: #a68fff;
+		color: white;
+	}
+
+	.center {
+
+	}
 </style>
 
 <div class="row">
@@ -38,7 +47,7 @@
 		<form class="formPadding" method="POST" action="${formAction}">
 		<input type="hidden" name="destination" value="${param.destination}"/>
 		<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
-			<h3 style="color:mediumpurple"> Login </h3>
+			<h3 style="color:#0671f3" class="glyphicon-align-center"> Login </h3>
 			<div class="form-group">
 				<label for="userName">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
@@ -47,7 +56,7 @@
 				<label for="password">Password: </label>
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
 			</div>
-			<button type="submit" class="btn btn-primary">Login</button>
+			<button type="submit" class="btn btn-block login-btn">Login</button>
 		</form>
 	</div>
 	<div class="col-sm-4"></div>
