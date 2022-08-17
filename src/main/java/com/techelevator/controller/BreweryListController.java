@@ -16,6 +16,7 @@ public class BreweryListController {
     public BreweryListController (BreweryDAO breweryDAO) {
         this.breweryDAO = breweryDAO;
     }
+
     @RequestMapping("/breweryList")
     public String getBreweryListPage(HttpServletRequest request) {
 

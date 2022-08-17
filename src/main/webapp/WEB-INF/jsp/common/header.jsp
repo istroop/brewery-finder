@@ -71,23 +71,28 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="<c:url value="/"/>" class="navbar-brand">Brewery Finder</a>
         </div>
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav">
-                <c:if test="${not empty currentUser}">
-                    <c:url var="dashboardHref" value="/users/${currentUser.getUserName()}"/>
-                    <li class="nav-item"><a class="nav-link" href="${dashboardHref}">Private Messages</a></li>
-                    <c:url var="newMessageHref"
-                           value="/users/${currentUser.getUserName()}/messages/new"/>
-                    <li class="nav-item"><a class="nav-link" href="${newMessageHref}">New Message</a></li>
-                    <c:url var="sentMessagesHref"
-                           value="/users/${currentUser.getUserName()}/messages"/>
-                    <li class="nav-item"><a class="nav-link" href="${sentMessagesHref}">Sent Messages</a></li>
-                    <c:url var="changePasswordHref"
-                           value="/users/${currentUser.getUserName()}/changePassword"/>
-                    <li class="nav-item"><a class="nav-link" href="${changePasswordHref}">Change Password</a></li>
-                </c:if>
+                <c:choose>
+                    <c:when test="${not empty currentUser}">
+                        <a href="<c:url value="/users/${currentUser.getUserName()}"/>" class="navbar-brand">Brewery Finder</a>
+                        <c:url var="dashboardHref" value="/users/${currentUser.getUserName()}"/>
+                        <li class="nav-item"><a class="nav-link" href="${dashboardHref}">Private Messages</a></li>
+                        <c:url var="newMessageHref"
+                               value="/users/${currentUser.getUserName()}/messages/new"/>
+                        <li class="nav-item"><a class="nav-link" href="${newMessageHref}">New Message</a></li>
+                        <c:url var="sentMessagesHref"
+                               value="/users/${currentUser.getUserName()}/messages"/>
+                        <li class="nav-item"><a class="nav-link" href="${sentMessagesHref}">Sent Messages</a></li>
+                        <c:url var="changePasswordHref"
+                               value="/users/${currentUser.getUserName()}/changePassword"/>
+                        <li class="nav-item"><a class="nav-link" href="${changePasswordHref}">Change Password</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="<c:url value="/"/>" class="navbar-brand">Brewery Finder</a>
+                    </c:otherwise>
+                </c:choose>
             </ul>
             <ul class="nav navbar-nav">
                 <c:choose>
