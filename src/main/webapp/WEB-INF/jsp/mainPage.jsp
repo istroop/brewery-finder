@@ -7,6 +7,19 @@
 <br>
 <br>
 
+<style>
+    .select {
+        background-color: #a68fff;
+        color: white;
+        border: solid 2px #a68fff;
+    }
+    .select:hover {
+        background-color: #b6abfc;
+        color: white;
+        border: solid 2px #b6abfc;
+    }
+</style>
+
 <h2>Welcome to the Brewery Finder!</h2>
 
 
@@ -17,7 +30,7 @@
             <c:url var="breweryHref"
                    value="/breweries/${brewery.id}"/>
             <h3>
-                <a class="nav-link" href="${breweryHref}">${brewery.name}</a>
+                <a class="btn btn-block select" href="${breweryHref}">${brewery.name}</a>
             </h3>
         </c:forEach>
 

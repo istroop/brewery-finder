@@ -61,4 +61,13 @@ public class JDBCBreweryDAO implements BreweryDAO{
 
         return thisBrewery;
     }
+
+    @Override
+    public void updateBrewery(int id, String hoursOfOperation, String phone, String history, String image, String address, Boolean activityStatus) {
+        String updateBrewery = "UPDATE brewery SET hours_of_operation = ?, phone = ?, history = ?, image = ?, " +
+                "address = ?, active_status = ? WHERE id = ?";
+        jdbcTemplate.update(updateBrewery, hoursOfOperation, phone, history, image, address, activityStatus, id);
+    }
+
+
 }
