@@ -50,13 +50,12 @@
 
 <br><p>
     <ul>
-    <li>You can find us at: ${brewery.address}</li>
-    <li>During our hours: ${brewery.hoursOfOperation}</li>
-    <li>Or contact us at: ${brewery.phone}</li>
-    <br>
+    <li>You can find us at: ${brewery.address}</li><br>
+    <li>During our hours: ${brewery.hoursOfOperation}</li><br>
+    <li>Or contact us at: ${brewery.phone}</li><br>
 </ul>
 
-<h4>What's on tap at ${brewery.name}: </h4>
+<h4 style="color: mediumpurple">What's on tap at ${brewery.name}: </h4><br>
 <ul>
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"
