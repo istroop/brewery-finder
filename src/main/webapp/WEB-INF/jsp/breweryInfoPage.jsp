@@ -18,15 +18,15 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 17px;
         }
-        .header {
+        .brewerycontainer {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .header img {vertical-align: middle;}
+        .brewerycontainer img {vertical-align: middle;}
 
-        .header .content {
+        .brewerycontainer .content {
             position: absolute;
             bottom: 0;
             background: rgb(0,0,0);
@@ -63,9 +63,8 @@
 
 <body>
 <title>Brewery Information Page</title>
-<<<<<<< HEAD
 <!--Image with history overlay-->
-<div class="container">
+<div class="brewerycontainer">
     <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
     <div class="content">
         <h1>Welcome to ${brewery.name}</h1>
