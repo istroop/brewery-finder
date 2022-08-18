@@ -9,7 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,13 +33,20 @@ public class BeerInfoPageController {
     }
 
     @RequestMapping("/beer/{beerId}")
-    public String getBeerInfoPage(@PathVariable("beerId") int id, HttpServletRequest request) {
+    public String getBeerInfoPage(@SessionAttribute User currentUser, @PathVariable("beerId") int id, HttpServletRequest request) {
 
         Beer beer = beerDAO.getBeerById(id);
         request.setAttribute("beer", beer);
 
         List<BeerReview> reviewList = beerReviewDAO.getReviewsByBeerId(id);
         request.setAttribute("reviews", reviewList);
+
+        double averageRating = 0.0;
+        for(BeerReview review: reviewList) {
+            averageRating += review.getRating();
+        }
+        request.setAttribute("averageRating", Math.round(averageRating/reviewList.size() * 100.0) / 100.0);
+        request.setAttribute("currentUser", currentUser);
 
         return "beers/beerInfoPage";
     }
