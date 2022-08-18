@@ -71,6 +71,10 @@ public class JDBCUserDAO implements UserDAO
 			thisUser = new User();
 			thisUser.setUserName(user.getString("user_name"));
 			thisUser.setPassword(user.getString("password"));
+			thisUser.setName(user.getString("name"));
+			thisUser.setRole(user.getString("role"));
+			thisUser.setBirthdate(user.getString("birthdate"));
+			thisUser.setId(user.getInt("id"));
 		}
 
 		return thisUser;
