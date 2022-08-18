@@ -136,7 +136,10 @@
 <c:url var="validationJs" value="/js/user-validation.js"/>
 <script src="${validationJs}"></script>
 
-<c:url var="formAction" value="/beer/1/reviews"/>
+<c:set var="req" value="${pageContext.request}"/>
+<c:set var="url"/>
+
+<c:url var="formAction" value="/beer/${beerId}/reviews"/>
 <form method="POST" action="${formAction}" class="formPadding">
     <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
     <div class="page-container">
@@ -144,10 +147,7 @@
             <h3 style="color:mediumpurple" class="center"> Write a Review! </h3>
 
             <div class="page-container">
-                <label class="control-label" for="username">Username: </label>
-                <input type="text" id="username" name="username" placeHolder="Username" class="form-control"
-                       required
-                       oninvalid="this.setCustomValidity(\'This field is required\')"/>
+                <h3>Username: ${currentUser.userName}</h3>
             </div>
 
             <div class="page-container">
@@ -168,9 +168,8 @@
 
             <div class="page-container">
                 <label for="review">Review: </label>
-                <textarea type="text" id="review" name="review" placeholder="User Phone" class="form-control"
-                          required oninvalid="this.setCustomValidity(\'This field is required\')">
-                </textarea>
+                <textarea type="text" id="review" name="review" placeholder="Review" class="form-control"
+                          required oninvalid="this.setCustomValidity(\'This field is required\')"></textarea>
             </div>
 
             </select><br>

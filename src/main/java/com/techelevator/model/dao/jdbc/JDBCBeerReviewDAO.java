@@ -61,6 +61,8 @@ public class JDBCBeerReviewDAO implements BeerReviewDAO {
 
     public void createNewReview(int beerId, int userId, int rating, String review,
                                 String reviewTitle) {
+
+
         String sql = "INSERT INTO beer_review (beer_id, user_id, rating, review, review_title)" +
                 "VALUES (?,?,?,?,?)";
         jdbcTemplate.update(sql, beerId, userId, rating, review, reviewTitle);
