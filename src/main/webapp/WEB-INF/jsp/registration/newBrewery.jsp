@@ -136,7 +136,7 @@
 <c:url var="validationJs" value="/js/user-validation.js"/>
 <script src="${validationJs}"></script>
 
-<c:url var="formAction" value="/users"/>
+<c:url var="formAction" value="/breweries"/>
 <form method="POST" action="${formAction}" class="formPadding">
     <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
     <div class="page-container">
@@ -150,6 +150,11 @@
             </div>
 
             <%--            Add functionality on the back end to retrieve name from brewer id--%>
+            <div class="page-container">
+                <label for="brewerId">Brewer Id: </label>
+                <input type="number" id="brewerId" name="brewer" placeholder="Brewer Id" class="form-control"/>
+            </div>
+
             <div class="page-container">
                 <label for="userContact">Contact Name: </label>
                 <input type="text" id="userContact" name="userContact" placeholder="User Contact" class="form-control"/>
