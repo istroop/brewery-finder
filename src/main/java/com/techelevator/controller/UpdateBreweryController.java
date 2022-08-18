@@ -2,9 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.model.dao.BreweryDAO;
 import com.techelevator.model.dto.Brewery;
-import com.techelevator.model.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,7 +28,7 @@ public class UpdateBreweryController {
         Brewery brewery = breweryDAO.getBreweryById(breweryId);
         request.setAttribute("brewery", brewery);
 
-        return "updateBrewery";
+        return "breweries/updateBrewery";
     }
 
     @RequestMapping(path="/breweries/{breweryId}", method=RequestMethod.POST)

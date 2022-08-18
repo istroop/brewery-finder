@@ -30,6 +30,14 @@
 <p>
 <br>
 <h3>${beer.name} Reviews</h3>
+
+<c:url var="newReviewHref"
+       value="/breweries/new"/>
+<h3>
+    <a class="btn btn-primary new-brewery" href="${newBreweryHref}">Add a Brewery</a>
+</h3>
+
+
 <hr>
 <c:forEach var="review" items="${reviews}">
     <h4>${review.getReviewTitle()} <small>by: ${review.getUsername()}</small> </h4>

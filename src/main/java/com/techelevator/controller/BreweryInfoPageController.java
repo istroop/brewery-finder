@@ -33,7 +33,7 @@ public class BreweryInfoPageController {
         List<Beer> beers = beerDAO.getBeersByBrewery(id);
         request.setAttribute("beers", beers);
 
-        return "breweryInfoPage";
+        return "breweries/breweryInfoPage";
     }
 
 }

@@ -29,7 +29,7 @@ public class UserController {
 		if( ! modelHolder.containsAttribute("user")) {
 			modelHolder.addAttribute("user", new User());
 		}
-		return "registration/newUser";
+		return "users/newUser";
 	}
 	
 	@RequestMapping(path="/users", method=RequestMethod.POST)

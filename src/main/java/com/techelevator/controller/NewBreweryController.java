@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.model.dto.User;
-import com.techelevator.model.dao.UserDAO;
 
 
 @Controller
@@ -28,7 +27,7 @@ public class NewBreweryController {
     @RequestMapping("breweries/new")
     public String displayNewBreweryForm(ModelMap modelHolder) {
 
-        return "registration/newBrewery";
+        return "breweries/newBrewery";
     }
 
     @RequestMapping(path="/breweries", method=RequestMethod.POST)
