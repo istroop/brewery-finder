@@ -72,8 +72,10 @@
                 <c:choose>
                     <c:when test="${not empty currentUser}">
                         <a href="<c:url value="/users/${currentUser.getUserName()}"/>" class="navbar-brand">Brewery Finder</a>
-                        <c:url var="dashboardHref" value="/users/${currentUser.getUserName()}"/>
-                        <li class="nav-item"><a class="nav-link" href="${dashboardHref}">Private Messages</a></li>
+
+                        <c:url var="dashboardHref" value="/breweryList"/>
+                        <li class="nav-item"><a class="nav-link" href="${dashboardHref}">Brewery List</a></li>
+                        
                         <c:url var="newMessageHref"
                                value="/users/${currentUser.getUserName()}/messages/new"/>
                         <li class="nav-item"><a class="nav-link" href="${newMessageHref}">New Message</a></li>
