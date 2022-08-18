@@ -5,6 +5,8 @@ import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 public class User {
+	private int id;
+	private String name;
 	private String userName;
 	private String userEmail;
 	private String birthdate;
@@ -63,5 +65,21 @@ public class User {
 
 	public void setBirthdate(String birthdate) {
 		this.birthdate = birthdate;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

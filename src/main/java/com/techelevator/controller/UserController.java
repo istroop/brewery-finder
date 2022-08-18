@@ -40,7 +40,7 @@ public class UserController {
 			return "redirect:/users/new";
 		}
 		
-		userDAO.saveUser(user.getUserName(), user.getPassword(), user.getBirthdate(), user.getRole(), user.getUserEmail());
+		userDAO.saveUser(user.getName(), user.getUserName(), user.getPassword(), user.getBirthdate(), user.getRole(), user.getUserEmail());
 		return "login/login";
 	}
 	

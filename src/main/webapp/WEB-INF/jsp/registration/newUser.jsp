@@ -109,8 +109,14 @@
             <div class="container">
                 <div class="container">
                     <div class="inputField">
-                        <label class="control-label" for="userName">Full Name: </label>
-                        <input type="text" id="userName" name="userName" placeHolder="Full Name" class="form-control"
+                        <label class="control-label" for="name">Full Name: </label>
+                        <input type="text" id="name" name="name" placeHolder="Full Name" class="form-control"
+                               required oninvalid="this.setCustomValidity(\'This field is required\')"/>
+                    </div>
+
+                    <div class="inputField">
+                        <label class="control-label" for="userName">Username: </label>
+                        <input type="text" id="userName" name="userName" placeHolder="Username" class="form-control"
                                required oninvalid="this.setCustomValidity(\'This field is required\')"/>
                     </div>
                     <div class="inputField">

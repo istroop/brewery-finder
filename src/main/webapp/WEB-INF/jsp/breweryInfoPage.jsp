@@ -62,6 +62,14 @@
 
 <body>
 <title>Brewery Information Page</title>
+<c:url var="updateHref" value="/breweries/${breweryId}/update"/>
+<h5>
+    <c:set var="userId" value="${currentUser.id}"/>
+    <c:set var="brewer" value="${brewery.brewer}"/>
+    <c:if test = "${userId == brewer}">
+        <a class="nav-link" href="${updateHref}">Update Brewery</a>
+    </c:if>
+</h5>
 <!--Image with history overlay-->
 <div class="brewerycontainer">
     <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
@@ -92,25 +100,14 @@
     </div>
 </div>
 
-    <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
 <div>
-<h5>
-    <c:if test="${currentUser.getRole()}=brewer">
-        <a class="nav-link" href="${updateHref}">Update Brewery</a>
-    </c:if>
-</h5>
-<br><ul>
-    <li>You can find us at: ${brewery.address}</li>
-    <li>During our hours: ${brewery.hoursOfOperation}</li>
-    <li>Or contact us at: ${brewery.phone}</li>
-    <br>
-</ul>
+<br>
 </div>
 <h4 style="color: mediumpurple">What's on tap at ${brewery.name}: </h4><br>
 <ul>
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"
-               value="/beer/${brewery.id}"/>
+               value="/beer/${beer.id}"/>
         <h3>
             <a class="nav-link" href="${beerHref}">${beer.name}</a>
         </h3>

@@ -2,18 +2,19 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 <html>
-<br>
-<br>
 
 <head>
     <title>Beer Information Page</title>
 </head>
 <body>
 
+<br>
+<br>
+
 <%--Image for Beer--%>
-<%--<li>${beer.image}</li>--%>
 
-
+<br>
+<br>
 <h2>${beer.name}</h2>
 <h5>${beer.description}</h5>
 
@@ -25,6 +26,22 @@
     <br>
 </ul>
 </p>
+
+<p>
+<br>
+<h3>${beer.name} Reviews</h3>
+<hr>
+<c:forEach var="review" items="${reviews}">
+    <h4>${review.getReviewTitle()} <small>by: ${review.getUsername()}</small> </h4>
+    <c:set var="rating" value="${review.getRating()}"/>
+    <c:forEach begin="1" end="${rating}">
+        <a>* </a>
+    </c:forEach>
+    <p>${review.getReview()}</p>
+    <br>
+</c:forEach>
+</p>
+
 </body>
 </html>
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

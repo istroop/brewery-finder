@@ -8,6 +8,8 @@ public class Brewery {
 
     private int brewer;
 
+    // Need to add variable for bewers name
+
     private String hoursOfOperation;
 
     private String phone;
