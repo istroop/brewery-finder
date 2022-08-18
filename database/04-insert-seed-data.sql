@@ -60,4 +60,10 @@ INSERT INTO beer
 ('Black Label Premium', 4, 'https://storage.googleapis.com/cdn.vinoshipper.com/wine/c3058781-86a8-4aa7-a154-9468a85f5bcf.jpg',
  'Our traditional Junmai Ginjo sake, this has been brightly filtered then diluted to 14% ABV. Full body, off dry with fruity/ floral notes.', '14', 'Sake');
 
+
+INSERT INTO beer_review (beer_id, user_id, rating, review)
+VALUES
+       (1, 1, 4.8, 'This is one of the best beers I have ever had'),
+       (1, 1, 3.7, 'Not normally a fan of this kind of beer but it was pretty ok'),
+       (2, 1, 2.5, 'Not a fan of Stouts');
 COMMIT;

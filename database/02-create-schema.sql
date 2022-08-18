@@ -5,6 +5,7 @@
 BEGIN;
 
 -- CREATE statements go here
+DROP TABLE IF EXISTS beer_review;
 DROP TABLE IF EXISTS beer;
 DROP TABLE IF EXISTS brewery;
 DROP TABLE IF EXISTS app_user CASCADE;
@@ -45,5 +46,18 @@ CREATE TABLE beer (
     CONSTRAINT beer_to_brewery_id_fkey FOREIGN KEY (brewery_id)
                   REFERENCES brewery(id)
 );
+
+CREATE TABLE beer_review (
+    id SERIAL PRIMARY KEY,
+    beer_id int NOT NULL,
+    user_id int NOT NULL,
+    rating float,
+    review varchar(500),
+    CONSTRAINT beer_review_to_beer_id_fkey FOREIGN KEY (beer_id)
+                         REFERENCES beer(id),
+    CONSTRAINT beer_review_to_user_id_fkey FOREIGN KEY (user_id)
+                         REFERENCES app_user(id)
+);
+
 
 COMMIT;

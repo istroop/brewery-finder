@@ -100,7 +100,6 @@
     </div>
 </div>
 
-    <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
 <div>
 <br>
 </div>
@@ -108,7 +107,7 @@
 <ul>
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"
-               value="/beer/${brewery.id}"/>
+               value="/beer/${beer.id}"/>
         <h3>
             <a class="nav-link" href="${beerHref}">${beer.name}</a>
         </h3>
