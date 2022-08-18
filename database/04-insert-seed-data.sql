@@ -6,8 +6,8 @@ BEGIN;
 
 -- INSERT statements go here
 INSERT INTO app_user
-    (user_name, password, role, birthdate, email_address, salt) VALUES
-('Admin1', 'q9zYhV+vZAmWu7tfDyKCRw==', 'brewer', '01/01/1999', 'a@a.com',
+    (name, user_name, password, role, birthdate, email_address, salt) VALUES
+('Admin Lastname', 'Admin1', 'q9zYhV+vZAmWu7tfDyKCRw==', 'brewer', '01/01/1999', 'a@a.com',
  'HOmSruexAbYm3qyY5PfebrlI2oBThGOL4e5lK5M+U6w2x0S7TUQKnqHxN6Eu15TdzGhBb2NTQjCj/+rr1XRoJtcAK' ||
  '+x1PYIAhyCZT15obFyDku6ABDy4KZEzh132RzeCTA+oxK6zhlTanUNtcIAPcp57ggfXEYYnEY19WAElZ8Y=');
 --  ,

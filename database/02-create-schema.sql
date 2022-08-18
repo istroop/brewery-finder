@@ -11,6 +11,7 @@ DROP TABLE IF EXISTS app_user CASCADE;
 
 CREATE TABLE app_user (
   id SERIAL PRIMARY KEY,
+  name varchar(32),
   user_name varchar(32) NOT NULL UNIQUE,
   password varchar(32) NOT NULL,
   role varchar(32),
