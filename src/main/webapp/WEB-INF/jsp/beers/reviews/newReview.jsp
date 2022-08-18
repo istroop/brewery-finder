@@ -136,7 +136,7 @@
 <c:url var="validationJs" value="/js/user-validation.js"/>
 <script src="${validationJs}"></script>
 
-<c:url var="formAction" value="/breweries"/>
+<c:url var="formAction" value="/beer/1/reviews"/>
 <form method="POST" action="${formAction}" class="formPadding">
     <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
     <div class="page-container">

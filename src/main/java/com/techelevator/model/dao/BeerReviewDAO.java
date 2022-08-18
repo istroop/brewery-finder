@@ -9,4 +9,6 @@ public interface BeerReviewDAO {
 
     public List<BeerReview> getReviewsByBeerId (int beerId);
     public BeerReview getReviewById (int id);
+    public void createNewReview(int beerId, int userId, double rating, String review,
+                                String reviewTitle);
 }

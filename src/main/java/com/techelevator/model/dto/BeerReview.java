@@ -10,7 +10,7 @@ public class BeerReview {
 
     private String username;
 
-    private double rating;
+    private int rating;
 
     private String review;
 
@@ -48,11 +48,11 @@ public class BeerReview {
         this.username = username;
     }
 
-    public double getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 

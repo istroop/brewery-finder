@@ -63,7 +63,9 @@ INSERT INTO beer
 
 INSERT INTO beer_review (beer_id, user_id, rating, review_title, review)
 VALUES
-       (1, 1, 4.8, 'AMAZING BEER!!!!','This is one of the best beers I have ever had'),
-       (1, 1, 3.7, 'would try again?','Not normally a fan of this kind of beer but it was pretty ok - might try again if I come back'),
-       (2, 1, 2.5, 'Not a fan of Stouts', 'This beer was not my beer. Not a fan of stouts typically so not really sure what I was expecting. ');
+       (1, 1, 5, 'AMAZING BEER!!!!','This is one of the best beers I have ever had'),
+       (1, 1, 4, 'would try again?','Not normally a fan of this kind of beer but it was pretty ok - might try again ' ||
+                                    'if I come back'),
+       (2, 1, 3, 'Not a fan of Stouts', 'This beer was not my beer. Not a fan of stouts typically so not really sure ' ||
+                                        'what I was expecting. ');
 COMMIT;

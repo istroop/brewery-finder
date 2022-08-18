@@ -51,11 +51,18 @@ public class JDBCBeerReviewDAO implements BeerReviewDAO {
             thisReview.setBeerId(review.getInt("beer_id"));
             thisReview.setUserId(review.getInt("user_id"));
             thisReview.setUsername(review.getString("user_name"));
-            thisReview.setRating(review.getDouble("rating"));
+            thisReview.setRating(review.getInt("rating"));
             thisReview.setReview(review.getString("review"));
             thisReview.setReviewTitle(review.getString("review_title"));
         }
 
         return thisReview;
+    }
+
+    public void createNewReview(int beerId, int userId, double rating, String review,
+                                String reviewTitle) {
+        String sql = "INSERT INTO beer_review (beer_id, user_id, rating, review, review_title)" +
+                "VALUES (?,?,?,?,?)";
+        jdbcTemplate.update(sql, beerId, userId, rating, review, reviewTitle);
     }
 }

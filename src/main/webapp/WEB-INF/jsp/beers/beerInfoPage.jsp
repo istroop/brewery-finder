@@ -32,9 +32,9 @@
 <h3>${beer.name} Reviews</h3>
 
 <c:url var="newReviewHref"
-       value="/breweries/new"/>
+       value="/beer/${beerId}/reviews/new"/>
 <h3>
-    <a class="btn btn-primary new-brewery" href="${newBreweryHref}">Add a Brewery</a>
+    <a class="btn btn-primary" href="${newReviewHref}">Write a Review</a>
 </h3>
 
 

@@ -4,14 +4,12 @@ import com.techelevator.model.dao.BeerDAO;
 import com.techelevator.model.dao.BeerReviewDAO;
 import com.techelevator.model.dto.Beer;
 import com.techelevator.model.dto.BeerReview;
+import com.techelevator.model.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
@@ -48,12 +46,24 @@ public class BeerInfoPageController {
         return "beers/reviews/newReview";
     }
 
-//    @RequestMapping(path="/beer/{beerId}/reviews", method=RequestMethod.POST)
-//    public String createReview(@PathVariable("beerId") int id,
-//                               @Valid @ModelAttribute Beer beer,
-//                               BindingResult result,
-//                               RedirectAttributes flash) {
-//
-//    }
+
+    @RequestMapping(path="/beer/{beerId}/reviews", method=RequestMethod.POST)
+    public String createReview(@SessionAttribute User currentUser, @PathVariable("beerId") int id,
+                               @Valid @ModelAttribute BeerReview review,
+                               BindingResult result,
+                               RedirectAttributes flash) {
+
+        if(result.hasErrors()) {
+            flash.addFlashAttribute("review", review);
+            flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "review", result);
+            return "redirect:/beer/{beerId}/reviews/new";
+        }
+
+        beerReviewDAO.createNewReview(review.getBeerId(), review.getUserId(), review.getRating(), review.getReview(),
+                review.getReviewTitle());
+
+        return "beers/beerInfoPage";
+
+    }
 
 }

@@ -51,7 +51,7 @@ CREATE TABLE beer_review (
     id SERIAL PRIMARY KEY,
     beer_id int NOT NULL,
     user_id int NOT NULL,
-    rating float,
+    rating int NOT NULL,
     review_title varchar(50),
     review varchar(500),
     CONSTRAINT beer_review_to_beer_id_fkey FOREIGN KEY (beer_id)
