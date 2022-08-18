@@ -43,6 +43,7 @@ CREATE TABLE beer (
     description varchar(500) NOT NULL,
     abv float NOT NULL,
     beer_type varchar(255) NOT NULL,
+    active_status bool,
     CONSTRAINT beer_to_brewery_id_fkey FOREIGN KEY (brewery_id)
                   REFERENCES brewery(id)
 );

@@ -38,7 +38,7 @@ public class JDBCBeerDAO implements BeerDAO {
 
     @Override
     public Beer getBeerById(int id) {
-        String sqlSearchForBeer ="SELECT id, brewery_id, name, image, description, abv, beer_type " +
+        String sqlSearchForBeer ="SELECT id, brewery_id, name, image, description, abv, beer_type, active_status " +
                 "FROM beer "+
                 "WHERE id = ? ";
 
@@ -52,6 +52,7 @@ public class JDBCBeerDAO implements BeerDAO {
             thisBeer.setDescription(beer.getString("description"));
             thisBeer.setAbv(beer.getDouble("abv"));
             thisBeer.setBeerType(beer.getString("beer_type"));
+            thisBeer.setActivityStatus(beer.getBoolean("active_status"));
         }
 
         return thisBeer;

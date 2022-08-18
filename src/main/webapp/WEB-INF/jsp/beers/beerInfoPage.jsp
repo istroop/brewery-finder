@@ -16,6 +16,12 @@
 <br>
 <br>
 <h2>${beer.name}</h2>
+
+<c:url var="updateHref" value="/beer/${beerId}/update"/>
+<h5>
+    <a class="nav-link" href="${updateHref}">Update Brewery</a>
+</h5>
+
 <h5>${beer.description}</h5>
 
 
