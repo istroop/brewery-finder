@@ -2,6 +2,10 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
+
 <!DOCTYPE html>
 <html>
 <br>
@@ -15,7 +19,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Roboto Slab', serif;;
             font-size: 17px;
         }
         .brewerycontainer {
@@ -61,7 +65,7 @@
 </head>
 
 <body>
-<h1 style="text-align: center">Brewery Information Page</h1>
+<h1 style="text-align: center; font-family: font-family: 'Calistoga', cursive;">Brewery Information Page</h1>
 <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
 <h5>
     <c:set var="userId" value="${currentUser.id}"/>
@@ -72,16 +76,15 @@
 </h5>
 
 <body>
-<h2 style="text-align: center">Current Breweries </h2>
-</body>
 <!--Image with history overlay-->
 <div class="brewerycontainer">
     <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
     <div class="content">
-        <h1>Welcome to ${brewery.name}</h1>
-        <p class="indent">${brewery.history}</p>
+        <h1 style="font-family: 'Calistoga', cursive;">Welcome to ${brewery.name}</h1>
+        <p class="indent" style="font-family: 'Roboto Slab', serif;">${brewery.history}</p>
     </div>
 </div>
+
 <!--Address, HOO section-->
 <div class="w3-container w3-padding-64 w3-xlarge" id="about">
     <div class="w3-content">
