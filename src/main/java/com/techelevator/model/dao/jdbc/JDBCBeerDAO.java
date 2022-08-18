@@ -38,9 +38,9 @@ public class JDBCBeerDAO implements BeerDAO {
 
     @Override
     public Beer getBeerById(int id) {
-        String sqlSearchForBeer ="SELECT id, brewery_id, name, image, description, abv, beer_type, active_status " +
-                "FROM beer "+
-                "WHERE id = ? AND active_status = true";
+        String sqlSearchForBeer ="SELECT beer.id, brewery_id, brewer, beer.name, beer.image, description, abv, beer_type, beer.active_status " +
+                "FROM beer  JOIN brewery b on beer.brewery_id = b.id "+
+                "WHERE beer.id = ? AND beer.active_status = true";
 
         SqlRowSet beer = jdbcTemplate.queryForRowSet(sqlSearchForBeer, id);
         Beer thisBeer = null;
@@ -53,6 +53,7 @@ public class JDBCBeerDAO implements BeerDAO {
             thisBeer.setAbv(beer.getDouble("abv"));
             thisBeer.setBeerType(beer.getString("beer_type"));
             thisBeer.setActivityStatus(beer.getBoolean("active_status"));
+            thisBeer.setBrewer(beer.getInt("brewer"));
         }
 
         return thisBeer;
