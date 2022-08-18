@@ -42,6 +42,8 @@ public class NewBreweryController {
             return "redirect:/breweries/new";
         }
 
-        return "";
+        breweryDAO.newBrewery(brewery.getBrewer(), brewery.getName(), brewery.getHoursOfOperation(), brewery.getPhone(), brewery.getHistory(), brewery.getImage(), brewery.getAddress(), true);
+        return "mainPage";
     }
+
 }
