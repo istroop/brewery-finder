@@ -2,14 +2,16 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+        body {font-family: 'Roboto Slab', serif; color: #132A13; background-color: #F2EDDB}
 
         * {
             box-sizing: border-box;
@@ -21,7 +23,7 @@
             margin: 5px 0 15px 0;
             display: inline-block;
             border: none;
-            background: #f1f1f1;
+            background: #E4DAB6;
         }
 
         input[type=password], input [type=password] {
@@ -30,7 +32,7 @@
             margin: 5px 0 15px 0;
             display: inline-block;
             border: none;
-            background: #f1f1f1;
+            background: #E4DAB6;
         }
 
         input[type=date], input [type=date] {
@@ -39,21 +41,21 @@
             margin: 5px 0 15px 0;
             display: inline-block;
             border: none;
-            background: #f1f1f1;
+            background: #E4DAB6;
         }
 
         input[type=text]:focus, input[type=password]:focus {
-            background-color: #dddddd;
+            background-color: #E4DAB6;
             outline: none;
         }
 
         input[type=password]:focus, input[type=password]:focus {
-            background-color: #dddddd;
+            background-color: #E4DAB6;
             outline: none;
         }
 
         input[type=date]:focus, input[type=date]:focus {
-            background-color: #dddddd;
+            background-color: #E4DAB6;
             outline: none;
         }
 
@@ -63,7 +65,7 @@
         }
 
         .registerbtn {
-            background-color: #a68fff;
+            background-color: #31572C;
             color: white;
             padding: 10px 20px;
             margin: 40px 0;
@@ -104,7 +106,7 @@
     <div class="col-sm">
         <c:url var="formAction" value="/users"/>
         <form class="formPadding" method="POST" action="${formAction}">
-            <h3 style="color:#a68fff" class="center"> Create your Profile Today! </h3>
+            <h3 style="font-family: 'Calistoga', cursive;" class="center"> Create your Profile Today! </h3>
             <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
             <div class="container">
                 <div class="container">
