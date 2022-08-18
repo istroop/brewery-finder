@@ -40,7 +40,7 @@ public class JDBCBeerDAO implements BeerDAO {
     public Beer getBeerById(int id) {
         String sqlSearchForBeer ="SELECT id, brewery_id, name, image, description, abv, beer_type, active_status " +
                 "FROM beer "+
-                "WHERE id = ? ";
+                "WHERE id = ? AND active_status = true";
 
         SqlRowSet beer = jdbcTemplate.queryForRowSet(sqlSearchForBeer, id);
         Beer thisBeer = null;
@@ -56,5 +56,13 @@ public class JDBCBeerDAO implements BeerDAO {
         }
 
         return thisBeer;
+    }
+
+    @Override
+    public void updateBeer(int id, String name, String beerType, double abv, String image, String description, boolean activityStatus) {
+        String sqlUpdateBeer = "UPDATE beer " +
+                "SET name = ?, beer_type = ?, abv = ?, image = ?, description = ?, active_status = ? " +
+                "WHERE id = ?";
+        jdbcTemplate.update(sqlUpdateBeer, name, beerType, abv, image, description, activityStatus, id);
     }
 }
