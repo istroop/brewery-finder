@@ -61,7 +61,7 @@
 </head>
 
 <body>
-<title>Brewery Information Page</title>
+<h1 style="text-align: center">Brewery Information Page</h1>
 <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
 <h5>
     <c:set var="userId" value="${currentUser.id}"/>
@@ -70,6 +70,10 @@
         <a class="nav-link" href="${updateHref}">Update Brewery</a>
     </c:if>
 </h5>
+
+<body>
+<h2 style="text-align: center">Current Breweries </h2>
+</body>
 <!--Image with history overlay-->
 <div class="brewerycontainer">
     <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
