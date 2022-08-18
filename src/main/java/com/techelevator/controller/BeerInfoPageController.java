@@ -52,7 +52,9 @@ public class BeerInfoPageController {
     }
 
     @RequestMapping("/beer/{beerId}/reviews/new")
-    public String displayNewBreweryForm(ModelMap modelHolder) {
+    public String displayNewBreweryForm(@PathVariable("beerId") int id, ModelMap modelHolder) {
+
+        modelHolder.addAttribute("beerId", id);
 
         return "beers/reviews/newReview";
     }
@@ -70,10 +72,11 @@ public class BeerInfoPageController {
             return "redirect:/beer/{beerId}/reviews/new";
         }
 
-        beerReviewDAO.createNewReview(review.getBeerId(), review.getUserId(), review.getRating(), review.getReview(),
+        beerReviewDAO.createNewReview(review.getBeerId(), currentUser.getId(), review.getRating(),
+                review.getReview(),
                 review.getReviewTitle());
 
-        return "beers/beerInfoPage";
+        return "redirect:/beer/{beerId}";
 
     }
 
