@@ -19,18 +19,18 @@ INSERT INTO brewery
     (name, brewer, hours_of_operation, phone, history, address, active_status, image) values
 ('The Funkatorium', 1, '11AM - 11PM', '(828) 552-3203','Wicked Weed sour & funky beers are served in a rustic pub ' ||
                                                        'with a barrel room & a dog-friendly patio.', '123 Main St.',
- true, 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,h_1200,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/asheville/Funkatorium-Exterior-480-91fc40fd5056a36_91fc4714-5056-a36a-0aaf2f3b57df9c87.jpg'),
+ true, 'https://i.imgur.com/DSJIdDY.jpeg'),
 ('Highland Brewing Company', 1, '2PM - 9PM', '(828) 299-3370', 'Brewery offering free tours of its facilities plus a ' ||
                                                                'low-key taproom to sample a pint or flight.',  '4123 ' ||
                                                                                                                'Broad' ||
                                                                                                                ' St.',
- true, 'https://www.romanticasheville.com/sites/default/files/u13/highland-brewing-taproom.jpg'),
+ true, 'https://i.imgur.com/wxvM06X.jpeg'),
 ('Wicked Weed Brewing Pub', 1, '11AM - 11PM', '(828) 575-9599', 'Hip brewery with a tasting room & a restaurant ' ||
                                                                 'serving high-end, locally sourced New American fare' ||
-                                                                '.','6123 High St.', true, 'https://craftpeak-cooler-images.imgix.net/wicked-weed-brewing/Sized-For-Homepage.jpg?auto=compress%2Cformat&ixlib=php-1.2.1&s=521b12679110e1ed7470e796fc7ec07d'),
+                                                                '.','6123 High St.', true, 'https://i.imgur.com/wreLCgg.jpeg'),
 ('Ben''s Tune Up', 1, '4PM - 11PM', '(828) 424-7580', 'Trendy brewery & beer garden offering house sakes, craft beers' ||
-                                                      ' & Japanese-American fusion eats.', '7902 Park Place', true, 'https://eatingasheville.com/wp-content/uploads/2016/06/bens-tune-up-main1.jpg'),
-('Asheville Brewing Company', 1, '', '', '', '', false, 'https://www.ashevillebrewing.com/wp-content/uploads/2016/10/APBC_0461-1000x675.jpg');
+                                                      ' & Japanese-American fusion eats.', '7902 Park Place', true, 'https://i.imgur.com/GbUihd2.jpeg'),
+('Asheville Brewing Company', 1, '', '', '', '', false, 'https://i.imgur.com/VbjEJ8b.jpeg');
 
 INSERT INTO beer
     (name, brewery_id, image, description, abv, beer_type) values
