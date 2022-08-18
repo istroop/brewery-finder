@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     * {box-sizing: border-box;}
-    body {font-family: 'Roboto Slab', serif;; color: #132A13; margin: 0; background-color: #F2EDDB}
+    body {font-family: 'Roboto Slab', serif; color: #132A13; margin: 0; background-color: #F2EDDB}
     .mySlides {display: none}
     img {vertical-align: middle;}
 
