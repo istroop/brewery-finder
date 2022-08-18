@@ -34,10 +34,30 @@ INSERT INTO brewery
 
 INSERT INTO beer
     (name, brewery_id, image, description, abv, beer_type) values
-('Beer 1', 1, 'beer image url', 'i will come back and change these later', '0.5', 'the good kind'),
-('Beer 2', 1, 'beer image url', 'i will come back and change these later', '5.5', 'the good kind'),
-('Beer 3', 2, 'beer image url', 'i will come back and change these later', '6.5', 'the good kind'),
-('Beer 4', 3, 'beer image url', 'i will come back and change these later', '9.5', 'the good kind'),
-('Beer 5', 4, 'beer image url', 'i will come back and change these later', '10.5', 'the good kind');
+('Black Angel', 1,
+ 'https://craftpeak-cooler-images.imgix.net/wicked-weed-brewing/BlackAngel-1.jpg',
+ 'Black Angel is aged in bourbon barrels on over 1.5 pounds per gallon of tart Michigan Montmorency cherries. ' ||
+ 'It rests in the barrels for approximately 9 months and is then artfully blended to achieve complexity.',
+ '6.8', 'Sour'),
+('Watermelon Dragon Fruit Burst', 1, 'https://craftpeak-cooler-images.imgix.net/wicked-weed-brewing/WatermelonBurstSizedforWeb-1.png',
+ 'Burst into an explosion of tart fruit flavor that refreshes your senses with every sip. Vibrant colors, fresh fruits, ' ||
+ 'and a quenching tartness make Burst Session Sour a vivid new beer experience.', '4.5', 'Sour'),
+('High Pines', 2, 'https://highlandbrewing.com/wp-content/uploads/high-pines-can-1-768x1229.png',
+'This imperial IPA features citrus and blueberry hop flavors with a touch of fresh mountain pine.', '9', 'Imperial IPA'),
+('Black Watch', 2, 'https://highlandbrewing.com/wp-content/uploads/black-watch-double-chocolate-milk-stout-bottle.png',
+ 'Black Watch Double Chocolate Milk Stout combines more than 100 pounds of cacao nibs with five malts, roasted barley,' ||
+ ' and flaked oats to create a rich, high-gravity ale reminiscent of brownie batter and marshmallows with an aromatic ' ||
+ 'nose and a lingering dark chocolate finish.', '8', 'Double Chocolate Milk Stout'),
+('Freak of Nature', 3, 'https://craftpeak-cooler-images.imgix.net/wicked-weed-brewing/Freak_Web.png?auto=compress%2Cformat&ixlib=p' ||
+              'hp-1.2.1&s=3c7203da8aeabb6859c2f5647986a59d',
+ 'Freak of Nature. Noun. 1. An unusual, unexpected natural phenomenon. 2. An outlying, west coast style double India Pale ' ||
+ 'Ale brewed with an abnormally large quantity of hops. 3. A delicately crafted, and crushable ale designed for fresh and ' ||
+ 'immediate consumption. 4. A hophead vice or downfall. Ex: Though warned about its habit-forming hoppiness, they were ' ||
+ 'seduced by the dank, tropical, and drinkable Freak of Nature.', '8.5', 'Double IPA'),
+('Fresh Pressed', 3, 'https://craftpeak-cooler-images.imgix.net/wicked-weed-brewing/FreshPressedSizeforWeb.png?' ||
+'auto=compress%2Cformat&ixlib=php-1.2.1&s=4f4b646ac9ec4acb25e7f00221e7fb3a', 'Fresh pressed is a medium-bodied wheat ale ' ||
+'that is hazy straw colored in nature. It is beautifully balanced with juicy and tropical fruit flavors. It’s brewed with mango, pineapple, and guava.', '5.2', 'Wheat Ale with Mango, Pineapple, and Guava'),
+('Black Label Premium', 4, 'https://storage.googleapis.com/cdn.vinoshipper.com/wine/c3058781-86a8-4aa7-a154-9468a85f5bcf.jpg',
+ 'Our traditional Junmai Ginjo sake, this has been brightly filtered then diluted to 14% ABV. Full body, off dry with fruity/ floral notes.', '14', 'Sake');
 
 COMMIT;
