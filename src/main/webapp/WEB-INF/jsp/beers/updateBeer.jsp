@@ -53,7 +53,7 @@
 
       <div class="container">
         <label for="image">Image: </label>
-        <input type="text" id="image" name="image" value="${beer.image}" class="form-control" />
+        <input type="text" id="image" name="image" value="${beer.getImage()}" class="form-control" />
       </div>
 
       <div class="container">
@@ -67,7 +67,7 @@
       </div>
       <div class="container">
         <label for="beerType">Beer Type: </label>
-        <input type="text" id="beerType" name="beerType" value="${brewery.beerType}" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')" />
+        <input type="text" id="beerType" name="beerType" value="${beer.beerType}" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')" />
       </div>
 
       <div class="container">
@@ -76,6 +76,7 @@
           <option value="true">Active</option>
           <option value="false">Inactive</option>
         </select><br><br>
+
         <button type="submit" class="registerbtn">Update Brewery</button>
       </div>
     </div>
