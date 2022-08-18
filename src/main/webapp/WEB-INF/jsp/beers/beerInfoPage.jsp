@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:import url="/WEB-INF/jsp/common/header.jsp" />
+<c:import url="/WEB-INF/jsp/common/header.jsp"/>
 <html>
 
 <head>
@@ -36,14 +36,18 @@
 </p>
 
 <p>
-<br>
-<c:choose>
+    <br>
 
-    <c:when test="${currentUser.role.equals('beerLover')}">
-        <h3>${beer.name} Reviews</h3>
+<h3>${beer.name} Reviews</h3>
+
+<c:choose>
+    <c:when test="${averageRating > 0}">
+        <h5>Average Rating: ${averageRating} out of 5!</h5>
+
         <hr>
+
         <c:forEach var="review" items="${reviews}">
-            <h4>${review.getReviewTitle()} <small>by: ${review.getUsername()}</small> </h4>
+            <h4>${review.getReviewTitle()} <small>by: ${review.getUsername()}</small></h4>
             <c:set var="rating" value="${review.getRating()}"/>
             <c:forEach begin="1" end="${rating}">
                 <a>* </a>
@@ -51,29 +55,26 @@
             <p>${review.getReview()}</p>
             <br>
         </c:forEach>
-        <c:url var="newReviewHref"
-               value="/beer/${beerId}/reviews/new"/>
-        <h3>
-            <a class="btn btn-primary" href="${newReviewHref}">Write a Review</a>
-        </h3>
-        </c:when>
 
-    <c:when test="${currentUser.role.equals('brewer')}">
-        <c:choose>
-            <c:when test="${averageRating > 0}">
-                <h4>Average Rating: ${averageRating} out of 5!</h4>
-            </c:when>
-            <c:otherwise>
-                <h4>There has not been a review for this beer yet! :(</h4>
-            </c:otherwise>
-        </c:choose>
     </c:when>
+    <c:otherwise>
+        <hr>
+        <h4>There has not been a review for this beer yet! :(</h4>
+    </c:otherwise>
+</c:choose>
 
-    </c:choose>
+<c:if test="${currentUser.role.equals('beerLover')}">
+    <c:url var="newReviewHref"
+           value="/beer/${beerId}/reviews/new"/>
+    <h3>
+        <a class="btn btn-primary" href="${newReviewHref}">Write a Review</a>
+    </h3>
+</c:if>
+
 
 </p>
 
 </body>
 </html>
-<c:import url="/WEB-INF/jsp/common/footer.jsp" />
+<c:import url="/WEB-INF/jsp/common/footer.jsp"/>
 
