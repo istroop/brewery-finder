@@ -29,8 +29,8 @@
 
 <p>
 <br>
-<<<<<<< HEAD:src/main/webapp/WEB-INF/jsp/beerInfoPage.jsp
 <c:choose>
+
     <c:when test="${currentUser.role.equals('beerLover')}">
         <h3>${beer.name} Reviews</h3>
         <hr>
@@ -43,33 +43,26 @@
             <p>${review.getReview()}</p>
             <br>
         </c:forEach>
+        <c:url var="newReviewHref"
+               value="/beer/${beerId}/reviews/new"/>
+        <h3>
+            <a class="btn btn-primary" href="${newReviewHref}">Write a Review</a>
+        </h3>
         </c:when>
+
     <c:when test="${currentUser.role.equals('brewer')}">
-        <h4>Average Rating: ${averageRating} out of 5!</h4>
+        <c:choose>
+            <c:when test="${averageRating > 0}">
+                <h4>Average Rating: ${averageRating} out of 5!</h4>
+            </c:when>
+            <c:otherwise>
+                <h4>There has not been a review for this beer yet! :(</h4>
+            </c:otherwise>
+        </c:choose>
     </c:when>
+
     </c:choose>
 
-=======
-<h3>${beer.name} Reviews</h3>
-
-<c:url var="newReviewHref"
-       value="/beer/${beerId}/reviews/new"/>
-<h3>
-    <a class="btn btn-primary" href="${newReviewHref}">Write a Review</a>
-</h3>
-
-
-<hr>
-<c:forEach var="review" items="${reviews}">
-    <h4>${review.getReviewTitle()} <small>by: ${review.getUsername()}</small> </h4>
-    <c:set var="rating" value="${review.getRating()}"/>
-    <c:forEach begin="1" end="${rating}">
-        <a>* </a>
-    </c:forEach>
-    <p>${review.getReview()}</p>
-    <br>
-</c:forEach>
->>>>>>> 629a66751900d320ee4a3f18ba992a5bd0e7e244:src/main/webapp/WEB-INF/jsp/beers/beerInfoPage.jsp
 </p>
 
 </body>
