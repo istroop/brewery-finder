@@ -18,6 +18,12 @@
         color: white;
         border: solid 2px #b6abfc;
     }
+
+    .new-brewery {
+        background-color: #354df5;
+        color: white;
+        border: solid 2px #354df5;
+    }
 </style>
 
 <h2>Welcome to the Brewery Finder!</h2>
@@ -33,6 +39,12 @@
                 <a class="btn btn-block select" href="${breweryHref}">${brewery.name}</a>
             </h3>
         </c:forEach>
+
+        <c:url var="newBreweryHref"
+               value="/breweries/new"/>
+        <h3>
+            <a class="btn btn-primary new-brewery" href="${newBreweryHref}">Add a Brewery</a>
+        </h3>
 
 
     </c:when>
