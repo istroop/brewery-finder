@@ -37,7 +37,7 @@ public class BreweryInfoPageController {
 
         request.setAttribute("currentUser", currentUser);
 
-        return "breweryInfoPage";
+        return "breweries/breweryInfoPage";
     }
 
 }

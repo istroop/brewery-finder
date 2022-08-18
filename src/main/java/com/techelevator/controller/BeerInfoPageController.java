@@ -7,11 +7,17 @@ import com.techelevator.model.dto.BeerReview;
 import com.techelevator.model.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -42,6 +48,21 @@ public class BeerInfoPageController {
         request.setAttribute("averageRating", Math.round(averageRating/reviewList.size() * 100.0) / 100.0);
         request.setAttribute("currentUser", currentUser);
 
-        return "beerInfoPage";
+        return "beers/beerInfoPage";
     }
+
+    @RequestMapping("/beer/{beerId}/reviews/new")
+    public String displayNewBreweryForm(ModelMap modelHolder) {
+
+        return "beers/reviews/newReview";
+    }
+
+//    @RequestMapping(path="/beer/{beerId}/reviews", method=RequestMethod.POST)
+//    public String createReview(@PathVariable("beerId") int id,
+//                               @Valid @ModelAttribute Beer beer,
+//                               BindingResult result,
+//                               RedirectAttributes flash) {
+//
+//    }
+
 }
