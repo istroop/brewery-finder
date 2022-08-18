@@ -70,6 +70,10 @@
         <a class="nav-link" href="${updateHref}">Update Brewery</a>
     </c:if>
 </h5>
+
+<body>
+<h2 style="text-align: center">Current Breweries </h2>
+</body>
 <!--Image with history overlay-->
 <div class="brewerycontainer">
     <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
