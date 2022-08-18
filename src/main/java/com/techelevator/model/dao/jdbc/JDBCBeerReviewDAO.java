@@ -39,7 +39,7 @@ public class JDBCBeerReviewDAO implements BeerReviewDAO {
 
     @Override
     public BeerReview getReviewById(int id) {
-        String sqlSearchForReview ="SELECT br.id as id, beer_id, user_id, user_name, rating, review " +
+        String sqlSearchForReview ="SELECT br.id as id, beer_id, user_id, user_name, rating, review, review_title " +
                 "FROM beer_review br JOIN app_user au on au.id = br.user_id "+
                 "WHERE br.id = ? ";
 
@@ -53,6 +53,7 @@ public class JDBCBeerReviewDAO implements BeerReviewDAO {
             thisReview.setUsername(review.getString("user_name"));
             thisReview.setRating(review.getDouble("rating"));
             thisReview.setReview(review.getString("review"));
+            thisReview.setReviewTitle(review.getString("review_title"));
         }
 
         return thisReview;

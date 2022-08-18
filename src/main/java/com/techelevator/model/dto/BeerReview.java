@@ -14,6 +14,8 @@ public class BeerReview {
 
     private String review;
 
+    private String reviewTitle;
+
     public int getId() {
         return id;
     }
@@ -60,5 +62,13 @@ public class BeerReview {
 
     public void setReview(String review) {
         this.review = review;
+    }
+
+    public String getReviewTitle() {
+        return reviewTitle;
+    }
+
+    public void setReviewTitle(String reviewTitle) {
+        this.reviewTitle = reviewTitle;
     }
 }
