@@ -61,7 +61,7 @@
 </head>
 
 <body>
-<title>Brewery Information Page</title>
+<h1 style="text-align: center">Brewery Information Page</h1>
 <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
 <h5>
     <c:set var="userId" value="${currentUser.id}"/>
