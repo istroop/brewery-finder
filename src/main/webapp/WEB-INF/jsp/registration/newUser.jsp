@@ -110,6 +110,7 @@
             <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
             <div class="container">
                 <div class="container">
+
                     <div class="inputField">
                         <label class="control-label" for="name">Full Name: </label>
                         <input type="text" id="name" name="name" placeHolder="Full Name" class="form-control"
@@ -121,27 +122,32 @@
                         <input type="text" id="userName" name="userName" placeHolder="Username" class="form-control"
                                required oninvalid="this.setCustomValidity(\'This field is required\')"/>
                     </div>
+
                     <div class="inputField">
                         <label for="userBirthday">Birthday: </label>
                         <input type="date" id="userBirthday" name="birthdate" placeholder="User Birthday"
                                class="form-control"/>
                     </div>
+
                     <div class="inputField">
                         <label for="userEmail">Email: </label>
                         <input type="text" id="userEmail" name="userEmail" placeholder="User Email" class="form-control"
                                required oninvalid="this.setCustomValidity(\'This field is required\')"/>
                     </div>
+
                     <div class="inputField">
                         <label for="password">Password: </label>
                         <input type="password" id="password" name="password" placeHolder="Password" class="form-control"
                                required oninvalid="this.setCustomValidity(\'This field is required\')"/>
                     </div>
+
                     <div class="inputField">
                         <label for="confirmPassword">Confirm Password: </label>
                         <input type="password" id="confirmPassword" name="confirmPassword"
                                placeHolder="Re-Type Password" class="form-control" required
                                oninvalid="this.setCustomValidity(\'This field is required\')"/>
                     </div>
+
                         <label for="role">Choose a Role: </label><br>
                         <select name="role" id="role" required>
                             <option value="beerLover">Beer Lover</option>
