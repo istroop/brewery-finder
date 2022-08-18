@@ -16,6 +16,8 @@ public class Beer {
 
     private String beerType;
 
+    private boolean activityStatus;
+
     public int getId() {
         return id;
     }
@@ -70,6 +72,14 @@ public class Beer {
 
     public void setBeerType(String beerType) {
         this.beerType = beerType;
+    }
+
+    public boolean isActivityStatus() {
+        return activityStatus;
+    }
+
+    public void setActivityStatus(boolean activityStatus) {
+        this.activityStatus = activityStatus;
     }
 
     public Beer() {};

@@ -59,7 +59,7 @@ public class JDBCBeerReviewDAO implements BeerReviewDAO {
         return thisReview;
     }
 
-    public void createNewReview(int beerId, int userId, double rating, String review,
+    public void createNewReview(int beerId, int userId, int rating, String review,
                                 String reviewTitle) {
         String sql = "INSERT INTO beer_review (beer_id, user_id, rating, review, review_title)" +
                 "VALUES (?,?,?,?,?)";
