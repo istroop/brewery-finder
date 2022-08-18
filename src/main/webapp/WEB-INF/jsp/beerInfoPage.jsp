@@ -10,10 +10,13 @@
 </head>
 <body>
 
+<br>
+<br>
+
 <%--Image for Beer--%>
-<%--<li>${beer.image}</li>--%>
 
-
+<br>
+<br>
 <h2>${beer.name}</h2>
 <h5>${beer.description}</h5>
 
