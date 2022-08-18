@@ -65,10 +65,11 @@
 <title>Brewery Information Page</title>
 <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
 <h5>
-    <c:if test = "${currentUser.getRole() == 'brewer'}">
+    <c:set var="userId" value="${currentUser.id}"/>
+    <c:set var="brewer" value="${brewery.brewer}"/>
+    <c:if test = "${userId == brewer}">
         <a class="nav-link" href="${updateHref}">Update Brewery</a>
     </c:if>
-    <a class="nav-link" href="${updateHref}">Update Brewery</a>
 </h5>
 <!--Image with history overlay-->
 <div class="brewerycontainer">
