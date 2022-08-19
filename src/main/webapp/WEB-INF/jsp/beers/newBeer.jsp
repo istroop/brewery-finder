@@ -2,13 +2,16 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Roboto Slab', serif;;
+            font-size: 17px;
+            color: #344E41;
+            background-color: #DAD7CD;
         }
 
         * {
@@ -16,37 +19,10 @@
         }
 
         .page-container {
-            background-color: white;
+            background-color: #DAD7CD;
             padding-right: 15px;
             width: 100%;
         }
-
-        /*input[type=text], input [type=text] {*/
-        /*    width: 100%;*/
-        /*    padding: 15px;*/
-        /*    margin: 5px 0 15px 0;*/
-        /*    display: inline-block;*/
-        /*    border: none;*/
-        /*    background: #f1f1f1;*/
-        /*}*/
-
-        /*input[type=text], input [type=text] {*/
-        /*    width: 100%;*/
-        /*    padding: 15px;*/
-        /*    margin: 5px 0 15px 0;*/
-        /*    display: inline-block;*/
-        /*    border: none;*/
-        /*    background: #f1f1f1;*/
-        /*}*/
-
-        /*input[type=number], input [type=number] {*/
-        /*    width: 100%;*/
-        /*    padding: 15px;*/
-        /*    margin: 5px 0 15px 0;*/
-        /*    display: inline-block;*/
-        /*    border: none;*/
-        /*    background: #f1f1f1;*/
-        /*}*/
 
         .textbox {
             width: 100%;
@@ -56,31 +32,8 @@
             margin: 5px 0 15px 0;
             display: inline-block;
             border: none;
-            background: #f1f1f1;
+            background: #C4C0B0;
         }
-
-        /*input[type=text], input [type=text] {*/
-        /*    width: 100%;*/
-        /*    padding: 15px;*/
-        /*    margin: 5px 0 15px 0;*/
-        /*    display: inline-block;*/
-        /*    border: none;*/
-        /*    background: #f1f1f1;*/
-        /*}*/
-
-        /*input[type=text], input [type=text] {*/
-        /*    !*width: 100%;*!*/
-        /*    !*height:150px;*!*/
-        /*    !*padding: 15px 20px;*!*/
-        /*    !*box-sizing: border-box;*!*/
-        /*    !*margin: 5px 0 15px 0;*!*/
-        /*    !*display: inline-block;*!*/
-        /*    !*border: none;*!*/
-        /*    !*background: #f1f1f1;*!*/
-
-        /*    background-color: #dddddd;*/
-        /*    outline: none;*/
-        /*}*/
 
         input[type=text], input [type=text] {
             width: 100%;
@@ -88,7 +41,7 @@
             margin: 5px 0 15px 0;
             display: inline-block;
             border: none;
-            background: #f1f1f1;
+            background: #C4C0B0;
         }
 
         hr {
@@ -97,7 +50,7 @@
         }
 
         .registerbtn {
-            background-color: #a68fff;
+            background-color: #344E41;
             color: white;
             padding: 10px 20px;
             margin: 40px 0;
@@ -115,15 +68,11 @@
             padding-top: 50px;
         }
 
-
         .center {
             text-align: center;
         }
 
     </style>
-</head>
-
-<body>
 
 <c:url var="validationJs" value="/js/user-validation.js"/>
 <script src="${validationJs}"></script>
@@ -133,7 +82,7 @@
     <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
     <div class="page-container">
         <div class="page-container">
-            <h3 style="color:mediumpurple" class="center"> Add a New Beer to Your Brewery! </h3>
+            <h1 style="text-align: center; font-family: 'Calistoga', cursive;"> Add a New Beer to Your Brewery! </h1>
 
             <div class="page-container">
                 <label class="control-label" for="name">Beer Name: </label>
@@ -173,7 +122,5 @@
     </div>
 </form>
 
-</body>
-</html>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp"/>
