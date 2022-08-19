@@ -149,10 +149,15 @@
                        oninvalid="this.setCustomValidity(\'This field is required\')"/>
             </div>
 
-            <%--            Add functionality on the back end to retrieve name from brewer id--%>
             <div class="page-container">
                 <label for="brewerId">Brewer Id: </label>
-                <input type="number" id="brewerId" name="brewer" placeholder="Brewer Id" class="form-control"/>
+                <select type="text" id="brewerId" name="brewer" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
 
             <div class="page-container">
@@ -180,8 +185,8 @@
 
             <div class="page-container">
                 <label for="history">History: </label>
-                <input type="text" id="history" name="history" placeHolder="History" class="form-control" required
-                       oninvalid="this.setCustomValidity(\'This field is required\')"/>
+                <textarea type="text" id="history" name="history" placeholder="History" class="form-control"
+                          required oninvalid="this.setCustomValidity(\'This field is required\')"></textarea>
             </div>
 
 

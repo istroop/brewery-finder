@@ -6,6 +6,8 @@ public class Beer {
 
     private int breweryId;
 
+    private int brewer;
+
     private String name;
 
     private String image;
@@ -80,6 +82,14 @@ public class Beer {
 
     public void setActivityStatus(boolean activityStatus) {
         this.activityStatus = activityStatus;
+    }
+
+    public int getBrewer() {
+        return brewer;
+    }
+
+    public void setBrewer(int brewer) {
+        this.brewer = brewer;
     }
 
     public Beer() {};
