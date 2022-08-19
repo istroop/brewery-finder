@@ -119,6 +119,16 @@
 
 <div class="beer-list-section">
 <h1 style="font-family: 'Calistoga', cursive; text-align: center">What's on tap at ${brewery.name}: </h1><br>
+
+<c:url var="addHref" value="/breweries/${breweryId}/addBeer"/>
+<h5>
+    <c:set var="userId" value="${currentUser.id}"/>
+    <c:set var="brewer" value="${brewery.brewer}"/>
+    <c:if test = "${userId == brewer}">
+        <a class="nav-link" href="${addHref}">Add Beer</a>
+    </c:if>
+</h5><br>
+<h4 style="font-family: 'Calistoga', cursive; text-align: center">What's on tap at ${brewery.name}: </h4><br>
 <ul>
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"

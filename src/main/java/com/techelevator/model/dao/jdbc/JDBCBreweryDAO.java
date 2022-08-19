@@ -69,12 +69,12 @@ public class JDBCBreweryDAO implements BreweryDAO{
         jdbcTemplate.update(updateBrewery, hoursOfOperation, phone, history, image, address, activityStatus, id);
     }
 
+    @Override
     public void newBrewery (int brewer, String name, String hoursOfOperation, String phone, String history, String image,
                             String address, Boolean activityStatus){
         jdbcTemplate.update("INSERT INTO brewery(name, brewer, hours_of_operation, phone, history, image, address, active_status)" +
                 "VALUES ( ?,?,?,?,?,?,?,?);", name, brewer, hoursOfOperation, phone, history, image, address, activityStatus);
 
     }
-
 
 }
