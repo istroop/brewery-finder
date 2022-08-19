@@ -131,62 +131,33 @@
 <c:url var="validationJs" value="/js/user-validation.js"/>
 <script src="${validationJs}"></script>
 
-<c:url var="formAction" value="/breweries"/>
+<c:url var="formAction" value="/breweries/${breweryId}/2"/>
 <form method="POST" action="${formAction}" class="formPadding">
     <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
     <div class="page-container">
         <div class="page-container">
-            <h3 style="color:mediumpurple" class="center"> Add Your Brewery to the Collection! </h3>
+            <h3 style="color:mediumpurple" class="center"> Add An Image For Your Brewery! </h3>
 
-            <div class="page-container">
-                <label class="control-label" for="userBrewery">Brewery Name: </label>
-                <input type="text" id="userBrewery" name="name" placeHolder="Brewery Name" class="form-control" required
-                       oninvalid="this.setCustomValidity(\'This field is required\')"/>
+
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <c:url var="formAction" value="/upload" />
+                    <div id="uploadForm" method="POST" action="${formAction}" enctype="multipart/form-data">
+                        <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
+
+                        <div class="form-group">
+                            <label for="image">Image: </label>
+                            <input type="file" name="image" id="image" />
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
             </div>
-
-            <div class="page-container">
-                <label for="brewerId">Brewer Id: </label>
-                <select type="text" id="brewerId" name="brewer" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-
-            <div class="page-container">
-                <label for="userContact">Contact Name: </label>
-                <input type="text" id="userContact" name="userContact" placeholder="User Contact" class="form-control"/>
-            </div>
-
-            <div class="page-container">
-                <label for="userPhone">Phone Number: </label>
-                <input type="text" id="userPhone" name="phone" placeholder="User Phone" class="form-control"
-                       required oninvalid="this.setCustomValidity(\'This field is required\')"/>
-            </div>
-
-            <div class="page-container">
-                <label for="address">Address: </label>
-                <input type="text" id="address" name="address" placeHolder="Address" class="form-control" required
-                       oninvalid="this.setCustomValidity(\'This field is required\')"/>
-            </div>
-
-            <div class="page-container">
-                <label for="operation">Days & Hours of Operation: </label>
-                <input type="text" id="operation" name="hoursOfOperation" placeHolder="Operation" class="form-control"
-                       required oninvalid="this.setCustomValidity(\'This field is required\')"/>
-            </div>
-
-            <div class="page-container">
-                <label for="history">History: </label>
-                <textarea type="text" id="history" name="history" placeholder="History" class="form-control"
-                          required oninvalid="this.setCustomValidity(\'This field is required\')"></textarea>
-            </div>
-
 
             </select><br>
-            <button id="uploadButton" type="submit" class="btn btn-block registerbtn">Add Brewery</button>
+            <button id="uploadButton" type="submit" class="btn btn-block registerbtn">Add Image</button>
         </div>
 
     </div>

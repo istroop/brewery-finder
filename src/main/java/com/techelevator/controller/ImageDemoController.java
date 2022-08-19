@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class ImageDemoController
 {
@@ -26,7 +28,7 @@ public class ImageDemoController
     }
 
     @RequestMapping(value="/upload", method = RequestMethod.POST)
-    public String uploadImage( @RequestParam(required = false) MultipartFile file )
+    public String uploadImage( @RequestParam(required = false) MultipartFile file, HttpServletRequest request, int id)
     {
         //save restaurant without image and get the restaurantid
 
@@ -35,13 +37,11 @@ public class ImageDemoController
             try
             {
                 //come up with a file name first
-                String defaultFileName = "1";// should be the resaurant id
+                String defaultFileName = "brewery_#" + String.valueOf(id);// should be the resaurant id
 
 
                 //save the file with the chosen name
                 String fileName = uploadProvider.uploadFile( file, defaultFileName );
-
-                //update the database with the saved file name
 
             }
             catch(Throwable ex)
