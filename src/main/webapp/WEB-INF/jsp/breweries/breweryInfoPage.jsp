@@ -6,14 +6,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
 
-<!DOCTYPE html>
-<html>
 <br>
 <br>
 <br>
 <br>
-<head>
-    <meta name = "viewport" content="width=device-width, initial-scale=1">
     <style>
         * {
             box-sizing: border-box;
@@ -21,8 +17,8 @@
         body {
             font-family: 'Roboto Slab', serif;;
             font-size: 17px;
-            color: #132A13;
-            background-color: #F2EDDB;
+            color: #344E41;
+            background-color: #DAD7CD;
         }
         .brewerycontainer {
             position: relative;
@@ -45,29 +41,45 @@
             text-indent: 20px;
         }
 
-        .w3-container{padding:0.01em 16px}
+        .hours-section {
+            text-align: center;
+            font-size: 20px;
+            color: #f1f1f1;
+            background-color: #588157;
+            padding: 1em;
+        }
 
-        .w3-container:after,.w3-container:before, .w3-row:after,.w3-row:before{content:"";display:table;clear:both}
+        .contact-section {
+            text-align: center;
+            font-size: 20px;
+            color: #f1f1f1;
+            background-color: #344E41;
+            padding: 1em;
+        }
 
+        .address-section {
+            text-align: center;
+            font-size: 20px;
+            color: #f1f1f1;
+            background-color: #3A5A40;
+            padding: 1em;
+        }
 
-        .w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+        .beer-list-section {
+            text-align: center;
+            font-size: 20px;
+            color: #f1f1f1;
+            background-color: #A3B18A;
+            padding: 1em;
+        }
 
-        .w3-background{color:#fff!important;background-color:#4F772D!important}
-
-        .w3-xlarge{font-size:24px!important}.w3-jumbo{font-size:64px!important}
-
-
-        .w3-bar{width:100%;overflow:hidden}.w3-center .w3-bar{display:inline-block;width:auto}
-        .w3-bar-block.w3-center .w3-bar-item{text-align:center}.w3-block{display:block;width:100%}
-        .w3-left-align{text-align:left!important}.w3-right-align{text-align:right!important}.w3-justify{text-align:justify!important}.w3-center{text-align:center!important}
-
-        .w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0 8px}
-
+        a:hover {
+            color: white;
+            text-decoration: underline;
+        }
     </style>
-</head>
 
-<body>
-<h1 style="text-align: center; font-family: 'Calistoga', cursive;">Brewery Information Page</h1>
+<h1 style="text-align: center; font-family: 'Calistoga', cursive;">Brewery Information Page</h1><br>
 <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
 <h5>
     <c:set var="userId" value="${currentUser.id}"/>
@@ -77,7 +89,6 @@
     </c:if>
 </h5>
 
-<body>
 <!--Image with history overlay-->
 <div class="brewerycontainer">
     <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
@@ -88,31 +99,26 @@
 </div>
 
 <!--Address, HOO section-->
-<div class="w3-container w3-padding-64 w3-xlarge" id="about">
-    <div class="w3-content">
-        <h1 class="w3-center w3-jumbo" style="margin-bottom: 64px">About</h1>
-        <h1><b>Opening Hours</b></h1>
-        <div class="w3-row">
-            <p>${brewery.hoursOfOperation}</p>
-        </div>
-        <h1><b>Address</b></h1>
-        <div class="w3-row">
+<div>
+    <h1 style="text-align: center; font-family: 'Calistoga', cursive;">About This Brewery: </h1><br>
+    <div class="hours-section">
+        <h1 style="font-family: 'Calistoga', cursive;">Hours of Operation: </h1><br>
+        <p>${brewery.hoursOfOperation}</p>
+    </div>
+
+    <div class="address-section">
+        <h1 style="font-family: 'Calistoga', cursive;">Find Us At: </h1><br>
             <p>${brewery.address}</p>
     </div>
-</div>
-</div>
 
-<div class="w3-container w3-padding-64 w3-background w3-xlarge">
-    <div class="w3-content">
-        <h1 class="w3-center w3-jumbo" style="margin-bottom: 64px">Contact</h1>
+<div class="contact-section">
+        <h1 style="font-family: 'Calistoga', cursive;">Contact Information: </h1><br>
         <p>Give us a call at ${brewery.phone}!</p>
-    </div>
 </div>
-
-<div>
 <br>
-</div>
-<h4 style="font-family: 'Calistoga', cursive; text-align: center">What's on tap at ${brewery.name}: </h4><br>
+
+<div class="beer-list-section">
+<h1 style="font-family: 'Calistoga', cursive; text-align: center">What's on tap at ${brewery.name}: </h1><br>
 <ul>
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"
@@ -122,7 +128,6 @@
         </h3>
     </c:forEach>
 </ul>
-</p>
-</body>
-</html>
+</div>
+
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

@@ -8,12 +8,9 @@
 
 <br>
 <br>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
-        body {font-family: 'Roboto Slab', serif; font-size: 17px; color: #132A13; background-color: #F2EDDB}
+        body {font-family: 'Roboto Slab', serif; font-size: 17px; color: #344E41; background-color: #DAD7CD}
 
         html {box-sizing: border-box;}
 
@@ -21,14 +18,14 @@
 
         .cardColumn {
             float: left;
-            width: 50%;
+            width: 100%;
             margin-bottom: 16px;
             padding: 0 8px;
         }
 
         .cardRow {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
 
@@ -40,7 +37,7 @@
         }
 
         .card {
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
             background-color: white;
         }
 
@@ -60,7 +57,7 @@
             display: inline-block;
             padding: 8px;
             color: white;
-            background-color: #31572C;
+            background-color: #344E41;
             text-align: center;
             cursor: pointer;
             width: 100%;
@@ -74,20 +71,19 @@
             text-decoration: underline;
         }
     </style>
-</head>
 
-<body>
+
+
 <h1 style="font-family: 'Calistoga', cursive; text-align: center">Our Brewery List: </h1>
-</body>
+
 <br>
 
-<body>
 
+<div class="cardRow">
 <c:forEach var="brewery" items="${breweries}">
     <c:url var="breweryHref"
            value="/breweries/${brewery.id}"/>
 
-    <div class="cardRow">
         <div class="cardColumn">
             <div class="card">
                 <img src="${brewery.image}" alt="breweryPicture" style="width: 100%">
@@ -95,20 +91,19 @@
                     <h2>${brewery.name}</h2>
                     <p class="title">${brewery.address}</p>
                     <p>${brewery.history}</p>
-                    <p><a class="cardBtn btn-block select" href="${breweryHref}>${brewery.name}">Learn More</a></p><br>
+                    <p><a class="cardBtn btn-block select" href="${breweryHref}">Learn More</a></p><br>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</c:forEach>
 
-<body>
+
+</c:forEach>
+</div>
+
 <c:url var="newBreweryHref"
        value="/breweries/new"/>
 <h3>
     <a class="btn btn-primary new-brewery" href="${newBreweryHref}">Add a Brewery</a>
 </h3>
-</body>
-</html>
+
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

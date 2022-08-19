@@ -30,7 +30,12 @@
 </script>
 
 <style>
-	body {font-family: 'Roboto Slab', serif; color: #132A13; background-color: #F2EDDB}
+	body {
+		font-family: 'Roboto Slab', serif;;
+		font-size: 17px;
+		color: #344E41;
+		background-color: #DAD7CD;
+	}
 
 	* {
 		box-sizing: border-box;
@@ -42,7 +47,7 @@
 		margin: 5px 0 15px 0;
 		display: inline-block;
 		border: none;
-		background: #E4DAB6;
+		background: #C4C0B0;
 	}
 
 	input[type=password], input [type=password] {
@@ -51,16 +56,16 @@
 		margin: 5px 0 15px 0;
 		display: inline-block;
 		border: none;
-		background: #E4DAB6;
+		background: #C4C0B0;
 	}
 
 	input[type=text]:focus, input[type=password]:focus {
-		background-color: #E4DAB6;
+		background-color: #C4C0B0;
 		outline: none;
 	}
 
 	input[type=password]:focus, input[type=password]:focus {
-		background-color: #E4DAB6;
+		background-color: #C4C0B0;
 		outline: none;
 	}
 
@@ -70,7 +75,7 @@
 	}
 
 	.login-btn {
-		background-color: #31572C;
+		background-color: #344E41;
 		color: white;
 		padding: 10px 20px;
 		margin: 40px 0;
