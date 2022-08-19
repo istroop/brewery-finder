@@ -11,15 +11,15 @@
 <br>
 <br>
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * {box-sizing: border-box}
+
         body {
             font-family: 'Roboto Slab', serif;;
             font-size: 17px;
             color: #344E41;
             background-color: #DAD7CD;
         }
+
         .brewerycontainer {
             position: relative;
             max-width: 800px;
@@ -37,6 +37,7 @@
             width: 100%;
             padding: 20px;
         }
+
         p.indent {
             text-indent: 20px;
         }
@@ -71,6 +72,10 @@
             color: #f1f1f1;
             background-color: #A3B18A;
             padding: 1em;
+        }
+
+        a {
+            color: white;
         }
 
         a:hover {
@@ -127,9 +132,8 @@
     <c:if test = "${userId == brewer}">
         <a class="nav-link" href="${addHref}">Add Beer</a>
     </c:if>
-</h5><br>
-<h4 style="font-family: 'Calistoga', cursive; text-align: center">What's on tap at ${brewery.name}: </h4><br>
-<ul>
+</h5>
+
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"
                value="/beer/${beer.id}"/>
@@ -137,7 +141,7 @@
             <a class="nav-link" href="${beerHref}">${beer.name}</a>
         </h3>
     </c:forEach>
-</ul>
+
 </div>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
