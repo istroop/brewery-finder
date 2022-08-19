@@ -21,6 +21,8 @@
         body {
             font-family: 'Roboto Slab', serif;;
             font-size: 17px;
+            color: #132A13;
+            background-color: #F2EDDB;
         }
         .brewerycontainer {
             position: relative;
@@ -50,7 +52,7 @@
 
         .w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
 
-        .w3-blue-grey{color:#fff!important;background-color:#607d8b!important}
+        .w3-background{color:#fff!important;background-color:#4F772D!important}
 
         .w3-xlarge{font-size:24px!important}.w3-jumbo{font-size:64px!important}
 
@@ -65,7 +67,7 @@
 </head>
 
 <body>
-<h1 style="text-align: center; font-family: font-family: 'Calistoga', cursive;">Brewery Information Page</h1>
+<h1 style="text-align: center; font-family: 'Calistoga', cursive;">Brewery Information Page</h1>
 <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
 <h5>
     <c:set var="userId" value="${currentUser.id}"/>
@@ -100,7 +102,7 @@
 </div>
 </div>
 
-<div class="w3-container w3-padding-64 w3-blue-grey w3-xlarge">
+<div class="w3-container w3-padding-64 w3-background w3-xlarge">
     <div class="w3-content">
         <h1 class="w3-center w3-jumbo" style="margin-bottom: 64px">Contact</h1>
         <p>Give us a call at ${brewery.phone}!</p>
@@ -110,7 +112,7 @@
 <div>
 <br>
 </div>
-<h4 style="color: mediumpurple">What's on tap at ${brewery.name}: </h4><br>
+<h4 style="font-family: 'Calistoga', cursive; text-align: center">What's on tap at ${brewery.name}: </h4><br>
 <ul>
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"
