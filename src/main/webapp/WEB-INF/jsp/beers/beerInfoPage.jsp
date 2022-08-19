@@ -20,7 +20,7 @@
 <c:if test="${beer.brewer == currentUser.id}">
     <c:url var="updateHref" value="/beer/${beerId}/update"/>
     <h5>
-        <a class="nav-link" href="${updateHref}">Update Brewery</a>
+        <a class="nav-link" href="${updateHref}">Update Beer</a>
     </h5>
 </c:if>
 

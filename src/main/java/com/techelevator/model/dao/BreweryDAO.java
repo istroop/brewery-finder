@@ -12,10 +12,6 @@ public interface BreweryDAO {
                               String address, Boolean activityStatus);
     public void newBrewery (int id, String name, String hoursOfOperation, String phone, String history, String image,
             String address, Boolean activityStatus);
-
-
-
-
 }
 
 

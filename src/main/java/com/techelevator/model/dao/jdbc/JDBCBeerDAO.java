@@ -66,4 +66,12 @@ public class JDBCBeerDAO implements BeerDAO {
                 "WHERE id = ?";
         jdbcTemplate.update(sqlUpdateBeer, name, beerType, abv, image, description, activityStatus, id);
     }
+
+    @Override
+    public void addBeer(int breweryId, String name, String image, String description, double abv, String beerType, boolean activityStatus) {
+        String sqlAddBeer = "INSERT INTO beer " +
+                "(brewery_id, name, image, description, abv, beer_type, active_status) VALUES " +
+                "(?, ?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sqlAddBeer, breweryId, name, image, description, abv, beerType, activityStatus);
+    }
 }

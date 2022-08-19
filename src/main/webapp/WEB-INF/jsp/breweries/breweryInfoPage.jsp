@@ -110,7 +110,17 @@
 <div>
 <br>
 </div>
-<h4 style="color: mediumpurple">What's on tap at ${brewery.name}: </h4><br>
+<h4 style="color: mediumpurple">What's on tap at ${brewery.name}: </h4>
+
+<c:url var="addHref" value="/breweries/${breweryId}/addBeer"/>
+<h5>
+    <c:set var="userId" value="${currentUser.id}"/>
+    <c:set var="brewer" value="${brewery.brewer}"/>
+    <c:if test = "${userId == brewer}">
+        <a class="nav-link" href="${addHref}">Add Beer</a>
+    </c:if>
+</h5><br>
+
 <ul>
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"
