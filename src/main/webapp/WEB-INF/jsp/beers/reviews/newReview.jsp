@@ -1,22 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Student
-  Date: 8/17/2022
-  Time: 11:55 AM
-  To change this template use File | Settings | File Templates.
---%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Roboto Slab', serif;;
+            font-size: 17px;
+            color: #344E41;
+            background-color: #DAD7CD;
         }
 
         * {
@@ -24,37 +19,10 @@
         }
 
         .page-container {
-            background-color: white;
+            background-color: #DAD7CD;
             padding-right: 15px;
             width: 100%;
         }
-
-        /*input[type=text], input [type=text] {*/
-        /*    width: 100%;*/
-        /*    padding: 15px;*/
-        /*    margin: 5px 0 15px 0;*/
-        /*    display: inline-block;*/
-        /*    border: none;*/
-        /*    background: #f1f1f1;*/
-        /*}*/
-
-        /*input[type=text], input [type=text] {*/
-        /*    width: 100%;*/
-        /*    padding: 15px;*/
-        /*    margin: 5px 0 15px 0;*/
-        /*    display: inline-block;*/
-        /*    border: none;*/
-        /*    background: #f1f1f1;*/
-        /*}*/
-
-        /*input[type=number], input [type=number] {*/
-        /*    width: 100%;*/
-        /*    padding: 15px;*/
-        /*    margin: 5px 0 15px 0;*/
-        /*    display: inline-block;*/
-        /*    border: none;*/
-        /*    background: #f1f1f1;*/
-        /*}*/
 
         .textbox {
             width: 100%;
@@ -64,31 +32,8 @@
             margin: 5px 0 15px 0;
             display: inline-block;
             border: none;
-            background: #f1f1f1;
+            background: #C4C0B0;
         }
-
-        /*input[type=text], input [type=text] {*/
-        /*    width: 100%;*/
-        /*    padding: 15px;*/
-        /*    margin: 5px 0 15px 0;*/
-        /*    display: inline-block;*/
-        /*    border: none;*/
-        /*    background: #f1f1f1;*/
-        /*}*/
-
-        /*input[type=text], input [type=text] {*/
-        /*    !*width: 100%;*!*/
-        /*    !*height:150px;*!*/
-        /*    !*padding: 15px 20px;*!*/
-        /*    !*box-sizing: border-box;*!*/
-        /*    !*margin: 5px 0 15px 0;*!*/
-        /*    !*display: inline-block;*!*/
-        /*    !*border: none;*!*/
-        /*    !*background: #f1f1f1;*!*/
-
-        /*    background-color: #dddddd;*/
-        /*    outline: none;*/
-        /*}*/
 
         input[type=text], input [type=text] {
             width: 100%;
@@ -96,7 +41,7 @@
             margin: 5px 0 15px 0;
             display: inline-block;
             border: none;
-            background: #f1f1f1;
+            background: #C4C0B0;
         }
 
         hr {
@@ -105,7 +50,7 @@
         }
 
         .registerbtn {
-            background-color: #a68fff;
+            background-color: #344E41;
             color: white;
             padding: 10px 20px;
             margin: 40px 0;
@@ -123,13 +68,7 @@
             padding-top: 50px;
         }
 
-
-        .center {
-            text-align: center;
-        }
-
     </style>
-</head>
 
 <body>
 
@@ -144,7 +83,7 @@
     <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
     <div class="page-container">
         <div class="page-container">
-            <h3 style="color:mediumpurple" class="center"> Write a Review! </h3>
+            <h1 style="text-align: center; font-family: 'Calistoga', cursive;"> Write a Review! </h1>
 
             <div class="page-container">
                 <h3>Username: ${currentUser.userName}</h3>
@@ -157,7 +96,7 @@
 
             <div class="page-container">
                 <label for="rating">Rating: </label>
-                <select type="text" id="rating" name="rating" placeholder="User Contact" class="form-control">
+                <select style="background-color: #C4C0B0" type="text" id="rating" name="rating" placeholder="User Contact" class="form-control">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -169,7 +108,7 @@
             <div class="page-container">
                 <label for="review">Review: </label>
                 <textarea type="text" id="review" name="review" placeholder="Review" class="form-control"
-                          required oninvalid="this.setCustomValidity(\'This field is required\')"></textarea>
+                          required oninvalid="this.setCustomValidity(\'This field is required\')" style="background-color: #C4C0B0"></textarea>
             </div>
 
             </select><br>
