@@ -83,6 +83,11 @@
             text-decoration: underline;
         }
 
+        .beerButton {
+            background-color: #344E41;
+            color: #DAD7CD
+        }
+
     </style>
 
 <h1 style="text-align: center; font-family: 'Calistoga', cursive;">Brewery Information Page</h1><br>
@@ -126,13 +131,13 @@
 <div class="beer-list-section">
 <h1 style="font-family: 'Calistoga', cursive; text-align: center">What's on tap at ${brewery.name}: </h1><br>
 
-<c:url var="addHref" value="/breweries/${breweryId}/addBeer"/>
-    <c:url var="viewAll" value="/breweries/${breweryId}/allBeers"/>
+    <c:url var="editList" value="/breweries/${breweryId}/allBeers"/>
 <h5>
     <c:set var="userId" value="${currentUser.id}"/>
     <c:set var="brewer" value="${brewery.brewer}"/>
     <c:if test = "${userId == brewer}">
-        <a class="nav-link" href="${addHref}">Add Beer</a>
+        <a class="nav-link" href="${editList}">Edit Beer List</a>
+
     </c:if>
 </h5>
 
@@ -140,7 +145,7 @@
         <c:url var="beerHref"
                value="/beer/${beer.id}"/>
         <h3>
-            <a class="nav-link" href="${beerHref}">${beer.name}</a>
+            <a class="btn btn-block beerButton" href="${beerHref}">${beer.name}</a>
         </h3>
     </c:forEach>
 

@@ -35,12 +35,11 @@
     .button {
         background-color: #344E41;
         color: white;
-        padding: 10px 20px;
-        margin: 40px 0;
         border: none;
         cursor: pointer;
-        width: 100%;
-        font-size: 140%;
+        width: 50%;
+        font-size: 100%;
+        margin-bottom: 10px;
     }
 </style>
 
@@ -58,12 +57,12 @@
     <row>
         <c:url var="updateHref" value="/beer/${beerId}/update"/>
         <h5>
-            <button><a class="btn btn-primary button" href="${updateHref}">Update Beer</a></button>
+            <a class="btn btn-primary button" href="${updateHref}">Update Beer</a>
         </h5>
 
         <c:url var="deleteHref" value="/beer/${beerId}/delete"/>
         <h5>
-            <button><a class="btn btn-primary button" href="${deleteHref}">Delete Beer</a></button>
+            <a class="btn btn-primary button" href="${deleteHref}">Delete Beer</a>
         </h5>
     </row>
 

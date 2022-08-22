@@ -40,6 +40,20 @@ public class BreweryInfoPageController {
         return "breweries/breweryInfoPage";
     }
 
+    @RequestMapping("/breweries/{breweryId}/allBeers")
+    public String getAllBeersPage(@SessionAttribute User currentUser, HttpServletRequest request, @PathVariable int breweryId) {
+
+        Brewery brewery = breweryDAO.getBreweryById(breweryId);
+        request.setAttribute("brewery", brewery);
+
+        List<Beer> beers = beerDAO.getAllBeersByBrewery(breweryId);
+        request.setAttribute("beers", beers);
+
+        request.setAttribute("currentUser", currentUser);
+
+        return "breweries/beerList";
+    }
+
 
 
 }

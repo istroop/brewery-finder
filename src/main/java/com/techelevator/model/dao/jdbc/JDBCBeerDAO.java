@@ -22,7 +22,7 @@ public class JDBCBeerDAO implements BeerDAO {
     }
 
     @Override
-    public List<Beer> getBeersByBrewery(int brewery_id) {
+    public List<Beer> getAllBeersByBrewery(int brewery_id) {
         String sqlSearchForBeers = "SELECT id FROM beer WHERE brewery_id = ?";
 
         SqlRowSet beerSet = jdbcTemplate.queryForRowSet(sqlSearchForBeers, brewery_id);
@@ -37,10 +37,28 @@ public class JDBCBeerDAO implements BeerDAO {
     }
 
     @Override
+    public List<Beer> getBeersByBrewery(int brewery_id) {
+        String sqlSearchForBeers = "SELECT id FROM beer WHERE brewery_id = ?";
+
+        SqlRowSet beerSet = jdbcTemplate.queryForRowSet(sqlSearchForBeers, brewery_id);
+        List<Beer> beers = new ArrayList<>();
+
+        while (beerSet.next()) {
+            Beer beer = getBeerById(beerSet.getInt("id"));
+            if (beer.isActivityStatus()) {
+                beers.add(beer);
+            }
+        }
+
+        return beers;
+    }
+
+
+    @Override
     public Beer getBeerById(int id) {
         String sqlSearchForBeer ="SELECT beer.id, brewery_id, brewer, beer.name, beer.image, description, abv, beer_type, beer.active_status " +
                 "FROM beer  JOIN brewery b on beer.brewery_id = b.id "+
-                "WHERE beer.id = ? AND beer.active_status = true";
+                "WHERE beer.id = ?";
 
         SqlRowSet beer = jdbcTemplate.queryForRowSet(sqlSearchForBeer, id);
         Beer thisBeer = null;
