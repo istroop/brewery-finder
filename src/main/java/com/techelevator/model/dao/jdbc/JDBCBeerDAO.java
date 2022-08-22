@@ -48,6 +48,7 @@ public class JDBCBeerDAO implements BeerDAO {
             thisBeer = new Beer();
             thisBeer.setId(beer.getInt("id"));
             thisBeer.setBreweryId(beer.getInt("brewery_id"));
+            thisBeer.setImage(beer.getString("image"));
             thisBeer.setName(beer.getString("name"));
             thisBeer.setDescription(beer.getString("description"));
             thisBeer.setAbv(beer.getDouble("abv"));

@@ -27,12 +27,12 @@ public class BreweryInfoPageController {
     }
 
     @RequestMapping("/breweries/{breweryId}")
-    public String getBreweryInfoPage(@SessionAttribute User currentUser, @PathVariable("breweryId") int id, HttpServletRequest request) {
+    public String getBreweryInfoPage(@SessionAttribute User currentUser, HttpServletRequest request, @PathVariable int breweryId) {
 
-        Brewery brewery = breweryDAO.getBreweryById(id);
+        Brewery brewery = breweryDAO.getBreweryById(breweryId);
         request.setAttribute("brewery", brewery);
 
-        List<Beer> beers = beerDAO.getBeersByBrewery(id);
+        List<Beer> beers = beerDAO.getBeersByBrewery(breweryId);
         request.setAttribute("beers", beers);
 
         request.setAttribute("currentUser", currentUser);

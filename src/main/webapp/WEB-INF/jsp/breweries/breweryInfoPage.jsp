@@ -82,6 +82,7 @@
             color: white;
             text-decoration: underline;
         }
+
     </style>
 
 <h1 style="text-align: center; font-family: 'Calistoga', cursive;">Brewery Information Page</h1><br>
