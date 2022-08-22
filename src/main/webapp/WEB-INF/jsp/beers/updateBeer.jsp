@@ -38,10 +38,7 @@
     }
 
     .container img {vertical-align: middle;}
-    }
   </style>
-
-<h1>Update Brewery Page</h1>
 
 <h1>Update Beer Page</h1>
 
