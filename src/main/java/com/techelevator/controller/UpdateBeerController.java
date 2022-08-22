@@ -35,7 +35,7 @@ public class UpdateBeerController {
 
     @RequestMapping(path="/beer/{beerId}", method=RequestMethod.POST)
     public String updateBrewery(@Valid @ModelAttribute Beer beer, @PathVariable int beerId) {
-        beerDAO.updateBeer(beerId, beer.getName(), beer.getBeerType(), beer.getAbv(), beer.getImage(), beer.getDescription(), beer.isActivityStatus());
+        beerDAO.updateBeer(beerId, beer.getName(), beer.getBeerType(), beer.getAbv(), beer.getDescription(), beer.isActivityStatus());
         return "redirect:/beer/" + beerId;
     }
 }

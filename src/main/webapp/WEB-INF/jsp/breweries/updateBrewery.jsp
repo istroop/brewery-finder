@@ -4,36 +4,42 @@
 
 <!DOCTYPE html>
 <html>
-<br>
-<br>
-<br>
-<br>
-<head>
-    <meta name = "viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 17px;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
 
-        .container img {vertical-align: middle;}
+<br>
+<br>
+<br>
+<br>
 
-        .container .content {
-            position: absolute;
-            bottom: 0;
-            background: rgb(0,0,0);
-            background: rgba(0,0,0,0.5);
-            color: #f1f1f1;
-            width: 100%
-            padding: 20px;
-        }
-        p.indent {
-            text-indent: 20px;
-        }
-    </style>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto Slab', serif;;
+        font-size: 17px;
+        color: #344E41;
+        background-color: #DAD7CD;
+    }
+
+    .container img {vertical-align: middle;}
+
+    .container .content {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0,0,0);
+        background: rgba(0,0,0,0.5);
+        color: #f1f1f1;
+        width: 100%
+        padding: 20px;
+    }
+    p.indent {
+        text-indent: 20px;
+    }
+</style>
 </head>
 
 <body>
@@ -43,7 +49,7 @@
 <form method="POST" action="${formAction}">
     <div class="container">
         <div class="container">
-            <h3 style="color:mediumpurple"> Update ${brewery.getName()}:</h3>
+            <h1 style="text-align: center; font-family: 'Calistoga', cursive;"> Update ${brewery.getName()}:</h1>
             <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
             <div class="container">
                 <label class="control-label" for="phone">Phone: </label>
@@ -60,10 +66,6 @@
             <div class="container">
                 <label for="history">History: </label>
                 <input type="text" id="history" name="history" value="${brewery.history}" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')" />
-            </div>
-            <div class="container">
-                <label for="image">Image: </label>
-                <input type="text" id="image" name="image" value="${brewery.image}" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')" />
             </div>
             <div class="container">
                 <label for="activityStatus">Activity Status: </label><br>

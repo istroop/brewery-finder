@@ -41,7 +41,7 @@
 </head>
 
 <body>
-<title>Update Brewery Page</title>
+<title>Update Beer Page</title>
 
 <c:url var="formAction" value="/beer/${beerId}" />
 <form method="POST" action="${formAction}">
@@ -53,11 +53,6 @@
       <div class="container">
         <label class="control-label" for="name">Name: </label>
         <input type="text" id="name" name="name" value="${beer.name}" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')"/>
-      </div>
-
-      <div class="container">
-        <label for="image">Image: </label>
-        <input type="text" id="image" name="image" value="${beer.getImage()}" class="form-control" />
       </div>
 
       <div class="container">
@@ -81,7 +76,7 @@
           <option value="false">Inactive</option>
         </select><br><br>
 
-        <button type="submit" class="registerbtn">Update Brewery</button>
+        <button type="submit" class="registerbtn">Update Beer</button>
       </div>
     </div>
 </form>
