@@ -172,20 +172,24 @@
                           required oninvalid="this.setCustomValidity(\'This field is required\')"></textarea>
             </div>
 
-            <c:forEach var="review" items="${reviews}">
+<%--            <c:forEach var="review" items="${reviews}">--%>
 
-                <div class="review inner-content">
-                    <p><span class="title">${review.title}</span> ${review.username} </p>
-                    <p> ${review.dateSubmitted}</p>
-                    <div>
-                        <c:forEach begin="1" end="${review.rating}">
-                            <img class="ratingStar" src="/img/star.png"/>
-                        </c:forEach>
-                    </div>
-                    <p>${review.text}</p>
-                </div>
+<%--                <div class="review inner-content">--%>
+<%--                    <p><span class="title">${review.title}</span> ${review.username} </p>--%>
+<%--                    <p> ${review.dateSubmitted}</p>--%>
+<%--                    <div>--%>
+<%--                        <c:forEach begin="1" end="${review.rating}">--%>
+<%--                            <img class="ratingStar" src="/img/rsz_beermug.png"/>--%>
+<%--                        </c:forEach>--%>
+<%--                    </div>--%>
+<%--                    <p>${review.text}</p>--%>
+<%--                </div>--%>
 
-            </c:forEach>
+<%--            </c:forEach>--%>
+
+
+
+
 
             </select><br>
             <button type="submit" class="btn btn-block registerbtn">Create Review</button>

@@ -50,7 +50,7 @@
             <h4>${review.getReviewTitle()} <small>by: ${review.getUsername()}</small></h4>
             <c:set var="rating" value="${review.getRating()}"/>
             <c:forEach begin="1" end="${rating}">
-                <a>* </a>
+                <a> <img class="ratingStar" src="/img/rsz_beermug.png"/></a>
             </c:forEach>
             <p>${review.getReview()}</p>
             <br>
