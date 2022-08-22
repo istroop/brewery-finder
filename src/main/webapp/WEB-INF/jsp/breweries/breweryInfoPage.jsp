@@ -126,6 +126,7 @@
 <h1 style="font-family: 'Calistoga', cursive; text-align: center">What's on tap at ${brewery.name}: </h1><br>
 
 <c:url var="addHref" value="/breweries/${breweryId}/addBeer"/>
+    <c:url var="viewAll" value="/breweries/${breweryId}/allBeers"/>
 <h5>
     <c:set var="userId" value="${currentUser.id}"/>
     <c:set var="brewer" value="${brewery.brewer}"/>

@@ -80,4 +80,12 @@ public class BeerInfoPageController {
 
     }
 
+    @RequestMapping("beer/{beerId}/delete")
+    public String deleteBeer(@PathVariable("beerId") int id) {
+        beerDAO.makeBeerInactive(id);
+
+        return "redirect:/breweryList";
+    }
+
+
 }

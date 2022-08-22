@@ -74,4 +74,10 @@ public class JDBCBeerDAO implements BeerDAO {
                 "(?, ?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update(sqlAddBeer, breweryId, name, image, description, abv, beerType, activityStatus);
     }
+
+    @Override
+    public void makeBeerInactive(int id) {
+        String sql = "UPDATE beer SET active_status=false WHERE id = ?";
+        jdbcTemplate.update(sql, id);
+    }
 }

@@ -31,6 +31,17 @@
         background-color: #3A5A40;
         padding: 1em;
     }
+
+    .button {
+        background-color: #344E41;
+        color: white;
+        padding: 10px 20px;
+        margin: 40px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-size: 140%;
+    }
 </style>
 
 <br>
@@ -43,12 +54,19 @@
 <div class="about-section">
 <h2 style="text-align: center; font-family: 'Calistoga', cursive;">More about ${beer.name}</h2><br>
 
-
 <c:if test="${beer.brewer == currentUser.id}">
-    <c:url var="updateHref" value="/beer/${beerId}/update"/>
-    <h5>
-        <a class="nav-link" href="${updateHref}">Update Beer</a>
-    </h5>
+    <row>
+        <c:url var="updateHref" value="/beer/${beerId}/update"/>
+        <h5>
+            <button><a class="btn btn-primary button" href="${updateHref}">Update Beer</a></button>
+        </h5>
+
+        <c:url var="deleteHref" value="/beer/${beerId}/delete"/>
+        <h5>
+            <button><a class="btn btn-primary button" href="${deleteHref}">Delete Beer</a></button>
+        </h5>
+    </row>
+
 </c:if>
 
 <p style="font-size: 25px;">${beer.description}</p>
