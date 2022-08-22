@@ -46,7 +46,9 @@ public class NewBreweryController {
             flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "brewery", result);
             return "redirect:/breweries/new";
         };
-        int id = breweryDAO.newBrewery(brewery.getBrewer(), brewery.getName(), brewery.getHoursOfOperation(), brewery.getPhone(), brewery.getHistory(), brewery.getImage(), brewery.getAddress(), true);
+
+        int id = breweryDAO.getNextId();
+        breweryDAO.newBrewery(brewery.getBrewer(), brewery.getName(), brewery.getHoursOfOperation(), brewery.getPhone(), brewery.getHistory(), brewery.getImage(), brewery.getAddress(), true);
 
         return "redirect:/breweries/" + id + "/newImage";
     }
@@ -73,13 +75,14 @@ public class NewBreweryController {
                 fileName = uploadProvider.uploadFile( file, defaultFileName );
 
                 // save to database
-
+                breweryDAO.insertImageByBreweryId(fileName, Integer.parseInt(breweryId));
             }
             catch(Throwable ex)
             {
 
             }
         }
-        return "redirect:/breweries/" + brewery.getId();
+        int id = breweryDAO.getNextId() - 1;
+        return "redirect:/breweries/" + id;
     }
 }
