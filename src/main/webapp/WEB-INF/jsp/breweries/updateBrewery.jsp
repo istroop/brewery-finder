@@ -44,19 +44,6 @@
             text-indent: 20px;
         }
     </style>
-=======
-    .container .content {
-        position: absolute;
-        bottom: 0;
-        background: rgb(0,0,0);
-        background: rgba(0,0,0,0.5);
-        color: #f1f1f1;
-        width: 100%
-        padding: 20px;
-    }
-    p.indent {
-        text-indent: 20px;
-    }
 </style>
 
 
@@ -91,7 +78,7 @@
                     <option value="true">Active</option>
                     <option value="false">Inactive</option>
                 </select><br><br>
-                <button type="submit" class="registerbtn">Update Beer</button>
+                <button type="submit" class="registerbtn">Update Brewery</button>
             </div>
         </div>
 </form>
