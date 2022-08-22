@@ -76,6 +76,7 @@ public class NewBreweryController {
             }
             catch(Throwable ex) {}
         }
+        else { breweryDAO.insertImageByBreweryId("default.jpg", Integer.parseInt(breweryId));};
         int id = breweryDAO.getNextId() - 1;
         return "redirect:/breweries/" + id;
     }
