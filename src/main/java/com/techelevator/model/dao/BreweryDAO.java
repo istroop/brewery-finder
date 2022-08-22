@@ -10,12 +10,8 @@ public interface BreweryDAO {
     public Brewery getBreweryById (int id);
     public void updateBrewery(int id, String hoursOfOperation, String phone, String history, String image,
                               String address, Boolean activityStatus);
-    public void newBrewery (int id, String name, String hoursOfOperation, String phone, String history, String image,
+    public Integer newBrewery (int id, String name, String hoursOfOperation, String phone, String history, String image,
             String address, Boolean activityStatus);
-
-
-
-
 }
 
 

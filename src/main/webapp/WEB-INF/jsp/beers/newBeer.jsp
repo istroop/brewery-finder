@@ -2,14 +2,6 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
-<<<<<<< HEAD
-<c:url var="uploadJs" value="/js/upload-image.js" />
-<script src="${uploadJs}"></script>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
@@ -76,7 +68,6 @@
             padding-top: 50px;
         }
 
-
         .center {
             text-align: center;
         }
@@ -86,66 +77,50 @@
 <c:url var="validationJs" value="/js/user-validation.js"/>
 <script src="${validationJs}"></script>
 
-<c:url var="formAction" value="/breweries"/>
+<c:url var="formAction" value="/breweries/${breweryId}/newBeer"/>
 <form method="POST" action="${formAction}" class="formPadding">
     <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
     <div class="page-container">
         <div class="page-container">
-            <h1 style="text-align: center; font-family: 'Calistoga', cursive;"> Add Your Brewery to the Collection! </h1>
+            <h1 style="text-align: center; font-family: 'Calistoga', cursive;"> Add a New Beer to Your Brewery! </h1>
 
             <div class="page-container">
-                <label class="control-label" for="userBrewery">Brewery Name: </label>
-                <input type="text" id="userBrewery" name="name" placeHolder="Brewery Name" class="form-control" required
+                <label class="control-label" for="name">Beer Name: </label>
+                <input type="text" id="name" name="name" placeHolder="Beer Name" class="form-control" required
                        oninvalid="this.setCustomValidity(\'This field is required\')"/>
             </div>
 
             <div class="page-container">
-                <label for="brewerId">Brewer Id: </label>
-                <select type="text" id="brewerId" name="brewer" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                <label for="image"> Beer Image: </label>
+                <input type="text" id="image" name="image" placeholder="Beer Image" class="form-control"/>
             </div>
 
             <div class="page-container">
-                <label for="userContact">Contact Name: </label>
-                <input type="text" id="userContact" name="userContact" placeholder="User Contact" class="form-control"/>
-            </div>
-
-            <div class="page-container">
-                <label for="userPhone">Phone Number: </label>
-                <input type="text" id="userPhone" name="phone" placeholder="User Phone" class="form-control"
+                <label for="description">Description: </label>
+                <input type="text" id="description" name="description" placeholder="Description" class="form-control"
                        required oninvalid="this.setCustomValidity(\'This field is required\')"/>
             </div>
 
             <div class="page-container">
-                <label for="address">Address: </label>
-                <input type="text" id="address" name="address" placeHolder="Address" class="form-control" required
+                <label for="abv">ABV: </label>
+                <input type="number" step=0.1 min=0 max=100 id="abv" name="abv" placeHolder="ABV" class="form-control" required
                        oninvalid="this.setCustomValidity(\'This field is required\')"/>
             </div>
 
             <div class="page-container">
-                <label for="operation">Days & Hours of Operation: </label>
-                <input type="text" id="operation" name="hoursOfOperation" placeHolder="Operation" class="form-control"
+                <label for="beerType">Beer Type: </label>
+                <input type="text" id="beerType" name="beerType" placeHolder="Beer Type" class="form-control"
                        required oninvalid="this.setCustomValidity(\'This field is required\')"/>
-            </div>
-
-            <div class="page-container">
-                <label for="history">History: </label>
-                <textarea type="text" id="history" name="history" placeholder="History" class="form-control"
-                          required oninvalid="this.setCustomValidity(\'This field is required\')"></textarea>
             </div>
 
 
             </select><br>
-            <button id="uploadButton" type="submit" class="btn btn-block registerbtn">Add Brewery</button>
+            <button type="submit" class="btn btn-block registerbtn">Add Beer</button>
         </div>
 
     </div>
     </div>
 </form>
+
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp"/>
