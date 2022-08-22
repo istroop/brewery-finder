@@ -11,4 +11,5 @@ public interface BeerDAO {
     void addBeer(int breweryId, String name, String image, String description, double abv, String beerType, boolean activityStatus);
     int getNextId();
     void insertImageByBeerId(String fileName, int parseInt);
+    public void makeBeerInactive(int id);
 }

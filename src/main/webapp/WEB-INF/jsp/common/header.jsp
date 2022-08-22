@@ -75,7 +75,7 @@
 
                         <c:url var="dashboardHref" value="/breweryList"/>
                         <li class="nav-item"><a class="nav-link" href="${dashboardHref}">Brewery List</a></li>
-                        
+                    <%--
                         <c:url var="newMessageHref"
                                value="/users/${currentUser.getUserName()}/messages/new"/>
                         <li class="nav-item"><a class="nav-link" href="${newMessageHref}">New Message</a></li>
@@ -85,6 +85,7 @@
                         <c:url var="changePasswordHref"
                                value="/users/${currentUser.getUserName()}/changePassword"/>
                         <li class="nav-item"><a class="nav-link" href="${changePasswordHref}">Change Password</a></li>
+                        --%>
                     </c:when>
                     <c:otherwise>
                         <a href="<c:url value="/"/>" class="navbar-brand">Brewery Finder</a>

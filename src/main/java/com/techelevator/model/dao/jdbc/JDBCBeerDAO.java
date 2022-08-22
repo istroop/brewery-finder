@@ -22,8 +22,8 @@ public class JDBCBeerDAO implements BeerDAO {
     }
 
     @Override
-    public List<Beer> getBeersByBrewery(int brewery_id) {
-        String sqlSearchForBeers = "SELECT id FROM beer WHERE brewery_id = ? AND active_status = true";
+    public List<Beer> getAllBeersByBrewery(int brewery_id) {
+        String sqlSearchForBeers = "SELECT id FROM beer WHERE brewery_id = ?";
 
         SqlRowSet beerSet = jdbcTemplate.queryForRowSet(sqlSearchForBeers, brewery_id);
         List<Beer> beers = new ArrayList<>();
@@ -31,6 +31,23 @@ public class JDBCBeerDAO implements BeerDAO {
         while (beerSet.next()) {
             Beer beer = getBeerById(beerSet.getInt("id"));
             beers.add(beer);
+        }
+
+        return beers;
+    }
+
+    @Override
+    public List<Beer> getBeersByBrewery(int brewery_id) {
+        String sqlSearchForBeers = "SELECT id FROM beer WHERE brewery_id = ?";
+
+        SqlRowSet beerSet = jdbcTemplate.queryForRowSet(sqlSearchForBeers, brewery_id);
+        List<Beer> beers = new ArrayList<>();
+
+        while (beerSet.next()) {
+            Beer beer = getBeerById(beerSet.getInt("id"));
+            if (beer.isActivityStatus()) {
+                beers.add(beer);
+            }
         }
 
         return beers;
@@ -90,5 +107,11 @@ public class JDBCBeerDAO implements BeerDAO {
     public void insertImageByBeerId(String fileName, int parseInt) {
         String insertImageSQL = "UPDATE beer SET image = ? WHERE id = ?";
         jdbcTemplate.update(insertImageSQL, fileName, parseInt);
+    }
+
+    @Override
+    public void makeBeerInactive(int id) {
+        String sql = "UPDATE beer SET active_status=false WHERE id = ?";
+        jdbcTemplate.update(sql, id);
     }
 }

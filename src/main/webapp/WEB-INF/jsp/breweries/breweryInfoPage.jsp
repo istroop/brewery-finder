@@ -206,25 +206,24 @@
 <c:url var="addHref" value="/breweries/${breweryId}/addBeer"/>
 <c:url var="inactiveHref" value="/breweries/${breweryId}/inactiveBeers"/>
 
+    <c:url var="editList" value="/breweries/${breweryId}/allBeers"/>
 <h5>
     <c:set var="userId" value="${currentUser.id}"/>
     <c:set var="brewer" value="${brewery.brewer}"/>
     <c:if test = "${userId == brewer}">
-        <a class="nav-link" href="${addHref}">Add Beer</a><br>
+        <a class="nav-link" href="${editList}">Edit Beer List</a> <br>
+
     </c:if>
 </h5>
 
-    <%--Only shows links to beers
+<%--    <c:forEach var="beer" items="${beers}">--%>
+<%--        <c:url var="beerHref"--%>
+<%--               value="/beer/${beer.id}"/>--%>
+<%--        <h3>--%>
+<%--            <a class="btn btn-block beerButton" href="${beerHref}">${beer.name}</a>--%>
+<%--        </h3>--%>
+<%--    </c:forEach>--%>
 
-    <c:forEach var="beer" items="${beers}">
-        <c:url var="beerHref"
-               value="/beer/${beer.id}"/>
-        <h3>
-            <a class="nav-link" href="${beerHref}">${beer.name}</a>
-        </h3>
-    </c:forEach>
-
-</div>
---%>
+<%--</div>--%>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
