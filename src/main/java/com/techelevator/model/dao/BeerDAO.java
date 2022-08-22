@@ -4,7 +4,6 @@ import com.techelevator.model.dto.Beer;
 import java.util.List;
 
 public interface BeerDAO {
-
     List<Beer> getBeersByBrewery(int brewery_id);
     List<Beer> getAllBeersByBrewery(int brewery_id);
     Beer getBeerById(int id);

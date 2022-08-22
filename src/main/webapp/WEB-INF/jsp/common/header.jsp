@@ -75,6 +75,8 @@
 
                         <c:url var="dashboardHref" value="/breweryList"/>
                         <li class="nav-item"><a class="nav-link" href="${dashboardHref}">Brewery List</a></li>
+
+
                     <%--
                         <c:url var="newMessageHref"
                                value="/users/${currentUser.getUserName()}/messages/new"/>

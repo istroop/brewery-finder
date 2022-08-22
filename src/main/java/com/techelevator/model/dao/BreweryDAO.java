@@ -14,6 +14,7 @@ public interface BreweryDAO {
             String address, Boolean activityStatus);
     public int getNextId();
     public void insertImageByBreweryId(String imageName, int breweryId);
+    public void makeBreweryInactive(int id);
 }
 
 
