@@ -93,7 +93,13 @@
                     <h2>${brewery.name}</h2>
                     <p class="title">${brewery.address}</p>
                     <p>${brewery.history}</p>
-                    <p><a class="cardBtn btn-block select" href="${breweryHref}">Learn More</a></p><br>
+                    <p><a class="cardBtn btn-block select" href="${breweryHref}">Learn More</a></p>
+                    <c:url var="deleteBreweryHref"
+                           value="/breweries/${brewery.id}/delete"/>
+                    <c:if test="${currentUser.role.equals('admin')}">
+                        <p><a class="cardBtn btn-block select" href="${deleteBreweryHref}">Delete</a></p>
+                    </c:if>
+                    <br>
                 </div>
             </div>
         </div>
@@ -104,8 +110,11 @@
 
 <c:url var="newBreweryHref"
        value="/breweries/new"/>
-<h3>
-    <a class="btn btn-primary new-brewery" href="${newBreweryHref}">Add a Brewery</a>
-</h3>
+<c:if test="${currentUser.role.equals('admin')}">
+    <h3>
+        <a class="btn btn-primary new-brewery" href="${newBreweryHref}">Add a Brewery</a>
+    </h3>
+</c:if>
+
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

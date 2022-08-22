@@ -35,7 +35,7 @@ public class UpdateBreweryController {
     public String updateBrewery(@Valid @ModelAttribute Brewery brewery, @PathVariable int breweryId) {
 
         breweryDAO.updateBrewery(breweryId, brewery.getHoursOfOperation(), brewery.getPhone(),
-                brewery.getHistory(), brewery.getImage(), brewery.getAddress(), brewery.getActivityStatus());
+                brewery.getHistory(), brewery.getAddress(), brewery.getActivityStatus());
         return "redirect:/breweries/" + breweryId;
     }
 }

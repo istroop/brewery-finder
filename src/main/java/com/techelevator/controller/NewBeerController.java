@@ -81,6 +81,7 @@ public class NewBeerController {
             }
             catch(Throwable ex) {}
         }
+        else {beerDAO.insertImageByBeerId("default.jpg", Integer.parseInt(beerId));}
         //int id = beerDAO.getNextId() - 1;
         return "redirect:/breweries/" + breweryId;
     }

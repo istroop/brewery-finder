@@ -2,6 +2,11 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
+<<<<<<< HEAD
+=======
+<!DOCTYPE html>
+<html>
+>>>>>>> main
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
@@ -10,18 +15,21 @@
 <br>
 <br>
 <br>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Roboto Slab', serif;
-            font-size: 17px;
-            color: #344E41;
-            background-color: #DAD7CD;
-        }
 
-        .container img {vertical-align: middle;}
+    <style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto Slab', serif;;
+        font-size: 17px;
+        color: #344E41;
+        background-color: #DAD7CD;
+    }
+
+    .container img {vertical-align: middle;}
 
         .container .content {
             position: absolute;
@@ -36,9 +44,24 @@
             text-indent: 20px;
         }
     </style>
+=======
+    .container .content {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0,0,0);
+        background: rgba(0,0,0,0.5);
+        color: #f1f1f1;
+        width: 100%
+        padding: 20px;
+    }
+    p.indent {
+        text-indent: 20px;
+    }
+</style>
 
-<body>
-<title>Update Brewery Page</title>
+
+
+<h1>Update Brewery Page</h1>
 
 <c:url var="formAction" value="/breweries/${breweryId}" />
 <form method="POST" action="${formAction}">
@@ -61,10 +84,6 @@
             <div class="container">
                 <label for="history">History: </label>
                 <input type="text" id="history" name="history" value="${brewery.history}" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')" />
-            </div>
-            <div class="container">
-                <label for="image">Image: </label>
-                <input type="text" id="image" name="image" value="${brewery.image}" class="form-control" required oninvalid="this.setCustomValidity(\'This field is required\')" />
             </div>
             <div class="container">
                 <label for="activityStatus">Activity Status: </label><br>

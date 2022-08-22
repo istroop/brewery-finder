@@ -63,10 +63,10 @@ public class JDBCBreweryDAO implements BreweryDAO{
     }
 
     @Override
-    public void updateBrewery(int id, String hoursOfOperation, String phone, String history, String image, String address, Boolean activityStatus) {
-        String updateBrewery = "UPDATE brewery SET hours_of_operation = ?, phone = ?, history = ?, image = ?, " +
+    public void updateBrewery(int id, String hoursOfOperation, String phone, String history, String address, Boolean activityStatus) {
+        String updateBrewery = "UPDATE brewery SET hours_of_operation = ?, phone = ?, history = ?, " +
                 "address = ?, active_status = ? WHERE id = ?";
-        jdbcTemplate.update(updateBrewery, hoursOfOperation, phone, history, image, address, activityStatus, id);
+        jdbcTemplate.update(updateBrewery, hoursOfOperation, phone, history, address, activityStatus, id);
     }
 
     @Override
@@ -90,6 +90,12 @@ public class JDBCBreweryDAO implements BreweryDAO{
     public void insertImageByBreweryId(String imageName, int breweryId) {
         String insertImageSQL = "UPDATE brewery SET image = ? WHERE id = ?";
         jdbcTemplate.update(insertImageSQL, imageName, breweryId);
+    }
+
+    @Override
+    public void makeBreweryInactive(int id) {
+        String sql = "UPDATE brewery SET active_status=false WHERE id = ?";
+        jdbcTemplate.update(sql, id);
     }
 
 }
