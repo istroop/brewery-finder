@@ -132,7 +132,7 @@
 <script src="${validationJs}"></script>
 
 <c:url var="formAction" value="/breweries/${breweryId}/2"/>
-<form method="POST" action="${formAction}" class="formPadding">
+<form method="POST" action="${formAction}" class="formPadding" enctype="multipart/form-data">
     <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
     <div class="page-container">
         <div class="page-container">
@@ -143,12 +143,12 @@
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
                     <c:url var="formAction" value="/upload" />
-                    <div id="uploadForm" method="POST" action="${formAction}" enctype="multipart/form-data">
+                    <div id="uploadForm" method="POST" action="${formAction}">
                         <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 
                         <div class="form-group">
-                            <label for="image">Image: </label>
-                            <input type="file" name="image" id="image" />
+                            <label for="file">Image: </label>
+                            <input type="file" name="file" id="file" />
                         </div>
 
                     </div>

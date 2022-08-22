@@ -19,43 +19,43 @@ INSERT INTO brewery
     (name, brewer, hours_of_operation, phone, history, address, active_status, image) values
 ('The Funkatorium', 1, '11AM - 11PM', '(828) 552-3203','Wicked Weed sour & funky beers are served in a rustic pub ' ||
                                                        'with a barrel room & a dog-friendly patio.', '123 Main St.',
- true, 'https://i.imgur.com/DSJIdDY.jpeg'),
+ true, 'brewery_1.jpg'),
 ('Highland Brewing Company', 1, '2PM - 9PM', '(828) 299-3370', 'Brewery offering free tours of its facilities plus a ' ||
                                                                'low-key taproom to sample a pint or flight.',  '4123 ' ||
                                                                                                                'Broad' ||
                                                                                                                ' St.',
- true, 'https://i.imgur.com/wxvM06X.jpeg'),
+ true, 'brewery_2.jpg'),
 ('Wicked Weed Brewing Pub', 1, '11AM - 11PM', '(828) 575-9599', 'Hip brewery with a tasting room & a restaurant ' ||
                                                                 'serving high-end, locally sourced New American fare' ||
-                                                                '.','6123 High St.', true, 'https://i.imgur.com/wreLCgg.jpeg'),
+                                                                '.','6123 High St.', true, 'brewery_3.jpg'),
 ('Ben''s Tune Up', 1, '4PM - 11PM', '(828) 424-7580', 'Trendy brewery & beer garden offering house sakes, craft beers' ||
-                                                      ' & Japanese-American fusion eats.', '7902 Park Place', true, 'https://i.imgur.com/GbUihd2.jpeg'),
-('Asheville Brewing Company', 1, '', '', '', '', false, 'https://i.imgur.com/VbjEJ8b.jpeg');
+                                                      ' & Japanese-American fusion eats.', '7902 Park Place', true, 'brewery_4.jpg'),
+('Asheville Brewing Company', 1, '', '', '', '', false, '');
 
 INSERT INTO beer
     (active_status, name, brewery_id, image, description, abv, beer_type) values
 (true, 'Black Angel', 1,
- 'https://i.imgur.com/TdJig0A.jpg',
+ 'beer_1.jpg',
  'Black Angel is aged in bourbon barrels on over 1.5 pounds per gallon of tart Michigan Montmorency cherries. ' ||
  'It rests in the barrels for approximately 9 months and is then artfully blended to achieve complexity.',
  '6.8', 'Sour'),
-(true, 'Watermelon Dragon Fruit Burst', 1, 'https://i.imgur.com/S8ysf5b.png',
+(true, 'Watermelon Dragon Fruit Burst', 1, 'beer_2.jpg',
  'Burst into an explosion of tart fruit flavor that refreshes your senses with every sip. Vibrant colors, fresh fruits, ' ||
  'and a quenching tartness make Burst Session Sour a vivid new beer experience.', '4.5', 'Sour'),
-(true, 'High Pines', 2, 'https://i.imgur.com/hTwk4v1.jpg',
+(true, 'High Pines', 2, 'beer_3.jpg',
 'This imperial IPA features citrus and blueberry hop flavors with a touch of fresh mountain pine.', '9', 'Imperial IPA'),
-(true, 'Black Watch', 2, 'https://i.imgur.com/l7Cymzf.jpg',
+(true, 'Black Watch', 2, 'beer_4.jpg',
  'Black Watch Double Chocolate Milk Stout combines more than 100 pounds of cacao nibs with five malts, roasted barley,' ||
  ' and flaked oats to create a rich, high-gravity ale reminiscent of brownie batter and marshmallows with an aromatic ' ||
  'nose and a lingering dark chocolate finish.', '8', 'Double Chocolate Milk Stout'),
-(true, 'Freak of Nature', 3, 'https://i.imgur.com/Je9UQlg.jpg',
+(true, 'Freak of Nature', 3, 'beer_5.jpg',
  'Freak of Nature. Noun. 1. An unusual, unexpected natural phenomenon. 2. An outlying, west coast style double India Pale ' ||
  'Ale brewed with an abnormally large quantity of hops. 3. A delicately crafted, and crushable ale designed for fresh and ' ||
  'immediate consumption. 4. A hophead vice or downfall. Ex: Though warned about its habit-forming hoppiness, they were ' ||
  'seduced by the dank, tropical, and drinkable Freak of Nature.', '8.5', 'Double IPA'),
-(true, 'Fresh Pressed', 3, 'https://i.imgur.com/94LPCTj.png', 'Fresh pressed is a medium-bodied wheat ale ' ||
+(true, 'Fresh Pressed', 3, 'beer_6.jpg', 'Fresh pressed is a medium-bodied wheat ale ' ||
 'that is hazy straw colored in nature. It is beautifully balanced with juicy and tropical fruit flavors. It’s brewed with mango, pineapple, and guava.', '5.2', 'Wheat Ale with Mango, Pineapple, and Guava'),
-(true, 'Black Label Premium', 4, 'https://i.imgur.com/Fwci20c.jpg',
+(true, 'Black Label Premium', 4, 'beer_7.jpg',
  'Our traditional Junmai Ginjo sake, this has been brightly filtered then diluted to 14% ABV. Full body, off dry with fruity/ floral notes.', '14', 'Sake');
 
 

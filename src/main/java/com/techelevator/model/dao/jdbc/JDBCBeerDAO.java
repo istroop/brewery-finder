@@ -53,7 +53,6 @@ public class JDBCBeerDAO implements BeerDAO {
         return beers;
     }
 
-
     @Override
     public Beer getBeerById(int id) {
         String sqlSearchForBeer ="SELECT beer.id, brewery_id, brewer, beer.name, beer.image, description, abv, beer_type, beer.active_status " +
