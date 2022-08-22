@@ -92,4 +92,10 @@ public class JDBCBreweryDAO implements BreweryDAO{
         jdbcTemplate.update(insertImageSQL, imageName, breweryId);
     }
 
+    @Override
+    public void makeBreweryInactive(int id) {
+        String sql = "UPDATE brewery SET active_status=false WHERE id = ?";
+        jdbcTemplate.update(sql, id);
+    }
+
 }
