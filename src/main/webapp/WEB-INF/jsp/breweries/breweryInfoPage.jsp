@@ -211,7 +211,6 @@
     <c:set var="brewer" value="${brewery.brewer}"/>
     <c:if test = "${userId == brewer}">
         <a class="nav-link" href="${addHref}">Add Beer</a><br>
-        <a class="nav-link" href="${inactiveHref}">See Inactive Beers</a>
     </c:if>
 </h5>
 
