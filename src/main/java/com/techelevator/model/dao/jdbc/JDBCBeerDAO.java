@@ -77,17 +77,18 @@ public class JDBCBeerDAO implements BeerDAO {
     }
 
     @Override
-    public List<Beer> getInactiveBeersByBrewery(int breweryId) {
-        String inactiveBeersSQL = "SELECT id FROM beer WHERE brewery_id = ? and active_status = false";
-
-        SqlRowSet beerSet = jdbcTemplate.queryForRowSet(inactiveBeersSQL, breweryId);
-        List<Beer> inactiveBeers = new ArrayList<>();
-
-        while (beerSet.next()) {
-            Beer beer = getBeerById(beerSet.getInt("id"));
-            inactiveBeers.add(beer);
+    public int getNextId() {
+        String sqlMaxId = "SELECT max(id) as id FROM beer";
+        SqlRowSet row = jdbcTemplate.queryForRowSet(sqlMaxId);
+        if(row.next()){
+            return row.getInt("id") + 1;
         }
+        return -1;
+    }
 
-        return inactiveBeers;
+    @Override
+    public void insertImageByBeerId(String fileName, int parseInt) {
+        String insertImageSQL = "UPDATE beer SET image = ? WHERE id = ?";
+        jdbcTemplate.update(insertImageSQL, fileName, parseInt);
     }
 }

@@ -22,7 +22,6 @@ public class NewBreweryController {
 
     private BreweryDAO breweryDAO;
     private UploadProvider uploadProvider;
-    private ImageDemoController imageDemoController;
 
     @Autowired
     public NewBreweryController(BreweryDAO breweryDAO, UploadProvider uploadProvider) {
