@@ -74,6 +74,50 @@
             padding: 1em;
         }
 
+        .flip-card {
+            display: inline-block;
+            background: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            posititon: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #bbbbbb;
+            color: black;
+        }
+
+        .flip-card-back {
+            font-size: 16px;
+            background-color: #344E41;
+            color: white;
+            width: 300px;
+            height: 300px;
+            transform: rotateY(180deg);
+        }
+
         a {
             color: white;
         }
@@ -81,6 +125,17 @@
         a:hover {
             color: white;
             text-decoration: underline;
+        }
+
+        .limit {
+            width: 300px;
+            height: 180px;
+            overflow-y: scroll;
+        }
+
+        .beerBtn {
+            background-color: #588157;
+            color: #f1f1f1;
         }
 
     </style>
@@ -126,6 +181,26 @@
 <div class="beer-list-section">
 <h1 style="font-family: 'Calistoga', cursive; text-align: center">What's on tap at ${brewery.name}: </h1><br>
 
+<c:forEach var="beer" items="${beers}">
+    <c:url var="beerHref"
+           value="/beer/${beer.id}"/>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="${beer.image}" alt="beerPicture" style="width: 300px; height: 300px;">
+            </div>
+            <div class="flip-card-back">
+                <h1 style="font-size: 30px;"><i>${beer.name}</i></h1>
+                <div class="limit">
+                <p style="text-align: center;">${beer.description}</p>
+                </div>
+                <button class="beerBtn btn-block select"><a class="nav-link" href="${beerHref}">More Info...</a></button>
+            </div>
+        </div>
+    </div>
+</c:forEach>
+
 <c:url var="addHref" value="/breweries/${breweryId}/addBeer"/>
 <h5>
     <c:set var="userId" value="${currentUser.id}"/>
@@ -134,6 +209,8 @@
         <a class="nav-link" href="${addHref}">Add Beer</a>
     </c:if>
 </h5>
+
+    <%--Only shows links to beers
 
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"
@@ -144,5 +221,6 @@
     </c:forEach>
 
 </div>
+--%>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
