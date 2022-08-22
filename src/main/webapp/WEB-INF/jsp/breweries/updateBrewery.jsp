@@ -71,7 +71,7 @@
                     <option value="true">Active</option>
                     <option value="false">Inactive</option>
                 </select><br><br>
-                <button type="submit" class="registerbtn">Update Brewery</button>
+                <button type="submit" class="registerbtn">Update Beer</button>
             </div>
         </div>
 </form>
