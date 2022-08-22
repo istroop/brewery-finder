@@ -67,4 +67,31 @@ public class JDBCBeerReviewDAO implements BeerReviewDAO {
                 "VALUES (?,?,?,?,?)";
         jdbcTemplate.update(sql, beerId, userId, rating, review, reviewTitle);
     }
+
+    @Override
+    public List<String> getReviewImages(int id) {
+        String sql = "SELECT image FROM beer_review_images WHERE beer_review_id = ?";
+        SqlRowSet output = jdbcTemplate.queryForRowSet(sql, id);
+        List<String> imageList = new ArrayList<>();
+
+        while (output.next()) {
+            imageList.add(output.getString("image"));
+        }
+        return imageList;
+    }
+
+    @Override
+    public int getNextId() {
+        SqlRowSet output = jdbcTemplate.queryForRowSet("SELECT max(id) as id from beer_review_images");
+        if(output.next()) {
+            return output.getInt("id") + 1;
+        }
+        else return -1;
+    }
+
+    @Override
+    public void insertImage(int reviewId, String image) {
+        jdbcTemplate.update("INSERT INTO beer_review_images (beer_review_id, image) VALUES (?, ?)", reviewId, image);
+    }
+
 }

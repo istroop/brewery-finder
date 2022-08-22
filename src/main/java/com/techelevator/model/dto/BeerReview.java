@@ -1,5 +1,7 @@
 package com.techelevator.model.dto;
 
+import java.util.List;
+
 public class BeerReview {
 
     private int id;
@@ -15,6 +17,8 @@ public class BeerReview {
     private String review;
 
     private String reviewTitle;
+
+    private List<String> reviewImages;
 
     public int getId() {
         return id;
@@ -70,5 +74,13 @@ public class BeerReview {
 
     public void setReviewTitle(String reviewTitle) {
         this.reviewTitle = reviewTitle;
+    }
+
+    public List<String> getReviewImages() {
+        return reviewImages;
+    }
+
+    public void setReviewImages(List<String> reviewImages) {
+        this.reviewImages = reviewImages;
     }
 }
