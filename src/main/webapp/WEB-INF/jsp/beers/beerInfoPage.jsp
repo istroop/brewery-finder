@@ -36,8 +36,9 @@
 <br>
 <br>
     <h1 style="text-align: center; font-family: 'Calistoga', cursive;">Beer Information Page</h1><br>
+    <c:url var="image" value="/img/uploads/${beer.image}"/>
 
-    <img src="${beer.image}" alt="beerPicture" style="width: 100%">
+    <img src="${image}" alt="beerPicture" style="width: 100%">
 <br>
 
 <div class="about-section">

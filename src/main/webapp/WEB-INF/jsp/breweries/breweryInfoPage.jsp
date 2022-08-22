@@ -189,7 +189,8 @@
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="${beer.image}" alt="beerPicture" style="width: 300px; height: 300px;">
+                <c:url var="beerImage" value="/img/uploads/${beer.image}"/>
+                <img src="${beerImage}" alt="beerPicture" style="width: 300px; height: 300px;">
             </div>
             <div class="flip-card-back">
                 <h1 style="font-size: 30px;"><i>${beer.name}</i></h1>
