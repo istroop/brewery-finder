@@ -140,15 +140,15 @@
 
     </style>
 
-<h1 style="text-align: center; font-family: 'Calistoga', cursive;">Brewery Information Page</h1><br>
+<h1 style="text-align: center; font-family: 'Calistoga', cursive;">Brewery Information Page</h1>
 <c:url var="updateHref" value="/breweries/${breweryId}/update"/>
-<h5>
+<h4>
     <c:set var="userId" value="${currentUser.id}"/>
     <c:set var="brewer" value="${brewery.brewer}"/>
     <c:if test = "${userId == brewer}">
         <center><a class="nav-link" href="${updateHref}">Update Brewery</a></center>
     </c:if>
-</h5>
+</h4><br>
 
 <!--Image with history overlay-->
 <div class="brewerycontainer">

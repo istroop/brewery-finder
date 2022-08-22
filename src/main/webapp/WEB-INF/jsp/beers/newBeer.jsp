@@ -91,11 +91,6 @@
             </div>
 
             <div class="page-container">
-                <label for="image"> Beer Image: </label>
-                <input type="text" id="image" name="image" placeholder="Beer Image" class="form-control"/>
-            </div>
-
-            <div class="page-container">
                 <label for="description">Description: </label>
                 <input type="text" id="description" name="description" placeholder="Description" class="form-control"
                        required oninvalid="this.setCustomValidity(\'This field is required\')"/>

@@ -51,7 +51,7 @@ public class NewBeerController {
         }
 
         int id = beerDAO.getNextId();
-        beerDAO.addBeer(Integer.parseInt(breweryId), beer.getName(), beer.getImage(), beer.getDescription(),
+        beerDAO.addBeer(Integer.parseInt(breweryId), beer.getName(), "", beer.getDescription(),
                 beer.getAbv(), beer.getBeerType(), true);
 
         return "redirect:/breweries/" + breweryId + "/newBeer/" + id + "/newImage";
