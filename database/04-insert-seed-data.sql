@@ -19,18 +19,18 @@ INSERT INTO brewery
     (name, brewer, hours_of_operation, phone, history, address, active_status, image) values
 ('The Funkatorium', 1, '11AM - 11PM', '(828) 552-3203','Wicked Weed sour & funky beers are served in a rustic pub ' ||
                                                        'with a barrel room & a dog-friendly patio.', '123 Main St.',
- true, 'https://i.imgur.com/DSJIdDY.jpeg'),
+ true, 'brewery_1.jpg'),
 ('Highland Brewing Company', 1, '2PM - 9PM', '(828) 299-3370', 'Brewery offering free tours of its facilities plus a ' ||
                                                                'low-key taproom to sample a pint or flight.',  '4123 ' ||
                                                                                                                'Broad' ||
                                                                                                                ' St.',
- true, 'https://i.imgur.com/wxvM06X.jpeg'),
+ true, 'brewery_2.jpg'),
 ('Wicked Weed Brewing Pub', 1, '11AM - 11PM', '(828) 575-9599', 'Hip brewery with a tasting room & a restaurant ' ||
                                                                 'serving high-end, locally sourced New American fare' ||
-                                                                '.','6123 High St.', true, 'https://i.imgur.com/wreLCgg.jpeg'),
+                                                                '.','6123 High St.', true, 'brewery_3.jpg'),
 ('Ben''s Tune Up', 1, '4PM - 11PM', '(828) 424-7580', 'Trendy brewery & beer garden offering house sakes, craft beers' ||
-                                                      ' & Japanese-American fusion eats.', '7902 Park Place', true, 'https://i.imgur.com/GbUihd2.jpeg'),
-('Asheville Brewing Company', 1, '', '', '', '', false, 'https://i.imgur.com/VbjEJ8b.jpeg');
+                                                      ' & Japanese-American fusion eats.', '7902 Park Place', true, 'brewery_4.jpg'),
+('Asheville Brewing Company', 1, '', '', '', '', false, '');
 
 INSERT INTO beer
     (active_status, name, brewery_id, image, description, abv, beer_type) values

@@ -146,13 +146,14 @@
     <c:set var="userId" value="${currentUser.id}"/>
     <c:set var="brewer" value="${brewery.brewer}"/>
     <c:if test = "${userId == brewer}">
-        <a class="nav-link" href="${updateHref}">Update Brewery</a>
+        <center><a class="nav-link" href="${updateHref}">Update Brewery</a></center>
     </c:if>
 </h5>
 
 <!--Image with history overlay-->
 <div class="brewerycontainer">
-    <img src="${brewery.image}" alt="Brewery Image" style="width:100%;">
+    <c:url var="image" value="/img/uploads/${brewery.image}"/>
+    <img src="${image}" alt="Brewery Image" style="width:100%;">
     <div class="content">
         <h1 style="font-family: 'Calistoga', cursive;">Welcome to ${brewery.name}</h1>
         <p class="indent" style="font-family: 'Roboto Slab', serif;">${brewery.history}</p>
@@ -202,11 +203,14 @@
 </c:forEach>
 
 <c:url var="addHref" value="/breweries/${breweryId}/addBeer"/>
+<c:url var="inactiveHref" value="/breweries/${breweryId}/inactiveBeers"/>
+
 <h5>
     <c:set var="userId" value="${currentUser.id}"/>
     <c:set var="brewer" value="${brewery.brewer}"/>
     <c:if test = "${userId == brewer}">
-        <a class="nav-link" href="${addHref}">Add Beer</a>
+        <a class="nav-link" href="${addHref}">Add Beer</a><br>
+        <a class="nav-link" href="${inactiveHref}">See Inactive Beers</a>
     </c:if>
 </h5>
 

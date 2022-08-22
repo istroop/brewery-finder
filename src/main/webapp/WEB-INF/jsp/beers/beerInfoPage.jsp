@@ -76,8 +76,9 @@
         <c:forEach var="review" items="${reviews}">
             <h4>${review.getReviewTitle()} <small>by: ${review.getUsername()}</small></h4>
             <c:set var="rating" value="${review.getRating()}"/>
+            <c:url var="beermugurl" value="/img/newbeers.png"/>
             <c:forEach begin="1" end="${rating}">
-                <a>* </a>
+                <a> <img class="ratingStar" src="${beermugurl}"/></a>
             </c:forEach>
             <p>${review.getReview()}</p>
             <br>
