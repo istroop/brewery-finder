@@ -2,21 +2,23 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<!DOCTYPE html>
-<html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
+
 <br>
 <br>
 <br>
 <br>
-<head>
-    <meta name = "viewport" content="width=device-width, initial-scale=1">
     <style>
         * {
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Roboto Slab', serif;
             font-size: 17px;
+            color: #344E41;
+            background-color: #DAD7CD;
         }
 
         .container img {vertical-align: middle;}
@@ -34,7 +36,6 @@
             text-indent: 20px;
         }
     </style>
-</head>
 
 <body>
 <title>Update Brewery Page</title>
@@ -43,7 +44,7 @@
 <form method="POST" action="${formAction}">
     <div class="container">
         <div class="container">
-            <h3 style="color:mediumpurple"> Update ${brewery.getName()}:</h3>
+            <h3 style="font-family: 'Calistoga', cursive; text-align: center"> Update ${brewery.getName()}:</h3>
             <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
             <div class="container">
                 <label class="control-label" for="phone">Phone: </label>
@@ -75,6 +76,5 @@
             </div>
         </div>
 </form>
-</body>
-</html>
+
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

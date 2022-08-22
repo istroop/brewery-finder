@@ -25,62 +25,6 @@
         box-sizing: inherit;
     }
 
-    .cardColumn {
-        float: left;
-        width: 100%;
-        margin-bottom: 16px;
-        padding: 0 8px;
-    }
-
-    .cardRow {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-
-    @media screen and (max-width: 650px) {
-        .cardColumn {
-            width: 100%;
-            display: block;
-        }
-    }
-
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-        background-color: white;
-    }
-
-    .cardContainer {
-        padding: 0 16px;
-    }
-
-    .cardContainer::after, .cardRow::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    .title {
-        color: grey;
-    }
-
-    .cardBtn {
-        border: none;
-        outline: 0;
-        display: inline-block;
-        padding: 8px;
-        color: white;
-        background-color: #344E41;
-        text-align: center;
-        cursor: pointer;
-        width: 100%;
-        opacity: 1;
-    }
-
-    .cardBtn:hover {
-        opacity: .7;
-    }
-
     a:hover {
         color: white;
         text-decoration: underline;

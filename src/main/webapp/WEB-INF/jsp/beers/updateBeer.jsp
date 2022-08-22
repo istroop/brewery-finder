@@ -23,24 +23,24 @@
       background-color: #DAD7CD;
     }
 
-    .container img {vertical-align: middle;}
-
-    .container .content {
-      position: absolute;
-      bottom: 0;
-      background: rgb(0,0,0);
-      background: rgba(0,0,0,0.5);
-      color: #f1f1f1;
-      width: 100%
-      padding: 20px;
+    input[type=text], input [type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 15px 0;
+      display: inline-block;
+      border: none;
+      background-color: #C4C0B0;
     }
-    p.indent {
-      text-indent: 20px;
+
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: #C4C0B0;
+      outline: none;
+    }
+
+    .container img {vertical-align: middle;}
     }
   </style>
-</head>
 
-<body>
 <title>Update Brewery Page</title>
 
 <c:url var="formAction" value="/beer/${beerId}" />
@@ -76,7 +76,7 @@
 
       <div class="container">
         <label for="activityStatus">Activity Status: </label><br>
-        <select name="activityStatus" id="activityStatus" required>
+        <select name="activityStatus" id="activityStatus" style="background-color: #C4C0B0" required>
           <option value="true">Active</option>
           <option value="false">Inactive</option>
         </select><br><br>
@@ -85,6 +85,5 @@
       </div>
     </div>
 </form>
-</body>
-</html>
+
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

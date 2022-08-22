@@ -24,18 +24,16 @@
             width: 100%;
         }
 
-        .textbox {
+        input[type=text], input [type=text] {
             width: 100%;
-            height: 150px;
-            padding: 15px 20px;
-            box-sizing: border-box;
+            padding: 15px;
             margin: 5px 0 15px 0;
             display: inline-block;
             border: none;
             background: #C4C0B0;
         }
 
-        input[type=text], input [type=text] {
+        input[type=number], input [type=number] {
             width: 100%;
             padding: 15px;
             margin: 5px 0 15px 0;
@@ -66,10 +64,6 @@
 
         .formPadding {
             padding-top: 50px;
-        }
-
-        .center {
-            text-align: center;
         }
 
     </style>
@@ -113,7 +107,6 @@
             <button type="submit" class="btn btn-block registerbtn">Add Beer</button>
         </div>
 
-    </div>
     </div>
 </form>
 

@@ -14,7 +14,7 @@
         * {box-sizing: border-box}
 
         body {
-            font-family: 'Roboto Slab', serif;;
+            font-family: 'Roboto Slab', serif;
             font-size: 17px;
             color: #344E41;
             background-color: #DAD7CD;
@@ -146,7 +146,7 @@
     <c:set var="userId" value="${currentUser.id}"/>
     <c:set var="brewer" value="${brewery.brewer}"/>
     <c:if test = "${userId == brewer}">
-        <center><a class="nav-link" href="${updateHref}">Update Brewery</a></center>
+        <a class="nav-link" style="align-items: center;" href="${updateHref}">Update Brewery</a>
     </c:if>
 </h4><br>
 
@@ -179,6 +179,7 @@
 </div>
 <br>
 
+    <!--On tap section-->
 <div class="beer-list-section">
 <h1 style="font-family: 'Calistoga', cursive; text-align: center">What's on tap at ${brewery.name}: </h1><br>
 
@@ -215,15 +216,5 @@
 
     </c:if>
 </h5>
-
-<%--    <c:forEach var="beer" items="${beers}">--%>
-<%--        <c:url var="beerHref"--%>
-<%--               value="/beer/${beer.id}"/>--%>
-<%--        <h3>--%>
-<%--            <a class="btn btn-block beerButton" href="${beerHref}">${beer.name}</a>--%>
-<%--        </h3>--%>
-<%--    </c:forEach>--%>
-
-<%--</div>--%>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

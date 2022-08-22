@@ -100,7 +100,7 @@
 
             <div class="page-container">
                 <label for="brewerId">Brewer Id: </label>
-                <select type="text" id="brewerId" name="brewer" class="form-control">
+                <select type="text" id="brewerId" name="brewer" class="form-control" style="background-color: #C4C0B0">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -134,7 +134,7 @@
 
             <div class="page-container">
                 <label for="history">History: </label>
-                <textarea type="text" id="history" name="history" placeholder="History" class="form-control"
+                <textarea type="text" id="history" name="history" placeholder="History" style="background-color: #C4C0B0" class="form-control"
                           required oninvalid="this.setCustomValidity(\'This field is required\')"></textarea>
             </div>
 
