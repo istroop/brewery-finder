@@ -74,7 +74,22 @@ public class JDBCBreweryDAO implements BreweryDAO{
                             String address, Boolean activityStatus){
         jdbcTemplate.update("INSERT INTO brewery(name, brewer, hours_of_operation, phone, history, image, address, active_status)" +
                 "VALUES ( ?,?,?,?,?,?,?,?);", name, brewer, hoursOfOperation, phone, history, image, address, activityStatus);
+    }
 
+    @Override
+    public int getNextId(){
+        String sqlMaxId = "SELECT max(id) as id FROM brewery";
+        SqlRowSet row = jdbcTemplate.queryForRowSet(sqlMaxId);
+        if(row.next()){
+            return row.getInt("id") + 1;
+        }
+        return -1;
+    }
+
+    @Override
+    public void insertImageByBreweryId(String imageName, int breweryId) {
+        String insertImageSQL = "UPDATE brewery SET image = ? WHERE id = ?";
+        jdbcTemplate.update(insertImageSQL, imageName, breweryId);
     }
 
 }
