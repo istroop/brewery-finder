@@ -63,12 +63,10 @@ public class NewBreweryController {
                               @PathVariable String breweryId)
     {
         String fileName = "";
-        if(file != null && !file.isEmpty())
-        {
-            try
-            {
+        if(file != null && !file.isEmpty()) {
+            try {
                 //come up with a file name first
-                String defaultFileName = "brewery_#" + breweryId;
+                String defaultFileName = "brewery_" + breweryId;
 
 
                 //save the file with the chosen name
@@ -77,10 +75,7 @@ public class NewBreweryController {
                 // save to database
                 breweryDAO.insertImageByBreweryId(fileName, Integer.parseInt(breweryId));
             }
-            catch(Throwable ex)
-            {
-
-            }
+            catch(Throwable ex) {}
         }
         int id = breweryDAO.getNextId() - 1;
         return "redirect:/breweries/" + id;

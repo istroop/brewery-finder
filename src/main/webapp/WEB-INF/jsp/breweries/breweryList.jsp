@@ -86,7 +86,9 @@
 
         <div class="cardColumn">
             <div class="card">
-                <img src="${brewery.image}" alt="breweryPicture" style="width: 100%">
+                <c:url var="image" value="/img/uploads/${brewery.image}"/>
+
+                <img src="${image}" alt="breweryPicture" style="width: 100%">
                 <div class="cardContainer">
                     <h2>${brewery.name}</h2>
                     <p class="title">${brewery.address}</p>
