@@ -7,6 +7,7 @@ import java.util.List;
 public interface BreweryDAO {
 
     List<Brewery> getActiveBreweries();
+    List<Brewery> getAllBreweries();
     Brewery getBreweryById (int id);
     void updateBrewery(int id, String hoursOfOperation, String phone, String history,
                               String address, Boolean activityStatus);

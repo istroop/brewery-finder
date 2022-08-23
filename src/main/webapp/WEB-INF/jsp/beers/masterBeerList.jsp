@@ -79,35 +79,15 @@
         text-align: center;
     }
 
-    input[type=text] {
-        width: 130px;
-        box-sizing: border-box;
-        border: 2px solid #cccccc;
-        border-radius: 4px;
-        font-size: 16px;
-        background-color: #C4C0B0;
-        background-image: url('searchicon.png');
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
-        padding: 12px 20px 12px 40px;
-        -webkit-transition: width 0.4s ease-in-out;
-        transition: width 0.4s ease-in-out;
-    }
-
-    input[type=text]:focus {
-        width: 100%;
-    }
-
 </style>
 
-    <h1 style="text-align: center; font-family: 'Calistoga', cursive;">Beer Directory</h1>
+<br><br><br><br>
+
+<h1 style="text-align: center; font-family: 'Calistoga', cursive;">Beer Directory</h1>
 
 <h2 style="text-align: center;">Browse all the beers in our directory: </h2>
 
-<form>
-    <input type="text" name="search" placeholder="Search..."> <br>
-    <button>Search</button>
-</form><br>
+<br>
 
 <div class="cardRow">
     <c:forEach var="beer" items="${beers}">
@@ -120,7 +100,7 @@
                 <img src="${image}" alt="beerPicture" style="width: 100%">
                 <div class="cardContainer">
                     <h2 style="text-align: center;">${beer.name}</h2>
-                    <p class="title";">${beer.beerType} | ABV: ${beer.abv}%</p>
+                    <p class="title">${beer.beerType} | ABV: ${beer.abv}%</p>
                     <p><a class="cardBtn btn-block select" href="${beerHref}">Read More...</a></p><br>
                 </div>
             </div>
@@ -129,3 +109,4 @@
 </div>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
+

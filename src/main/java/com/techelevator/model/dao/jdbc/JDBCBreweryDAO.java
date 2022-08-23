@@ -26,7 +26,18 @@ public class JDBCBreweryDAO implements BreweryDAO{
     public List<Brewery> getActiveBreweries() {
         String sqlSearchForBreweries = "SELECT id FROM brewery WHERE active_status = TRUE";
 
-        SqlRowSet breweriesSet = jdbcTemplate.queryForRowSet(sqlSearchForBreweries);
+        return getBreweries(sqlSearchForBreweries);
+    }
+
+    @Override
+    public List<Brewery> getAllBreweries() {
+        String sqlSearchForBreweries = "SELECT id FROM brewery";
+
+        return getBreweries(sqlSearchForBreweries);
+    }
+
+    public List<Brewery> getBreweries(String sql) {
+        SqlRowSet breweriesSet = jdbcTemplate.queryForRowSet(sql);
         List<Brewery> breweries = new ArrayList<>();
 
         while (breweriesSet.next()) {

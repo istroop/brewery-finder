@@ -53,6 +53,9 @@
 
 <br>
 <br>
+<br>
+<c:url var="backToBrewery"
+       value="/breweries/${brewery.id}"/>
     <h1 style="text-align: center; font-family: 'Calistoga', cursive;">Beer Information Page</h1><br>
     <c:url var="image" value="/img/uploads/${beer.image}"/>
 
@@ -60,8 +63,11 @@
 <br>
 
 <div class="about-section">
-<h2 style="text-align: center; font-family: 'Calistoga', cursive;">More about ${beer.name}</h2><br>
+<h2 style="text-align: center; font-family: 'Calistoga', cursive;">More about ${beer.name}</h2>
+<a style="text-align: center; font-family: 'Calistoga', cursive; color: white;"
+   href="${backToBrewery}" >from ${brewery.name}</a><br>
 
+    <br>
 <c:if test="${beer.brewer == currentUser.id}">
     <row>
         <c:url var="updateHref" value="/beer/${beerId}/update"/>
