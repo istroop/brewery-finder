@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import com.techelevator.model.dao.BreweryDAO;
+import com.techelevator.model.dao.UserDAO;
 import com.techelevator.model.dto.Brewery;
 import com.techelevator.services.uploads.UploadProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,21 +17,29 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.model.dto.User;
 
+import java.util.List;
+
 
 @Controller
 public class NewBreweryController {
 
     private BreweryDAO breweryDAO;
+    private UserDAO userDAO;
     private UploadProvider uploadProvider;
 
     @Autowired
-    public NewBreweryController(BreweryDAO breweryDAO, UploadProvider uploadProvider) {
+    public NewBreweryController(BreweryDAO breweryDAO, UserDAO userDAO, UploadProvider uploadProvider) {
         this.breweryDAO = breweryDAO;
+        this.userDAO = userDAO;
         this.uploadProvider = uploadProvider;
     }
 
     @RequestMapping("breweries/new")
     public String displayNewBreweryForm(ModelMap modelHolder) {
+
+        List<User> brewers = userDAO.getAllBrewers();
+
+        modelHolder.put("brewers", brewers);
 
         return "breweries/newBrewery";
     }

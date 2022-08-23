@@ -1,6 +1,9 @@
 package com.techelevator.model.dao;
 
+import com.techelevator.model.dto.User;
+
 import java.time.LocalDate;
+import java.util.List;
 
 public interface UserDAO {
 
@@ -11,5 +14,7 @@ public interface UserDAO {
 	public void updatePassword(String userName, String password);
 
 	public Object getUserByUserName(String userName);
+
+	public List<User> getAllBrewers();
 
 }
