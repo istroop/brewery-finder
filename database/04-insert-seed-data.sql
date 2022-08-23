@@ -66,4 +66,9 @@ VALUES
                                     'if I come back'),
        (2, 1, 3, 'Not a fan of Stouts', 'This beer was not my beer. Not a fan of stouts typically so not really sure ' ||
                                         'what I was expecting. ');
+
+INSERT INTO beer_review_images (beer_review_id, image)
+VALUES
+       (1, 'review_1.jpg'),
+       (1, 'review_2.jpg');
 COMMIT;

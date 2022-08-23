@@ -100,14 +100,29 @@
         <hr>
 
         <c:forEach var="review" items="${reviews}">
+
             <h4>${review.getReviewTitle()} <small>by: ${review.getUsername()}</small></h4>
+
             <c:set var="rating" value="${review.getRating()}"/>
             <c:url var="beermugurl" value="/img/newbeers.png"/>
             <c:forEach begin="1" end="${rating}">
                 <a> <img class="ratingStar" src="${beermugurl}"/></a>
             </c:forEach>
+
             <p>${review.getReview()}</p>
-            <br>
+
+            <c:forEach var="image" items="${review.getReviewImages()}">
+                <c:url var="img" value="/img/uploads/${image}"/>
+                <a><img src="${img}" style="width: 200px; height: 200px;"/></a>
+            </c:forEach>
+
+            <c:if test="${currentUser.getUserName() == review.getUsername()}">
+                <c:url var="addImage" value="/beer/${beerId}/review/${review.getId()}/reviewImages"/>
+                <h5>
+                    <a class="btn btn-primary button" href="${addImage}">Add Image to Your Review</a>
+                </h5>
+            </c:if>
+            <br><br>
         </c:forEach>
 
     </c:when>
@@ -119,7 +134,7 @@
 
 <c:if test="${currentUser.role.equals('beerLover')}">
     <c:url var="newReviewHref"
-           value="/beer/${beerId}/reviews/new"/>
+           value="/beer/${beerId}/reviews"/>
     <h3>
         <a class="btn btn-primary" href="${newReviewHref}">Write a Review</a>
     </h3>

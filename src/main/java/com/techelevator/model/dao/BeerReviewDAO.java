@@ -7,8 +7,10 @@ import java.util.List;
 
 public interface BeerReviewDAO {
 
-    public List<BeerReview> getReviewsByBeerId (int beerId);
-    public BeerReview getReviewById (int id);
-    public void createNewReview(int beerId, int userId, int rating, String review,
-                                String reviewTitle);
+    List<BeerReview> getReviewsByBeerId (int beerId);
+    BeerReview getReviewById (int id);
+    void createNewReview(int beerId, int userId, int rating, String review, String reviewTitle);
+    List<String> getReviewImages(int id);
+    int getNextId();
+    void insertImage(int reviewId, String image);
 }

@@ -64,8 +64,7 @@ public class NewBeerController {
 
     @RequestMapping(path="/breweries/{breweryId}/newBeer/{beerId}/2", method =RequestMethod.POST)
     public String uploadImage(MultipartFile file, HttpServletRequest request, @Valid @ModelAttribute Brewery brewery,
-                              @PathVariable String breweryId, @PathVariable String beerId)
-    {
+                              @PathVariable String breweryId, @PathVariable String beerId) {
         String fileName = "";
         if(file != null && !file.isEmpty()) {
             try {
