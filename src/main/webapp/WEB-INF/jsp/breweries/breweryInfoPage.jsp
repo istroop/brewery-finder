@@ -73,7 +73,13 @@
             background-color: #A3B18A;
             padding: 1em;
         }
-
+        .photo-list-section {
+            text-align: center;
+            font-size: 20px;
+            color: #f1f1f1;
+            background-color: #588157;
+            padding: 1em;
+        }
         .flip-card {
             display: inline-block;
             background: transparent;
@@ -216,14 +222,19 @@
 
     </c:if>
 </h5>
+</div>
+<br>
 
-    <c:if test = "${currentUser.getRole().equals('beerLover')}">
+<c:if test = "${currentUser.getRole().equals('beerLover')}">
+    <div class="photo-list-section">
         <c:url var="uploadImg" value="/breweries/${breweryId}/uploadImage"/>
-        <br> <a style="font-family: 'Calistoga', cursive; text-align: center" class="nav-link" href="${uploadImg}">Share a photo from your time at ${brewery.name}</a><br>
+        <br> <a style="font-family: 'Calistoga', cursive; text-align: center" class="nav-link" href="${uploadImg}">Share a photo from your time at ${brewery.name}</a>
+        <br><br>
         <c:forEach var="image" items="${images}">
             <c:url var="img" value="/img/uploads/${image}"/>
-        <img src="${img}" alt="breweryPictures" style="width: 300px; height:auto;">
+            <img src="${img}" alt="breweryPictures" style="width: auto; height:200px;">
         </c:forEach>
-    </c:if>
+    </div>
+</c:if>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
