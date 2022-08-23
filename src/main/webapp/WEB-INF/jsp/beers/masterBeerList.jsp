@@ -56,24 +56,26 @@
 <h2 style="text-align: center;">Browse all the beers in our directory: </h2>
 
 <form>
-    <input type="text" name="search" placeholder="Search...">
+    <input type="text" name="search" placeholder="Search..."> <br>
+    <button>Search</button>
 </form>
 
 <c:forEach var="beer" items="${beers}">
     <c:url var="beerHref"
            value="/beer/${beer.id}"/>
 
-<div class="gallery">
-    <a target="_blank" href="${beerHref}">
-        <img src="${beer.image}" alt="beerPicture" width="600" height="400">
-    </a>
-    <div class="desc">
-        <ul style="list-style: none;">
-            <li>${beer.name}</li>
-            <li>${beer.type}</li>
-        </ul>
+    <div class="gallery">
+        <a target="_blank" href="${beerHref}">
+            <c:url var="image" value="/img/uploads/${beer.image}"/>
+            <img src="${image}" alt="breweryPicture" width="700" height="500">
+        </a>
+        <div class="desc">
+            <ul style="list-style: none;">
+                <li>${beer.name}</li>
+                <li>${beer.beerType}</li>
+            </ul>
+        </div>
     </div>
-</div>
 
     </c:forEach>
 
