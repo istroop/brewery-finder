@@ -26,17 +26,6 @@
         width: 100%;
     }
 
-    div.gallery {
-        display: inline-block;
-        margin: 5px;
-        border: 1px solid #cccccc;
-        float: left;
-        width: 180px;
-    }
-
-    div.gallery:hover {
-        border: 1px solid #777777;
-    }
 
     div.gallery img {
         width: 100%;
@@ -78,15 +67,6 @@
         background-color: white;
     }
 
-    .cardContainer{padding: 0 16px;}
-
-    .cardContainer::after, .cardRow::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    .title {color:grey;}
 
     .cardBtn {
         border: 10px solid #344E41;
@@ -108,18 +88,18 @@
     }
 </style>
 
-
+<br><br><br><br>
 
 <h1 style="text-align: center; font-family: 'Calistoga', cursive;">Beer Directory</h1>
 
 <h2 style="text-align: center;">Browse all the beers in our directory: </h2>
 
 <form>
-    <input type="text" name="search" placeholder="Search..."> <br>
+    <input type="text" name="search" placeholder="Search...">
     <button>Search</button>
 </form>
 
-
+<br>
 <div class="cardRow">
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"
