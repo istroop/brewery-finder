@@ -134,7 +134,7 @@
 
 <c:if test="${currentUser.role.equals('beerLover')}">
     <c:url var="newReviewHref"
-           value="/beer/${beerId}/reviews"/>
+           value="/beer/${beerId}/reviews/new"/>
     <h3>
         <a class="btn btn-primary" href="${newReviewHref}">Write a Review</a>
     </h3>

@@ -62,7 +62,7 @@ public class BeerInfoPageController {
     }
 
     @RequestMapping("/beer/{beerId}/reviews/new")
-    public String displayNewBreweryForm(@PathVariable("beerId") int id, ModelMap modelHolder) {
+    public String displayNewReviewForm(@PathVariable("beerId") int id, ModelMap modelHolder) {
 
         modelHolder.addAttribute("beerId", id);
 
