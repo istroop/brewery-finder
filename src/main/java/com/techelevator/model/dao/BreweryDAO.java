@@ -6,15 +6,18 @@ import java.util.List;
 
 public interface BreweryDAO {
 
-    public List<Brewery> getActiveBreweries();
-    public Brewery getBreweryById (int id);
-    public void updateBrewery(int id, String hoursOfOperation, String phone, String history,
+    List<Brewery> getActiveBreweries();
+    Brewery getBreweryById (int id);
+    void updateBrewery(int id, String hoursOfOperation, String phone, String history,
                               String address, Boolean activityStatus);
-    public void newBrewery (int id, String name, String hoursOfOperation, String phone, String history, String image,
+    void newBrewery (int id, String name, String hoursOfOperation, String phone, String history, String image,
             String address, Boolean activityStatus);
-    public int getNextId();
-    public void insertImageByBreweryId(String imageName, int breweryId);
-    public void makeBreweryInactive(int id);
+    int getNextId();
+    void insertImageByBreweryId(String imageName, int breweryId);
+    void makeBreweryInactive(int id);
+    List<String> getBreweryImages(int breweryId);
+    int getNextImageId();
+    void insertBreweryImage(String imageName, int breweryId);
 }
 
 
