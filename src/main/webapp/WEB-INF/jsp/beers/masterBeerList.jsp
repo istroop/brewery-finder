@@ -113,7 +113,7 @@
                 </a>
                 <div class="desc">
                     <ul style="list-style: none;">
-                        <li>${beer.name}</li>
+                        <li style="font-weight: bold">${beer.name}</li>
                         <li>${beer.beerType}</li>
                     </ul>
                 </div>
