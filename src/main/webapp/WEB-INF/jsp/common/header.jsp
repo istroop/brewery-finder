@@ -77,7 +77,7 @@
                         <li class="nav-item"><a class="nav-link" href="${dashboardHref}">Brewery List</a></li>
 
                         <c:url var="masterListHref" value="/beerDirectory"/>
-                        <li class="nav-item"><a class="nav-link" href="${masterListHref}">Master Beer List</a></li>
+                        <li class="nav-item"><a class="nav-link" href="${masterListHref}">Beer Directory</a></li>
 
                     <%--
                         <c:url var="newMessageHref"
