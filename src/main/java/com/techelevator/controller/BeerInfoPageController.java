@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.model.dao.BeerDAO;
 import com.techelevator.model.dao.BeerReviewDAO;
+import com.techelevator.model.dao.BreweryDAO;
 import com.techelevator.model.dto.Beer;
 import com.techelevator.model.dto.BeerReview;
 import com.techelevator.model.dto.Brewery;
@@ -30,12 +31,15 @@ public class BeerInfoPageController {
     private BeerDAO beerDAO;
     private BeerReviewDAO beerReviewDAO;
     private UploadProvider uploadProvider;
+    private BreweryDAO breweryDAO;
 
     @Autowired
-    public BeerInfoPageController(BeerDAO beerDAO, BeerReviewDAO beerReviewDAO, UploadProvider uploadProvider) {
+    public BeerInfoPageController(BeerDAO beerDAO, BeerReviewDAO beerReviewDAO, UploadProvider uploadProvider,
+                                  BreweryDAO breweryDAO) {
         this.beerDAO = beerDAO;
         this.beerReviewDAO = beerReviewDAO;
         this.uploadProvider = uploadProvider;
+        this.breweryDAO = breweryDAO;
     }
 
     @RequestMapping("/beer/{beerId}")
@@ -43,6 +47,9 @@ public class BeerInfoPageController {
 
         Beer beer = beerDAO.getBeerById(id);
         request.setAttribute("beer", beer);
+
+        Brewery brewery = breweryDAO.getBreweryById(beer.getBreweryId());
+        request.setAttribute("brewery", brewery);
 
         List<BeerReview> reviewList = beerReviewDAO.getReviewsByBeerId(id);
         for(BeerReview review: reviewList){
