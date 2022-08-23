@@ -31,7 +31,7 @@ public class JDBCBreweryDAO implements BreweryDAO{
 
     @Override
     public List<Brewery> getAllBreweries() {
-        String sqlSearchForBreweries = "SELECT id FROM brewery";
+        String sqlSearchForBreweries = "SELECT id FROM brewery ORDER BY active_status DESC";
 
         return getBreweries(sqlSearchForBreweries);
     }
