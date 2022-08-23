@@ -8,7 +8,6 @@
 
 <br>
 <br>
-<br>
 <style>
     body {
         font-family: 'Roboto Slab', serif;;
@@ -80,8 +79,6 @@
     }
 
 </style>
-
-<br><br><br><br>
 
 <h1 style="text-align: center; font-family: 'Calistoga', cursive;">Beer Directory</h1>
 
