@@ -98,4 +98,30 @@ public class JDBCBreweryDAO implements BreweryDAO{
         jdbcTemplate.update(sql, id);
     }
 
+    @Override
+    public List<String> getBreweryImages (int breweryId) {
+        String getImagesSQL = "SELECT image FROM brewery_images WHERE brewery_id = ?";
+        SqlRowSet row = jdbcTemplate.queryForRowSet(getImagesSQL, breweryId);
+        List<String> imageList = new ArrayList<>();
+
+        while (row.next()) {
+            imageList.add(row.getString("image"));
+        }
+        return imageList;
+    }
+
+    @Override
+    public int getNextImageId() {
+        String sqlMaxId = "SELECT max(id) as id FROM brewery_images";
+        SqlRowSet row = jdbcTemplate.queryForRowSet(sqlMaxId);
+        if(row.next()){
+            return row.getInt("id") + 1;
+        }
+        return -1;
+    }
+
+    @Override
+    public void insertBreweryImage(String imageName, int breweryId) {
+        jdbcTemplate.update("INSERT INTO brewery_images (brewery_id, image) VALUES (?, ?)", breweryId, imageName);
+    }
 }

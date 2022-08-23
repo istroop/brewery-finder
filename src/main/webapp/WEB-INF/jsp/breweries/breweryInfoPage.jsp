@@ -99,7 +99,7 @@
         .flip-card-front, .flip-card-back {
             position: absolute;
             width: 100%;
-            height: 100%
+            height: 100%;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
         }
@@ -216,5 +216,14 @@
 
     </c:if>
 </h5>
+
+    <c:if test = "${currentUser.getRole().equals('beerLover')}">
+        <c:url var="uploadImg" value="/breweries/${breweryId}/uploadImage"/>
+        <br> <a style="font-family: 'Calistoga', cursive; text-align: center" class="nav-link" href="${uploadImg}">Share a photo from your time at ${brewery.name}</a><br>
+        <c:forEach var="image" items="${images}">
+            <c:url var="img" value="/img/uploads/${image}"/>
+        <img src="${img}" alt="breweryPictures" style="width: 300px; height:auto;">
+        </c:forEach>
+    </c:if>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
