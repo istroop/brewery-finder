@@ -24,18 +24,24 @@ public class UpdateBeerController {
         this.beerDAO = beerDAO;
     }
 
-    @RequestMapping(value = "/beer/{beerId}/update")
-    public String getUpdatePage(HttpServletRequest request, @PathVariable int beerId) {
+    @RequestMapping(value = "breweries/{breweryId}/beer/{beerId}/update")
+    public String getUpdatePage(HttpServletRequest request, @PathVariable int beerId, @PathVariable int breweryId) {
 
         Beer beer = beerDAO.getBeerById(beerId);
         request.setAttribute("beer", beer);
 
-        return "beers/updateBeer";
+        request.setAttribute("breweryId", breweryId);
+
+        return "breweries/updateBeerFromList";
     }
 
-    @RequestMapping(path="/beer/{beerId}", method=RequestMethod.POST)
-    public String updateBrewery(@Valid @ModelAttribute Beer beer, @PathVariable int beerId) {
+    @RequestMapping(path="breweries/{breweryId}/beer/{beerId}", method=RequestMethod.POST)
+    public String updateBrewery(@Valid @ModelAttribute Beer beer, @PathVariable int beerId,
+                                @PathVariable int breweryId) {
         beerDAO.updateBeer(beerId, beer.getName(), beer.getBeerType(), beer.getAbv(), beer.getDescription(), beer.isActivityStatus());
-        return "redirect:/beer/" + beerId;
+        return "redirect:/breweries/" + breweryId;
     }
+
+
+
 }

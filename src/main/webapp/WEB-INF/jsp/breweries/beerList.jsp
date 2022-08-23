@@ -56,7 +56,7 @@
 
     <c:forEach var="beer" items="${beers}">
         <c:url var="beerHref"
-               value="/beer/${beer.id}/update"/>
+               value="beer/${beer.id}/update"/>
         <h3>
             <c:choose>
                 <c:when test="${beer.activityStatus}">

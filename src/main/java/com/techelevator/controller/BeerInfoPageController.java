@@ -90,6 +90,21 @@ public class BeerInfoPageController {
 
     }
 
+    @RequestMapping(value = "/beer/{beerId}/update")
+    public String getUpdatePage(HttpServletRequest request, @PathVariable int beerId) {
+
+        Beer beer = beerDAO.getBeerById(beerId);
+        request.setAttribute("beer", beer);
+
+        return "beers/updateBeer";
+    }
+
+    @RequestMapping(path="/beer/{beerId}", method=RequestMethod.POST)
+    public String updateBeer(@Valid @ModelAttribute Beer beer, @PathVariable int beerId) {
+        beerDAO.updateBeer(beerId, beer.getName(), beer.getBeerType(), beer.getAbv(), beer.getDescription(), beer.isActivityStatus());
+        return "redirect:/beer/" + beerId;
+    }
+
     @RequestMapping("beer/{beerId}/delete")
     public String deleteBeer(@PathVariable("beerId") int id) {
         beerDAO.makeBeerInactive(id);
