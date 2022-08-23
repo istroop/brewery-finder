@@ -26,7 +26,9 @@ public class BreweryListController {
     @RequestMapping("/breweryList")
     public String getLoggedInMainPage(HttpServletRequest request) {
         List<Brewery> breweries = breweryDAO.getActiveBreweries();
+        List<Brewery> allBreweries = breweryDAO.getAllBreweries();
         request.setAttribute("breweries", breweries);
+        request.setAttribute("allBreweries", allBreweries);
 
         return "/breweries/breweryList";
     }
@@ -35,6 +37,12 @@ public class BreweryListController {
     public String deleteBrewery(@PathVariable int breweryId) {
 
         breweryDAO.makeBreweryInactive(breweryId);
+
+        return "redirect:/breweryList";
+    }
+
+    public String showAllBreweries() {
+
 
         return "redirect:/breweryList";
     }

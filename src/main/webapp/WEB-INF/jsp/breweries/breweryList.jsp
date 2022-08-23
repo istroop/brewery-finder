@@ -41,6 +41,12 @@
             background-color: white;
         }
 
+        .inactiveCard {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+            background-color: white;
+            opacity: 0.3;
+        }
+
         .cardContainer{padding: 0 16px;}
 
         .cardContainer::after, .cardRow::after {
@@ -80,12 +86,28 @@
 
 
 <div class="cardRow">
-<c:forEach var="brewery" items="${breweries}">
+    <c:choose>
+        <c:when test="${currentUser.role.equals('admin')}">
+            <c:set var="listOfBreweries" value="${allBreweries}"></c:set>
+        </c:when>
+        <c:otherwise>
+            <c:set var="listOfBreweries" value="${breweries}"></c:set>
+        </c:otherwise>
+    </c:choose>
+
+<c:forEach var="brewery" items="${listOfBreweries}">
     <c:url var="breweryHref"
            value="/breweries/${brewery.id}"/>
-
         <div class="cardColumn">
-            <div class="card">
+            <c:choose>
+                <c:when test="${brewery.activityStatus}">
+                    <c:set var="cardClass" value="card"></c:set>
+                </c:when>
+                <c:otherwise>
+                    <c:set var="cardClass" value="inactiveCard"></c:set>
+                </c:otherwise>
+            </c:choose>
+            <div class="${cardClass}">
                 <c:url var="image" value="/img/uploads/${brewery.image}"/>
 
                 <img src="${image}" alt="breweryPicture" style="width: 100%">
@@ -96,15 +118,16 @@
                     <p><a class="cardBtn btn-block select" href="${breweryHref}">Learn More</a></p>
                     <c:url var="deleteBreweryHref"
                            value="/breweries/${brewery.id}/delete"/>
+                    <c:url var="updateBreweryHref"
+                           value="/breweries/${brewery.id}/update"/>
                     <c:if test="${currentUser.role.equals('admin')}">
                         <p><a class="cardBtn btn-block select" href="${deleteBreweryHref}">Delete</a></p>
+                        <p><a class="cardBtn btn-block select" href="${updateBreweryHref}">Update</a></p>
                     </c:if>
                     <br>
                 </div>
             </div>
         </div>
-
-
 </c:forEach>
 </div>
 
