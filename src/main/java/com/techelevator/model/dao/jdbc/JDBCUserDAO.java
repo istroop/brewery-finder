@@ -13,6 +13,8 @@ import com.techelevator.model.dto.User;
 import com.techelevator.services.security.PasswordHasher;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class JDBCUserDAO implements UserDAO
@@ -78,6 +80,31 @@ public class JDBCUserDAO implements UserDAO
 		}
 
 		return thisUser;
+	}
+
+	@Override
+	public List<User> getAllBrewers() {
+
+		List<User> brewers = new ArrayList<>();
+		String search = "brewer";
+		String sql = "SELECT id, name, user_name, role, birthdate, email_address FROM app_user WHERE " +
+				"role = ?";
+		SqlRowSet row = jdbcTemplate.queryForRowSet(sql, search);
+
+		User user = null;
+
+		while (row.next()) {
+			user = new User();
+			user.setId(row.getInt("id"));
+			user.setName(row.getString("name"));
+			user.setUserName(row.getString("user_name"));
+			user.setRole(row.getString("role"));
+			user.setBirthdate(row.getString("birthdate"));
+			user.setUserEmail("email_address");
+			brewers.add(user);
+		}
+
+		return brewers;
 	}
 
 }
