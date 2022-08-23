@@ -71,4 +71,12 @@ INSERT INTO beer_review_images (beer_review_id, image)
 VALUES
        (1, 'review_1.jpg'),
        (1, 'review_2.jpg');
+
+INSERT INTO brewery_images (brewery_id, image)
+VALUES
+       (1, 'funkatorium_1.jpg'),
+       (1, 'funkatorium_2.jpg'),
+       (1, 'funkatorium_3.jpg'),
+       (1, 'funkatorium_4.jpg');
+
 COMMIT;
