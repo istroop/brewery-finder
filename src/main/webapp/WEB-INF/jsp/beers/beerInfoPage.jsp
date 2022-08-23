@@ -41,6 +41,14 @@
         font-size: 100%;
         margin-bottom: 10px;
     }
+
+    .img-center {
+        width: 500px;
+        height: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>
 
 <br>
@@ -48,7 +56,7 @@
     <h1 style="text-align: center; font-family: 'Calistoga', cursive;">Beer Information Page</h1><br>
     <c:url var="image" value="/img/uploads/${beer.image}"/>
 
-    <img src="${image}" alt="beerPicture" style="width: 100%">
+    <img src="${image}" alt="beerPicture" class="img-center">
 <br>
 
 <div class="about-section">
