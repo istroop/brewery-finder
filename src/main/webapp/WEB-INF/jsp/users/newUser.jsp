@@ -96,6 +96,36 @@
         .center {
             text-align: center;
         }
+        #userEmail-error {
+            color: #ba3939;
+            background: #ffe0e0;
+            border: 1px solid #a33a3a;
+        }
+        #confirmPassword-error {
+            color: #ba3939;
+            background: #ffe0e0;
+            border: 1px solid #a33a3a;
+        }
+        #name-error{
+            color: #ba3939;
+            background: #ffe0e0;
+            border: 1px solid #a33a3a;
+        }
+        #userName-error {
+            color: #ba3939;
+            background: #ffe0e0;
+            border: 1px solid #a33a3a;
+        }
+        #userBirthday-error {
+            color: #ba3939;
+            background: #ffe0e0;
+            border: 1px solid #a33a3a;
+        }
+        #password-error {
+            color: #ba3939;
+            background: #ffe0e0;
+            border: 1px solid #a33a3a;
+        }
     </style>
 </head>
 
@@ -137,7 +167,8 @@
                     <div class="inputField">
                         <label for="userEmail">Email: </label>
                         <input type="text" id="userEmail" name="userEmail" placeholder="User Email" class="form-control"
-                               required oninvalid="this.setCustomValidity(\'This field is required\')"/>
+                               required oninvalid="this.setCustomValidity(\'This field is required\')"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
                     </div>
 
                     <div class="inputField">
