@@ -18,4 +18,6 @@ public interface UserDAO {
 
 	public List<User> getAllBrewers();
 
+	public List<User> getAllBeerLovers();
+
 }

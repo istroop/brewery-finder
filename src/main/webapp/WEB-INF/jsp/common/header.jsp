@@ -79,6 +79,10 @@
                         <c:url var="masterListHref" value="/beerDirectory"/>
                         <li class="nav-item"><a class="nav-link" href="${masterListHref}">Beer Directory</a></li>
 
+                        <c:if test="${currentUser.getRole().equals('admin')}">
+                            <c:url var="userListHref" value="/userDirectory"/>
+                            <li class="nav-item"><a class="nav-link" href="${userListHref}">User Directory</a></li>
+                        </c:if>
                     <%--
                         <c:url var="newMessageHref"
                                value="/users/${currentUser.getUserName()}/messages/new"/>

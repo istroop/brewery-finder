@@ -109,4 +109,28 @@ public class JDBCUserDAO implements UserDAO
 		return brewers;
 	}
 
+	@Override
+	public List<User> getAllBeerLovers() {
+		List<User> beerLovers = new ArrayList<>();
+		String search = "beerLover";
+		String sql = "SELECT id, name, user_name, role, birthdate, email_address FROM app_user WHERE " +
+				"role = ?";
+		SqlRowSet row = jdbcTemplate.queryForRowSet(sql, search);
+
+		User user = null;
+
+		while (row.next()) {
+			user = new User();
+			user.setId(row.getInt("id"));
+			user.setName(row.getString("name"));
+			user.setUserName(row.getString("user_name"));
+			user.setRole(row.getString("role"));
+			user.setBirthdate(row.getString("birthdate"));
+			user.setUserEmail("email_address");
+			beerLovers.add(user);
+		}
+
+		return beerLovers;
+	}
+
 }
