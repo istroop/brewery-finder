@@ -7,16 +7,17 @@ import java.util.List;
 
 public interface UserDAO {
 
-	void saveUser(String name, String userName, String password, String birthdate, String role, String userEmail);
+	public void saveUser(String name, String userName, String password, String birthdate, String role,
+						boolean activeStatus,  String userEmail);
 
-	boolean searchForUsernameAndPassword(String userName, String password);
+	public boolean searchForUsernameAndPassword(String userName, String password);
 
-	void updatePassword(String userName, String password);
+	public void updatePassword(String userName, String password);
 
-	Object getUserByUserName(String userName);
+	public Object getUserByUserName(String userName);
 
-	List<User> getAllBrewers();
+	public List<User> getAllBrewers();
 
-	List<User> getAllBeerLovers();
+	public List<User> getAllBeerLovers();
 
 }
