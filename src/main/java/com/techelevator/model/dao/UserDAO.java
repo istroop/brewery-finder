@@ -14,7 +14,9 @@ public interface UserDAO {
 
 	public void updatePassword(String userName, String password);
 
-	public Object getUserByUserName(String userName);
+	public void updateUser(int id, String name, String userName, String birthdate, String userEmail);
+
+	public User getUserByUserName(String userName);
 
 	public List<User> getAllBrewers();
 

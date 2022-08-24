@@ -83,6 +83,9 @@
                             <c:url var="userListHref" value="/userDirectory"/>
                             <li class="nav-item"><a class="nav-link" href="${userListHref}">User Directory</a></li>
                         </c:if>
+
+                        <c:url var="editProfileHref" value="/users/${currentUser.getUserName()}/update"/>
+                        <li class="nav-item"><a class="nav-link" href="${editProfileHref}">Edit Profile</a></li>
                     <%--
                         <c:url var="newMessageHref"
                                value="/users/${currentUser.getUserName()}/messages/new"/>
