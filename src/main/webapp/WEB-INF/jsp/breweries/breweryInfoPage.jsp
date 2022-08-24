@@ -157,8 +157,8 @@
 <h4>
     <c:set var="userId" value="${currentUser.id}"/>
     <c:set var="brewer" value="${brewery.brewer}"/>
-    <c:if test="${userId == brewer}">
-        <a class="nav-link" style="align-items: center;" href="${updateHref}">Update Brewery</a>
+    <c:if test = "${userId == brewer}">
+        <div style="text-align: center;"><a class="nav-link" style="align-items: center;" href="${updateHref}">Update Brewery</a></div>
     </c:if>
 </h4><br>
 

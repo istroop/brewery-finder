@@ -78,4 +78,8 @@ VALUES
        (1, 'funkatorium_3.jpg'),
        (1, 'funkatorium_4.jpg');
 
+INSERT INTO beer_review_response (beer_review_id, response)
+VALUES
+       (1, 'yay im glad'),
+       (2, 'i hope your next visit is even better');
 COMMIT;

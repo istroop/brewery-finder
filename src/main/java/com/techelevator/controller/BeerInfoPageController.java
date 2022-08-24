@@ -12,17 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -52,9 +46,13 @@ public class BeerInfoPageController {
         request.setAttribute("brewery", brewery);
 
         List<BeerReview> reviewList = beerReviewDAO.getReviewsByBeerId(id);
+
         for(BeerReview review: reviewList){
             List<String> images = beerReviewDAO.getReviewImages(review.getId());
             review.setReviewImages(images);
+
+            List<String> responses = beerReviewDAO.getReviewResponses(review.getId());
+            review.setReviewResponses(responses);
         }
         request.setAttribute("reviews", reviewList);
 
@@ -147,5 +145,11 @@ public class BeerInfoPageController {
         return "redirect:/beer/" + beerId;
     }
 
+    @RequestMapping(value = "/beer/{beerId}/review/{reviewId}/response")
+    public String reviewResponse(@PathVariable int beerId, @PathVariable int reviewId,
+                                 @RequestParam("response") String response) {
 
+        beerReviewDAO.insertResponse(reviewId, response);
+        return "redirect:/beer/" + beerId;
+    }
 }

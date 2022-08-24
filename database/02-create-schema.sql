@@ -5,6 +5,7 @@
 BEGIN;
 
 -- CREATE statements go here
+DROP TABLE IF EXISTS beer_review_response;
 DROP TABLE IF EXISTS brewery_images;
 DROP TABLE IF EXISTS beer_review_images;
 DROP TABLE IF EXISTS beer_review;
@@ -80,4 +81,11 @@ CREATE TABLE brewery_images (
                             REFERENCES brewery(id)
 );
 
+CREATE TABLE beer_review_response (
+    id SERIAL PRIMARY KEY,
+    beer_review_id int NOT NULL,
+    response varchar(500),
+    CONSTRAINT beer_review_response_id_fkey FOREIGN KEY (beer_review_id)
+                                  REFERENCES  beer_review(id)
+);
 COMMIT;
