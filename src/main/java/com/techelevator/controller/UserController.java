@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.model.dto.User;
 import com.techelevator.model.dao.UserDAO;
+
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -44,5 +47,15 @@ public class UserController {
 		return "login/login";
 	}
 	
-	
+	@RequestMapping("/userDirectory")
+	public String viewAllUsers(HttpServletRequest request){
+
+		List<User> brewers = userDAO.getAllBrewers();
+		List<User> beerLovers = userDAO.getAllBeerLovers();
+
+		request.setAttribute("brewers", brewers);
+		request.setAttribute("beerLovers", beerLovers);
+
+		return "/users/userDirectory";
+	}
 }
