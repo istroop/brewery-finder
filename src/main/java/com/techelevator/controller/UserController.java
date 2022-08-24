@@ -1,6 +1,7 @@
 package com.techelevator.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,24 @@ public class UserController {
 		request.setAttribute("beerLovers", beerLovers);
 
 		return "/users/userDirectory";
+	}
+
+	@RequestMapping("/users/{userName}/update")
+	public String getUpdateUserForm(HttpServletRequest request, @PathVariable String userName) {
+		return "/users/updateUser";
+	}
+
+	@RequestMapping(path="/users/{userName}/doUpdate")
+	public String updateUser(@PathVariable String userName, @Valid @ModelAttribute User user, HttpSession session) {
+
+		User existingUser = userDAO.getUserByUserName(userName);
+
+		userDAO.updateUser(existingUser.getId(), user.getName(), user.getUserName(), user.getBirthdate(),
+				user.getUserEmail());
+
+		session.setAttribute("currentUser", user);
+
+		return "redirect:/users/" + userName;
 	}
 
 	@RequestMapping("/users/{id}/delete")

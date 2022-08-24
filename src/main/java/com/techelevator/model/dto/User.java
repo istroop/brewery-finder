@@ -30,6 +30,17 @@ public class User {
 	public String getRole() {
 		return role;
 	}
+	public String getRoleFormatted() {
+		if (this.role.equals("brewer")) {
+			return "Brewer";
+		} else if (this.role.equals("beerLover")) {
+			return "Beer Lover";
+		} else if (this.role.equals("admin")) {
+			return "admin";
+		}
+
+		return "";
+	}
 	/**
 	 * @param role the role to set
 	 */

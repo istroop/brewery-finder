@@ -64,7 +64,13 @@ public class JDBCUserDAO implements UserDAO
 	}
 
 	@Override
-	public Object getUserByUserName(String userName) {
+	public void updateUser(int id, String name, String userName, String birthdate, String userEmail) {
+		String sql = "UPDATE app_user SET name = ?, user_name = ?, birthdate = ?, email_address = ? WHERE id = ?";
+		jdbcTemplate.update(sql, name, userName, birthdate, userEmail, id);
+	}
+
+	@Override
+	public User getUserByUserName(String userName) {
 		String sqlSearchForUsername ="SELECT * "+
 		"FROM app_user "+
 		"WHERE UPPER(user_name) = ? ";
@@ -78,6 +84,7 @@ public class JDBCUserDAO implements UserDAO
 			thisUser.setName(user.getString("name"));
 			thisUser.setRole(user.getString("role"));
 			thisUser.setBirthdate(user.getString("birthdate"));
+			thisUser.setUserEmail(user.getString("email_address"));
 			thisUser.setId(user.getInt("id"));
 			thisUser.setUserEmail(user.getString("email_address"));
 			thisUser.setActiveStatus(user.getBoolean("active_status"));
