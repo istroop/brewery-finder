@@ -81,8 +81,6 @@
 
 </style>
 
-<br><br><br><br>
-
 <h1 style="text-align: center; font-family: 'Calistoga', cursive;">User Directory</h1>
 
 <h2 style="text-align: center;">Browse all the users in our directory: </h2>
@@ -97,6 +95,10 @@
                 <div class="cardContainer">
                     <h2 style="text-align: center;">${brewer.getName()}</h2>
                     <p class="title">${brewer.getUserEmail()} | ${brewer.getUserName()}</p>
+                    <c:set value="${brewer.id}" var="id"/>
+                    <c:url var="deleteUserHref"
+                           value="/users/${id}/delete"/>
+                    <p><a class="cardBtn btn-block select" href="${deleteUserHref}">Delete</a></p>
                 </div>
             </div>
         </div>
@@ -112,7 +114,11 @@
             <div class="card">
                 <div class="cardContainer">
                     <h2 style="text-align: center;">${beerLover.getName()}</h2>
-                    <p class="title">${beerLover.userEmail} | ${beerLover.getUserName()}</p>
+                    <p class="title">${beerLover.getUserEmail()} | ${beerLover.getUserName()}</p>
+                    <c:set value="${beerLover.id}" var="id"/>
+                    <c:url var="deleteUserHref"
+                           value="/users/${id}/delete"/>
+                    <p><a class="cardBtn btn-block select" href="${deleteUserHref}">Delete</a></p>
                 </div>
             </div>
         </div>
