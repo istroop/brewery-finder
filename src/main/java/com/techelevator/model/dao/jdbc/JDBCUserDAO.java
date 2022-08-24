@@ -79,6 +79,8 @@ public class JDBCUserDAO implements UserDAO
 			thisUser.setRole(user.getString("role"));
 			thisUser.setBirthdate(user.getString("birthdate"));
 			thisUser.setId(user.getInt("id"));
+			thisUser.setUserEmail(user.getString("email_address"));
+			thisUser.setActiveStatus(user.getBoolean("active_status"));
 		}
 
 		return thisUser;
@@ -89,7 +91,7 @@ public class JDBCUserDAO implements UserDAO
 
 		List<User> brewers = new ArrayList<>();
 		String search = "brewer";
-		String sql = "SELECT id, name, user_name, role, birthdate, email_address FROM app_user WHERE " +
+		String sql = "SELECT id, name, user_name, role, birthdate, email_address, active_status FROM app_user WHERE " +
 				"role = ?";
 		SqlRowSet row = jdbcTemplate.queryForRowSet(sql, search);
 
@@ -102,7 +104,8 @@ public class JDBCUserDAO implements UserDAO
 			user.setUserName(row.getString("user_name"));
 			user.setRole(row.getString("role"));
 			user.setBirthdate(row.getString("birthdate"));
-			user.setUserEmail("email_address");
+			user.setUserEmail(row.getString("email_address"));
+			user.setActiveStatus(row.getBoolean("active_status"));
 			brewers.add(user);
 		}
 
@@ -113,7 +116,7 @@ public class JDBCUserDAO implements UserDAO
 	public List<User> getAllBeerLovers() {
 		List<User> beerLovers = new ArrayList<>();
 		String search = "beerLover";
-		String sql = "SELECT id, name, user_name, role, birthdate, email_address FROM app_user WHERE " +
+		String sql = "SELECT id, name, user_name, role, birthdate, email_address, active_status FROM app_user WHERE " +
 				"role = ?";
 		SqlRowSet row = jdbcTemplate.queryForRowSet(sql, search);
 
@@ -126,11 +129,24 @@ public class JDBCUserDAO implements UserDAO
 			user.setUserName(row.getString("user_name"));
 			user.setRole(row.getString("role"));
 			user.setBirthdate(row.getString("birthdate"));
-			user.setUserEmail("email_address");
+			user.setUserEmail(row.getString("email_address"));
+			user.setActiveStatus(row.getBoolean("active_status"));
 			beerLovers.add(user);
 		}
 
 		return beerLovers;
+	}
+
+	@Override
+	public void makeUserInactive(int id) {
+		String sql = "UPDATE app_user SET active_status = false WHERE id = ?";
+		jdbcTemplate.update(sql, id);
+	}
+
+	@Override
+	public void makeUserActive(int id) {
+		String sql = "UPDATE app_user SET active_status = true WHERE id = ?";
+		jdbcTemplate.update(sql, id);
 	}
 
 }

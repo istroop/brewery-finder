@@ -64,9 +64,17 @@ public class UserController {
 	}
 
 	@RequestMapping("/users/{id}/delete")
-	public String deleteUser(@PathVariable String id) {
+	public String deleteUser(@PathVariable int id) {
 
-		//userDAO.makeUserInactive(id);
+		userDAO.makeUserInactive(id);
+
+		return "redirect:/userDirectory";
+	}
+
+	@RequestMapping("/users/{id}/reactivate")
+	public String reactivateUser(@PathVariable int id) {
+
+		userDAO.makeUserActive(id);
 
 		return "redirect:/userDirectory";
 	}

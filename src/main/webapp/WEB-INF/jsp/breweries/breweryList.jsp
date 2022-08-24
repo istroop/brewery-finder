@@ -135,7 +135,7 @@
        value="/breweries/new"/>
 <c:if test="${currentUser.role.equals('admin')}">
     <h3>
-        <a class="btn btn-primary new-brewery" href="${newBreweryHref}">Add a Brewery</a>
+        <a class="cardBtn btn-block select" style="text-align: center;background-color: #588157; border: 2px solid #2b542c" href="${newBreweryHref}">Add a Brewery</a>
     </h3>
 </c:if>
 

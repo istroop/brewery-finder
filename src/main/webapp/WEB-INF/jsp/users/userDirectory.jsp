@@ -79,6 +79,18 @@
         text-align: center;
     }
 
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+        background-color: white;
+    }
+
+    .inactiveCard {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+        background-color: white;
+        opacity: 0.3;
+    }
+
+
 </style>
 
 <h1 style="text-align: center; font-family: 'Calistoga', cursive;">User Directory</h1>
@@ -90,17 +102,33 @@
 <div class="cardRow">
     <c:forEach var="brewer" items="${brewers}">
 
-        <div class="cardColumn">
-            <div class="card">
+        <c:choose>
+
+            <c:when test="${brewer.isActiveStatus()}">
+                <c:set var="cardClass" value="card"/>
+            </c:when>
+
+            <c:otherwise>
+                <c:set var="cardClass" value="inactiveCard"/>
+            </c:otherwise>
+        </c:choose>
+
+        <div class="${cardClass}">
+
+            <div class="cardColumn">
                 <div class="cardContainer">
                     <h2 style="text-align: center;">${brewer.getName()}</h2>
                     <p class="title">${brewer.getUserEmail()} | ${brewer.getUserName()}</p>
                     <c:set value="${brewer.id}" var="id"/>
                     <c:url var="deleteUserHref"
                            value="/users/${id}/delete"/>
+                    <c:url var="reactivateUserHref"
+                           value="/users/${id}/reactivate"/>
                     <p><a class="cardBtn btn-block select" href="${deleteUserHref}">Delete</a></p>
+                    <p><a class="cardBtn btn-block select" href="${reactivateUserHref}">Reactivate</a></p>
                 </div>
             </div>
+
         </div>
     </c:forEach>
 </div>
@@ -108,20 +136,35 @@
 
 <h3>Beer Lovers</h3>
 <div class="cardRow">
-    <c:forEach var="beerLover" items="${beerLovers}">
 
-        <div class="cardColumn">
-            <div class="card">
-                <div class="cardContainer">
-                    <h2 style="text-align: center;">${beerLover.getName()}</h2>
-                    <p class="title">${beerLover.getUserEmail()} | ${beerLover.getUserName()}</p>
-                    <c:set value="${beerLover.id}" var="id"/>
-                    <c:url var="deleteUserHref"
-                           value="/users/${id}/delete"/>
-                    <p><a class="cardBtn btn-block select" href="${deleteUserHref}">Delete</a></p>
-                </div>
+    <c:forEach var="beerLover" items="${beerLovers}">
+        <c:choose>
+            <c:when test="${beerLover.isActiveStatus()}">
+                <c:set var="cardClass" value="card"/>
+            </c:when>
+
+            <c:otherwise>
+                <c:set var="cardClass" value="inactiveCard"/>
+            </c:otherwise>
+
+        </c:choose>
+
+        <div class="${cardClass}">
+            <div class="cardColumn">
+                    <div class="cardContainer">
+                        <h2 style="text-align: center;">${beerLover.getName()}</h2>
+                        <p class="title">${beerLover.getUserEmail()} | ${beerLover.getUserName()}</p>
+                        <c:set value="${beerLover.id}" var="id"/>
+                        <c:url var="deleteUserHref"
+                               value="/users/${id}/delete"/>
+                        <c:url var="reactivateUserHref"
+                               value="/users/${id}/reactivate"/>
+                        <p><a class="cardBtn btn-block select" href="${deleteUserHref}">Delete</a></p>
+                        <p><a class="cardBtn btn-block select" href="${reactivateUserHref}">Reactivate</a></p>
+                    </div>
             </div>
         </div>
+
     </c:forEach>
 </div>
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
