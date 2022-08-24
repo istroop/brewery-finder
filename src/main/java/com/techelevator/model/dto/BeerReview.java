@@ -20,6 +20,8 @@ public class BeerReview {
 
     private List<String> reviewImages;
 
+    private List<String> reviewResponses;
+
     public int getId() {
         return id;
     }
@@ -82,5 +84,13 @@ public class BeerReview {
 
     public void setReviewImages(List<String> reviewImages) {
         this.reviewImages = reviewImages;
+    }
+
+    public List<String> getReviewResponses() {
+        return reviewResponses;
+    }
+
+    public void setReviewResponses(List<String> reviewResponses) {
+        this.reviewResponses = reviewResponses;
     }
 }

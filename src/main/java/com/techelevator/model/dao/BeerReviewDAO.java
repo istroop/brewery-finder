@@ -13,4 +13,6 @@ public interface BeerReviewDAO {
     List<String> getReviewImages(int id);
     int getNextId();
     void insertImage(int reviewId, String image);
+    List<String> getReviewResponses(int id);
+    void insertResponse(int reviewId, String response);
 }
