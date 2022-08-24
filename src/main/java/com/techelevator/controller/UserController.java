@@ -82,8 +82,19 @@ public class UserController {
 		return "redirect:/users/" + userName;
 	}
 
-	@RequestMapping("/users/{id}/delete")
-	public String deleteUser(@PathVariable int id) {
+	@RequestMapping("/users/{userName}/delete")
+	public String removeUser(@PathVariable String userName, ModelMap model, HttpSession session) {
+
+		User user = userDAO.getUserByUserName(userName);
+
+		userDAO.makeUserInactive(user.getId());
+		model.remove("currentUser");
+		session.invalidate();
+		return "redirect:/";
+	}
+
+	@RequestMapping("/users/{id}/deactivate")
+	public String adminDeleteUser(@PathVariable int id) {
 
 		userDAO.makeUserInactive(id);
 
