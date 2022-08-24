@@ -145,6 +145,29 @@ public class JDBCUserDAO implements UserDAO
 	}
 
 	@Override
+	public List<User> getAllUsers() {
+		List<User> users = new ArrayList<>();
+		String sql = "SELECT id, name, user_name, role, birthdate, email_address, active_status FROM app_user";
+		SqlRowSet row = jdbcTemplate.queryForRowSet(sql);
+
+		User user = null;
+
+		while (row.next()) {
+			user = new User();
+			user.setId(row.getInt("id"));
+			user.setName(row.getString("name"));
+			user.setUserName(row.getString("user_name"));
+			user.setRole(row.getString("role"));
+			user.setBirthdate(row.getString("birthdate"));
+			user.setUserEmail(row.getString("email_address"));
+			user.setActiveStatus(row.getBoolean("active_status"));
+			users.add(user);
+		}
+
+		return users;
+	}
+
+	@Override
 	public void makeUserInactive(int id) {
 		String sql = "UPDATE app_user SET active_status = false WHERE id = ?";
 		jdbcTemplate.update(sql, id);

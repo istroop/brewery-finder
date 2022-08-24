@@ -22,6 +22,8 @@ public interface UserDAO {
 
 	List<User> getAllBeerLovers();
 
+	List<User> getAllUsers();
+
     void makeUserInactive(int id);
 
     void makeUserActive(int id);

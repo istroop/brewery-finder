@@ -45,6 +45,14 @@ public class UserController {
 			return "redirect:/users/new";
 		}
 
+		List<User> currentUsers = userDAO.getAllUsers();
+
+		for (User currentUser : currentUsers) {
+			if (currentUser.getUserName().equalsIgnoreCase(user.getUserName())) {
+				return "redirect:/users/error";
+			}
+		}
+
 		user.setActiveStatus(true);
 		
 		userDAO.saveUser(user.getName(), user.getUserName(), user.getPassword(), user.getBirthdate(), user.getRole(),
@@ -107,5 +115,15 @@ public class UserController {
 		userDAO.makeUserActive(id);
 
 		return "redirect:/userDirectory";
+	}
+
+	@RequestMapping("users/error")
+	public String usernameErrorPage () {
+		return "misc/userNameErrorPage";
+	}
+
+	@RequestMapping("users/error/redirect")
+	public String errorRedirect() {
+		return "redirect:/users/new";
 	}
 }
