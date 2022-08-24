@@ -23,7 +23,7 @@ public class JDBCBeerDAO implements BeerDAO {
 
     @Override
     public List<Beer> getAllBeersByBrewery(int brewery_id) {
-        String sqlSearchForBeers = "SELECT id FROM beer WHERE brewery_id = ?";
+        String sqlSearchForBeers = "SELECT id FROM beer WHERE brewery_id = ? ORDER BY active_status DESC";
 
         SqlRowSet beerSet = jdbcTemplate.queryForRowSet(sqlSearchForBeers, brewery_id);
         List<Beer> beers = new ArrayList<>();

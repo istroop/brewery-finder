@@ -29,8 +29,7 @@ INSERT INTO brewery
                                                                 'serving high-end, locally sourced New American fare' ||
                                                                 '.','6123 High St.', true, 'brewery_3.jpg'),
 ('Ben''s Tune Up', 1, '4PM - 11PM', '(828) 424-7580', 'Trendy brewery & beer garden offering house sakes, craft beers' ||
-                                                      ' & Japanese-American fusion eats.', '7902 Park Place', true, 'brewery_4.jpg'),
-('Asheville Brewing Company', 1, '', '', '', '', false, '');
+                                                      ' & Japanese-American fusion eats.', '7902 Park Place', true, 'brewery_4.jpg');
 
 INSERT INTO beer
     (active_status, name, brewery_id, image, description, abv, beer_type) values
