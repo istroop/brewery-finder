@@ -145,11 +145,11 @@ public class BeerInfoPageController {
         return "redirect:/beer/" + beerId;
     }
 
-    @RequestMapping(value = "/beer/{beerId}/review/{reviewId}/response")
-    public String reviewResponse(@PathVariable int beerId, @PathVariable int reviewId,
-                                 @RequestParam("response") String response) {
-
-        beerReviewDAO.insertResponse(reviewId, response);
-        return "redirect:/beer/" + beerId;
-    }
+//    @RequestMapping(value = "/beer/{beerId}/review/{reviewId}/response")
+//    public String reviewResponse(@PathVariable int beerId, @PathVariable int reviewId,
+//                                 @RequestParam("response") String response) {
+//
+//        beerReviewDAO.insertResponse(reviewId, response);
+//        return "redirect:/beer/" + beerId;
+//    }
 }
