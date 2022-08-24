@@ -179,6 +179,8 @@
                         <option value="brewer">Brewer</option>
                     </select><br>
                     <button type="submit" class="btn btn-block registerbtn">Update My Profile</button>
+                    <a href="/users/${currentUser.getUserName()}/delete" class="btn btn-block registerbtn">Delete
+                        Profile</a>
                 </div>
             </div>
         </form>

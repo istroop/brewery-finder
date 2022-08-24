@@ -36,7 +36,7 @@ public class User {
 		} else if (this.role.equals("beerLover")) {
 			return "Beer Lover";
 		} else if (this.role.equals("admin")) {
-			return "admin";
+			return "Administrator";
 		}
 
 		return "";
