@@ -109,7 +109,14 @@
 
             <div class="page-container">
                 <label for="userPhone">Phone Number: </label>
-                <input type="text" id="userPhone" name="phone" placeholder="User Phone" class="form-control"
+                <input type="text" id="userPhone" name="phone" placeholder="User Phone" pattern="/d{10}"
+                       maxlength="10" onkeydown="return ( event.ctrlKey || event.altKey
+                    || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false)
+                    || (95<event.keyCode && event.keyCode<106)
+                    || (event.keyCode==8) || (event.keyCode==9)
+                    || (event.keyCode>34 && event.keyCode<40)
+                    || (event.keyCode==46) )"
+                       class="form-control"
                        required oninvalid="this.setCustomValidity(\'This field is required\')"/>
             </div>
 
