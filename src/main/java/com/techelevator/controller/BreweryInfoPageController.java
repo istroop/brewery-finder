@@ -35,6 +35,12 @@ public class BreweryInfoPageController {
         Brewery brewery = breweryDAO.getBreweryById(breweryId);
         request.setAttribute("brewery", brewery);
 
+        String phone = brewery.getPhone();
+
+        String phoneFormatted = "(" + phone.substring(0,3) + ") " + phone.substring(3,6) + "-" + phone.substring(6);
+
+        request.setAttribute("breweryPhone", phoneFormatted);
+
         List<Beer> beers = beerDAO.getBeersByBrewery(breweryId);
         request.setAttribute("beers", beers);
 
