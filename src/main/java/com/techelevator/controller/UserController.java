@@ -81,4 +81,12 @@ public class UserController {
 
 		return "redirect:/users/" + userName;
 	}
+
+	@RequestMapping("/users/{id}/delete")
+	public String deleteUser(@PathVariable String id) {
+
+		//userDAO.makeUserInactive(id);
+
+		return "redirect:/userDirectory";
+	}
 }
