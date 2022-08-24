@@ -122,9 +122,9 @@
                 <a><img src="${img}" style="width: 200px; height: 200px;"/></a>
             </c:forEach>
 
-            <c:forEach var="response" items="${review.getReviewResponses()}">
+<%--            <c:forEach var="response" items="${review.getReviewResponses()}">
                 <h4>Response from Brewer: ${response}</h4>
-            </c:forEach>
+            </c:forEach> --%>
 
             <c:if test="${currentUser.getUserName() == review.getUsername()}">
                 <c:url var="addImage" value="/beer/${beerId}/review/${review.getId()}/reviewImages"/>
@@ -132,7 +132,7 @@
                     <a class="btn btn-primary button" href="${addImage}">Add Image to Your Review</a>
                 </h5>
             </c:if>
-
+<%---
             <c:if test="${beer.brewer == currentUser.id}">
 
                 <br><input type="text" id="response" name="response" placeholder="Respond to Review">
@@ -140,7 +140,7 @@
                 <a class="btn btn-primary button" href="${submitResponse}">Submit</a>
 
             </c:if>
-
+--%>
             <br><br>
             <hr style="color: #3A5A40">
         </c:forEach>
