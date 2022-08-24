@@ -18,6 +18,7 @@ public class User {
 	})
 	private String password;
 	private String role;
+	private boolean activeStatus;
 	
 	private String confirmPassword;
 	public String getUserName() {
@@ -81,5 +82,13 @@ public class User {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public boolean isActiveStatus() {
+		return activeStatus;
+	}
+
+	public void setActiveStatus(boolean activeStatus) {
+		this.activeStatus = activeStatus;
 	}
 }

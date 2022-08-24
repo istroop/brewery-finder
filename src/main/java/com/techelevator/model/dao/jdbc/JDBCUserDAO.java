@@ -30,13 +30,15 @@ public class JDBCUserDAO implements UserDAO
 	}
 	
 	@Override
-	public void saveUser(String name, String userName, String password, String birthdate, String role, String userEmail) {
+	public void saveUser(String name, String userName, String password, String birthdate, String role,
+						boolean activeStatus, String userEmail) {
 		byte[] salt = hashMaster.generateRandomSalt();
 		String hashedPassword = hashMaster.computeHash(password, salt);
 		String saltString = new String(Base64.encode(salt));
 		
-		jdbcTemplate.update("INSERT INTO app_user(name, user_name, password, birthdate, role, email_address, salt) VALUES (?, ?, ?, ?, ?, ?, ?)",
-				name, userName, hashedPassword, birthdate, role, userEmail, saltString);
+		jdbcTemplate.update("INSERT INTO app_user(name, user_name, password, birthdate, role, email_address, " +
+						"active_status, salt) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+				name, userName, hashedPassword, birthdate, role, userEmail, activeStatus, saltString);
 	}
 
 	@Override

@@ -39,8 +39,11 @@ public class UserController {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
 			return "redirect:/users/new";
 		}
+
+		user.setActiveStatus(true);
 		
-		userDAO.saveUser(user.getName(), user.getUserName(), user.getPassword(), user.getBirthdate(), user.getRole(), user.getUserEmail());
+		userDAO.saveUser(user.getName(), user.getUserName(), user.getPassword(), user.getBirthdate(), user.getRole(),
+				user.isActiveStatus(), user.getUserEmail());
 		return "login/login";
 	}
 	

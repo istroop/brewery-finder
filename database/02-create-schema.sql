@@ -20,6 +20,7 @@ CREATE TABLE app_user (
   role varchar(32),
   birthdate varchar(100),
   email_address varchar(100),
+  active_status bool,
   salt varchar(200)
 );
 
