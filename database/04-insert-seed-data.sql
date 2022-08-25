@@ -32,7 +32,7 @@ INSERT INTO brewery
                                                       ' & Japanese-American fusion eats.', '7902 Park Place', true, 'brewery_4.jpg'),
  ('7venth Sun Brewery', 1, '3PM - 11PM', '8132315900', 'Airy, expansive taproom & boutique brewery pouring ' ||
                                                        'house-brewed sour beers, saisons & IPAs.', '6809 N Nebraska Ave', true, 'brewery_5.jpg'),
- ('Angry Chair Brewing', 1, '11AM - 10PM', '8132381122', '', '4101 N Florida Ave', true, 'brewery_6.jpg');
+ ('Angry Chair Brewing', 1, '11AM - 10PM', '8132381122', 'We don’t intend on being a one-note brewery and are constantly pushing ourselves to do more. At any given time our tap list will feature a variety of styles, stouts, and IPAs being more common, but we make a lot of sours and porters as well. ', '4101 N Florida Ave', true, 'brewery_6.jpg');
 
 INSERT INTO beer
     (active_status, name, brewery_id, image, description, abv, beer_type) values
