@@ -2,11 +2,6 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<<<<<<< HEAD
-=======
-<!DOCTYPE html>
-<html>
->>>>>>> main
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
@@ -44,7 +39,6 @@
             text-indent: 20px;
         }
     </style>
-</style>
 
 
 

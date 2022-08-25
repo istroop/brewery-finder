@@ -6,10 +6,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             font-family: 'Roboto Slab', serif;;
@@ -127,9 +123,6 @@
             border: 1px solid #a33a3a;
         }
     </style>
-</head>
-
-<body>
 
 <c:url var="validationJs" value="/js/user-validation.js"/>
 <script src="${validationJs}"></script>
@@ -188,8 +181,5 @@
     <div class="col-sm"></div>
 
 </div>
-</div>
-</body>
-</html>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp"/>
