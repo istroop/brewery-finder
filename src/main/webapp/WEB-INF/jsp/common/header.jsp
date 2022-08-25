@@ -6,12 +6,29 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><c:out value="${pageTitle}"/></title>
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="<c:url value="/css/site.css"/>" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
             integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
-    <style type="text/css">
+
+
+
+    <style>
+
+        body {
+            font-family: 'Roboto Slab', serif;;
+            font-size: 17px;
+            color: #344E41;
+            background-color: #DAD7CD;
+        }
+
         label {
             display: block;
         }
@@ -57,6 +74,7 @@
 
 </head>
 <body>
+
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -71,10 +89,10 @@
             <ul class="navbar-nav nav">
                 <c:choose>
                     <c:when test="${not empty currentUser}">
-                        <a href="<c:url value="/users/${currentUser.getUserName()}"/>" class="navbar-brand">Brewery Finder</a>
+                        <li><a href="<c:url value="/users/${currentUser.getUserName()}"/>" class="navbar-brand">Brewery Finder</a></li>
 
                         <c:url var="dashboardHref" value="/breweryList"/>
-                        <li class="nav-item"><a class="nav-link" href="${dashboardHref}">Brewery List</a></li>
+                        <li><a class="nav-link" href="${dashboardHref}">Brewery List</a></li>
 
                         <c:url var="masterListHref" value="/beerDirectory"/>
                         <li class="nav-item"><a class="nav-link" href="${masterListHref}">Beer Directory</a></li>
@@ -86,6 +104,7 @@
 
                         <c:url var="editProfileHref" value="/users/${currentUser.getUserName()}/update"/>
                         <li class="nav-item"><a class="nav-link" href="${editProfileHref}">Edit Profile</a></li>
+
                     <%--
                         <c:url var="newMessageHref"
                                value="/users/${currentUser.getUserName()}/messages/new"/>
@@ -97,6 +116,7 @@
                                value="/users/${currentUser.getUserName()}/changePassword"/>
                         <li class="nav-item"><a class="nav-link" href="${changePasswordHref}">Change Password</a></li>
                         --%>
+
                     </c:when>
                     <c:otherwise>
                         <a href="<c:url value="/"/>" class="navbar-brand">Brewery Finder</a>
