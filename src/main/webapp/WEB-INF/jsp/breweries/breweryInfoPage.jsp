@@ -235,8 +235,8 @@
     <c:if test="${currentUser.getRole().equals('beerLover')}">
     <div class="photo-list-section">
         <c:url var="uploadImg" value="/breweries/${breweryId}/uploadImage"/>
-        <br> <a style="font-family: 'Calistoga', cursive; text-align: center" class="nav-link" href="${uploadImg}">Share
-        a photo from your time at ${brewery.name}</a>
+        <br> <h2 style="font-family: 'Calistoga', cursive; text-align: center" href="${uploadImg}">Share a photo from your time at ${brewery.name}</h2>
+        <h3><a class="btn btn-primary" style="background-color: #2b542c; border: #9d9d9d" href="${uploadImg}">Upload your image!</a> </h3>
         <br><br>
         <c:forEach var="image" items="${images}">
             <c:url var="img" value="/img/uploads/${image}"/>
