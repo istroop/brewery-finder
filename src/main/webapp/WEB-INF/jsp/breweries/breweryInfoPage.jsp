@@ -231,18 +231,17 @@
         </h5>
     </div>
     <br>
-
-    <c:if test="${currentUser.getRole().equals('beerLover')}">
     <div class="photo-list-section">
+    <h2 style="font-family: 'Calistoga', cursive; text-align: center" href="${uploadImg}">Share a photo from your time at ${brewery.name}</h2>
+    <c:if test="${currentUser.getRole().equals('beerLover')}">
         <c:url var="uploadImg" value="/breweries/${breweryId}/uploadImage"/>
-        <br> <h2 style="font-family: 'Calistoga', cursive; text-align: center" href="${uploadImg}">Share a photo from your time at ${brewery.name}</h2>
         <h3><a class="btn btn-primary" style="background-color: #2b542c; border: #9d9d9d" href="${uploadImg}">Upload your image!</a> </h3>
         <br><br>
-        <c:forEach var="image" items="${images}">
-            <c:url var="img" value="/img/uploads/${image}"/>
-            <img src="${img}" alt="breweryPictures" style="width: auto; height:200px;">
-        </c:forEach>
-    </div>
     </c:if>
+    <c:forEach var="image" items="${images}">
+        <c:url var="img" value="/img/uploads/${image}"/>
+    <img src="${img}" alt="breweryPictures" style="width: auto; height:200px;">
+    </c:forEach>
+    </div>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp"/>
