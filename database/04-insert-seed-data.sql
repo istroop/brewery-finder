@@ -7,7 +7,7 @@ BEGIN;
 -- INSERT statements go here
 INSERT INTO app_user
     (name, user_name, password, role, birthdate, email_address, active_status, salt) VALUES
-('Admin Lastname', 'Admin1', 'q9zYhV+vZAmWu7tfDyKCRw==', 'brewer', '01/01/1999', 'a@a.com', true,
+('Kris Kardashian', 'Admin1', 'q9zYhV+vZAmWu7tfDyKCRw==', 'brewer', '01/01/1999', 'a@a.com', true,
  'HOmSruexAbYm3qyY5PfebrlI2oBThGOL4e5lK5M+U6w2x0S7TUQKnqHxN6Eu15TdzGhBb2NTQjCj/+rr1XRoJtcAK' ||
  '+x1PYIAhyCZT15obFyDku6ABDy4KZEzh132RzeCTA+oxK6zhlTanUNtcIAPcp57ggfXEYYnEY19WAElZ8Y=');
 --  ,
@@ -29,7 +29,10 @@ INSERT INTO brewery
                                                                 'serving high-end, locally sourced New American fare' ||
                                                                 '.','6123 High St.', true, 'brewery_3.jpg'),
 ('Ben''s Tune Up', 1, '4PM - 11PM', '8284247580', 'Trendy brewery & beer garden offering house sakes, craft beers' ||
-                                                      ' & Japanese-American fusion eats.', '7902 Park Place', true, 'brewery_4.jpg');
+                                                      ' & Japanese-American fusion eats.', '7902 Park Place', true, 'brewery_4.jpg'),
+ ('7venth Sun Brewery', 1, '3PM - 11PM', '8132315900', 'Airy, expansive taproom & boutique brewery pouring ' ||
+                                                       'house-brewed sour beers, saisons & IPAs.', '6809 N Nebraska Ave', true, 'brewery_5.jpg'),
+ ('Angry Chair Brewing', 1, '11AM - 10PM', '8132381122', '', '4101 N Florida Ave', true, 'brewery_6.jpg');
 
 INSERT INTO beer
     (active_status, name, brewery_id, image, description, abv, beer_type) values
@@ -63,13 +66,15 @@ VALUES
        (1, 1, 5, 'AMAZING BEER!!!!','This is one of the best beers I have ever had'),
        (1, 1, 4, 'would try again?','Not normally a fan of this kind of beer but it was pretty ok - might try again ' ||
                                     'if I come back'),
-       (2, 1, 3, 'Not a fan of Stouts', 'This beer was not my beer. Not a fan of stouts typically so not really sure ' ||
-                                        'what I was expecting. ');
+       (2, 1, 3, 'Not a fan!', 'This beer was not my beer. Not a fan of watermelon typically so not really sure ' ||
+                                        'what I was expecting. '),
+       (2, 1, 1, 'This beer is really bad', 'The only reason that this beer got a 1 is because it is a cute can. Would not reccommend this beer to anyone');
 
 INSERT INTO beer_review_images (beer_review_id, image)
 VALUES
        (1, 'review_1.jpg'),
-       (1, 'review_2.jpg');
+       (1, 'review_2.jpg'),
+       (4, 'review_3.jpg');
 
 INSERT INTO brewery_images (brewery_id, image)
 VALUES
