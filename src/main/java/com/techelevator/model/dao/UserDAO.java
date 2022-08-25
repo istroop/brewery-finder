@@ -18,6 +18,8 @@ public interface UserDAO {
 
 	User getUserByUserName(String userName);
 
+	User getUserById(int id);
+
 	List<User> getAllBrewers();
 
 	List<User> getAllBeerLovers();

@@ -156,7 +156,7 @@
                         <p class="title">${beerLover.getUserEmail()} | ${beerLover.getUserName()}</p>
                         <c:set value="${beerLover.id}" var="id"/>
                         <c:url var="deleteUserHref"
-                               value="/users/${id}/delete"/>
+                               value="/users/${id}/deactivate"/>
                         <c:url var="reactivateUserHref"
                                value="/users/${id}/reactivate"/>
                         <p><a class="cardBtn btn-block select" href="${deleteUserHref}">Delete</a></p>
