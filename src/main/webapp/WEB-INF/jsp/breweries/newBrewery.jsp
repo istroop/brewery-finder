@@ -129,8 +129,9 @@
             </div>
 
             <div class="page-container">
-                <label for="history">History: </label>
-                <textarea type="text" id="history" name="history" placeholder="History" style="background-color: #C4C0B0" class="form-control"
+                <label for="history">Description: </label>
+                <textarea type="text" id="history" name="history" placeholder="Description" style="background-color:
+                #C4C0B0" class="form-control"
                           required oninvalid="this.setCustomValidity(\'This field is required\')"></textarea>
             </div>
 
